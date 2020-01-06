@@ -1,0 +1,68 @@
+Variable
+Population
+Income
+Nutrition|Calorie Supply
+Nutrition|Calorie Supply|+|Crops
+Nutrition|Calorie Supply|+|Livestock products
+Nutrition|Calorie Supply|+|Secondary products
+Nutrition|Calorie Supply|+|Fish
+Household Expenditure|Food|Expenditure Share
+Household Expenditure|Food|Expenditure Share|Crops
+Household Expenditure|Food|Expenditure Share|Livestock products
+Demand|+|Agricultural Supply Chain Loss
+Demand|+|Food
+Demand|+|Feed
+Demand|+|Material
+Demand|+|Processing
+Demand|Food|+|Crops
+Demand|Food|+|Livestock products
+Demand|Food|+|Fish
+Demand|Food|+|Secondary products
++|Production
+Production|+|Crops
+Production|+|Crop residues
+Production|+|Forage
+Production|+|Livestock products
+Production|+|Pasture
+Production|+|Secondary products
+Production|+|Fish
+Consumption
+Trade|+|Net-Trade
+Trade|Net-Trade|+|Crops
+Trade|Net-Trade|+|Livestock products
+Trade|Net-Trade|+|Fish
+Trade|Net-Trade|+|Forest products
+Trade|Net-Trade|+|Secondary products
+Resources|Land Cover|+|Cropland
+Resources|Land Cover|Cropland|+|Crops
+Resources|Land Cover|Cropland|+|Forage
+Resources|Land Cover|+|Pastures and Rangelands
+Resources|Land Cover|+|Forest
+Resources|Land Cover|Forest|+|Natural Forest
+Resources|Land Cover|Forest|+|Managed Forest
+Resources|Land Cover|+|Other Land
+Resources|Land Cover Change|+|Urban Area
+Resources|Water|Withdrawal|Agriculture
+Resources|Land Cover|Cropland|Area actually irrigated
+Resources|Nitrogen|Cropland Budget|Balance
+Resources|Nitrogen|Cropland Budget|Inputs
+Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer
+Resources|Nitrogen|Cropland Budget|Withdrawals
+Emissions|CH4|Land|+|Agriculture
+Emissions|CO2|Land|+|Land Use Change
+Emissions|N2O|Land|+|Agriculture
+Emissions|N2O|Agriculture
+Emissions|CH4|Land|Agriculture
+Productivity|Yield|+|Crops
+Productivity|Yield|+|Forage
+Productivity|Yield|+|Pasture
+Productivity|Yield|Crops|+|Cereals
+Productivity|Yield|Crops|+|Oil crops
+Productivity|Yield|Crops|+|Sugar crops
+Prices|Agriculture|Maize
+Prices|Agriculture|Ruminant meat
+Prices|Agriculture|Temperate cereals
+Prices|Agriculture|Tropical cereals
+Prices|Agriculture|Rice
+Prices|Agriculture|Poultry meat
+Prices|Agriculture|Fish
