@@ -3,8 +3,7 @@
     <SensesMenu/>
     <article>
       <Intro/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <Pressure/>
     </article>
   </div>
 </template>
@@ -12,14 +11,13 @@
 <script>
 import SensesMenu from 'library/src/components/SensesMenu.vue'
 import Intro from './views/Intro.vue'
-import HelloWorld from './components/HelloWorld.vue'
-
+import Pressure from './views/Pressure.vue'
 export default {
   name: 'app',
   components: {
     SensesMenu,
     Intro,
-    HelloWorld
+    Pressure
   }
 }
 </script>
