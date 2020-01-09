@@ -26,13 +26,6 @@ Production|+|Livestock products
 Production|+|Pasture
 Production|+|Secondary products
 Production|+|Fish
-Consumption
-Trade|+|Net-Trade
-Trade|Net-Trade|+|Crops
-Trade|Net-Trade|+|Livestock products
-Trade|Net-Trade|+|Fish
-Trade|Net-Trade|+|Forest products
-Trade|Net-Trade|+|Secondary products
 Resources|Land Cover|+|Cropland
 Resources|Land Cover|Cropland|+|Crops
 Resources|Land Cover|Cropland|+|Forage
@@ -41,7 +34,7 @@ Resources|Land Cover|+|Forest
 Resources|Land Cover|Forest|+|Natural Forest
 Resources|Land Cover|Forest|+|Managed Forest
 Resources|Land Cover|+|Other Land
-Resources|Land Cover Change|+|Urban Area
+Resources|Land Cover|+|Urban Area
 Resources|Water|Withdrawal|Agriculture
 Resources|Land Cover|Cropland|Area actually irrigated
 Resources|Nitrogen|Cropland Budget|Balance
