@@ -44,6 +44,11 @@ df = df[.!.&(df.model .== "Bodirsky", df.variable .== "Resources|Nitrogen|Cropla
 df = df[.!.&(df.variable .== "Income", df.unit .!= "US\$05 PPP/cap/yr"), :]
 df = df[.|(df.model .!= "EDGAR_LU", df.variable .== "Emissions|CO2|Land|+|Land Use Change"), :]
 
+# fix fish prices
+foreach(v -> df[df.variable .== "Prices|Agriculture|Fish", Symbol(v)] .= missing, 1960:1979)
+
+
+
 sort!(df, [order(:variable), order(:model), order(:scenario)])
 CSV.write("./output/landpressure.csv", df)
 
