@@ -23,7 +23,7 @@
       <div class="overlay bottom">
         <section class="text wide">
           <p>
-            In this module we will show that the pressure on land has risen in recent decades. You will learn how land use change can help mitigating climate change but also about it's limitations.
+            In this module we will show that the pressure on land has risen in recent decades. You will learn about the potentials of land use change to mitigate climate change as well as its limitations and potential trade-offs.
           </p>
         </section>
       </div>
