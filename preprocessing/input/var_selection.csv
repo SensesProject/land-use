@@ -1,4 +1,4 @@
-Variable
+variable
 Population
 Income
 Nutrition|Calorie Supply
@@ -6,18 +6,15 @@ Nutrition|Calorie Supply|+|Crops
 Nutrition|Calorie Supply|+|Livestock products
 Nutrition|Calorie Supply|+|Secondary products
 Nutrition|Calorie Supply|+|Fish
-Household Expenditure|Food|Expenditure Share
-Household Expenditure|Food|Expenditure Share|Crops
-Household Expenditure|Food|Expenditure Share|Livestock products
+Demand|Food|+|Crops
+Demand|Food|+|Livestock products
+Demand|Food|+|Fish
+Demand|Food|+|Secondary products
 Demand|+|Agricultural Supply Chain Loss
 Demand|+|Food
 Demand|+|Feed
 Demand|+|Material
 Demand|+|Processing
-Demand|Food|+|Crops
-Demand|Food|+|Livestock products
-Demand|Food|+|Fish
-Demand|Food|+|Secondary products
 +|Production
 Production|+|Crops
 Production|+|Crop residues
@@ -35,6 +32,22 @@ Resources|Land Cover|Forest|+|Natural Forest
 Resources|Land Cover|Forest|+|Managed Forest
 Resources|Land Cover|+|Other Land
 Resources|Land Cover|+|Urban Area
+Household Expenditure|Food|Expenditure Share
+Household Expenditure|Food|Expenditure Share|Crops
+Household Expenditure|Food|Expenditure Share|Livestock products
+Prices|Agriculture|Maize
+Prices|Agriculture|Ruminant meat
+Prices|Agriculture|Temperate cereals
+Prices|Agriculture|Tropical cereals
+Prices|Agriculture|Rice
+Prices|Agriculture|Poultry meat
+Prices|Agriculture|Fish
+Productivity|Yield|+|Crops
+Productivity|Yield|+|Forage
+Productivity|Yield|+|Pasture
+Productivity|Yield|Crops|+|Cereals
+Productivity|Yield|Crops|+|Oil crops
+Productivity|Yield|Crops|+|Sugar crops
 Resources|Water|Withdrawal|Agriculture
 Resources|Land Cover|Cropland|Area actually irrigated
 Resources|Nitrogen|Cropland Budget|Balance
@@ -46,16 +59,3 @@ Emissions|CO2|Land|+|Land Use Change
 Emissions|N2O|Land|+|Agriculture
 Emissions|N2O|Agriculture
 Emissions|CH4|Land|Agriculture
-Productivity|Yield|+|Crops
-Productivity|Yield|+|Forage
-Productivity|Yield|+|Pasture
-Productivity|Yield|Crops|+|Cereals
-Productivity|Yield|Crops|+|Oil crops
-Productivity|Yield|Crops|+|Sugar crops
-Prices|Agriculture|Maize
-Prices|Agriculture|Ruminant meat
-Prices|Agriculture|Temperate cereals
-Prices|Agriculture|Tropical cereals
-Prices|Agriculture|Rice
-Prices|Agriculture|Poultry meat
-Prices|Agriculture|Fish

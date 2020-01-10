@@ -47,9 +47,8 @@ df = df[.|(df.model .!= "EDGAR_LU", df.variable .== "Emissions|CO2|Land|+|Land U
 # fix fish prices
 foreach(v -> df[df.variable .== "Prices|Agriculture|Fish", Symbol(v)] .= missing, 1960:1979)
 
-
-
-sort!(df, [order(:variable), order(:model), order(:scenario)])
+# sort based on var-selection
+df = join(vars,df,on = :variable, kind= :outer)
 CSV.write("./output/landpressure.csv", df)
 
 # check for duplicates
