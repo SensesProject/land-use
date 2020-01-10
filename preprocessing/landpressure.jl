@@ -10,20 +10,14 @@ df = df[.!ismissing.(df[!, Symbol(1980)]),:]
 
 # transform wide → long and remove rows without value
 df = stack(df, 6:size(df)[2])
-# df.year = 0
-#
-# axess(df, 1)
-
 df.year = parse.(Int, string.(df.variable))
-# df.year .= parse.(Int, string.(df.variable))
 select!(df, Not(:variable))
 rename!(df, [:value, :model, :scenario, :region, :variable, :unit, :year])
 df = df[.!ismissing.(df.value),:]
 
 # remove rows where region != world
 df = df[df.region .== "World",:]
-delete!(df, :region)
-
+select!(df, Not(:region))
 # remove rows with unwanted variables
 df = df[map(v -> in(v, vars[:, 1]), df.variable), :]
 
@@ -53,7 +47,7 @@ foreach(v -> df[df.variable .== "Prices|Agriculture|Fish", Symbol(v)] .= missing
 
 # sort based on var-selection
 df = join(vars,df,on = :variable, kind= :outer)
-CSV.write("./output/landpressure.csv", df)
+CSV.write("../src/assets/data/landpressure.csv", df)
 
 # check for duplicates
 

@@ -48,11 +48,11 @@ Productivity|Yield|+|Pasture
 Productivity|Yield|Crops|+|Cereals
 Productivity|Yield|Crops|+|Oil crops
 Productivity|Yield|Crops|+|Sugar crops
+Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer
 Resources|Water|Withdrawal|Agriculture
 Resources|Land Cover|Cropland|Area actually irrigated
 Resources|Nitrogen|Cropland Budget|Balance
 Resources|Nitrogen|Cropland Budget|Inputs
-Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer
 Resources|Nitrogen|Cropland Budget|Withdrawals
 Emissions|CH4|Land|+|Agriculture
 Emissions|CO2|Land|+|Land Use Change
