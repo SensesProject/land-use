@@ -4,15 +4,19 @@ df = CSV.read("./input/validation.mif"; delim=";", missingstring="N/A")
 vars = CSV.read("./input/var_selection.csv")
 
 # remove last (empty) column
-delete!(df, names(df)[end])
+select!(df, Not(names(df)[end]))
 
-df = df[.!ismissing.(df[Symbol(1980)]),:]
+df = df[.!ismissing.(df[!, Symbol(1980)]),:]
 
 # transform wide → long and remove rows without value
 df = stack(df, 6:size(df)[2])
-df.year = 0
-df.year .= parse.(Int, string.(df.variable))
-delete!(df, :variable)
+# df.year = 0
+#
+# axess(df, 1)
+
+df.year = parse.(Int, string.(df.variable))
+# df.year .= parse.(Int, string.(df.variable))
+select!(df, Not(:variable))
 rename!(df, [:value, :model, :scenario, :region, :variable, :unit, :year])
 df = df[.!ismissing.(df.value),:]
 
