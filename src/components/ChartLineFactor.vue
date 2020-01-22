@@ -2,7 +2,7 @@
   <div class="chart-line-factor narrow">
     <div class="label tiny" :style="{width: `${width}px`}">
       <strong>{{ label.replace(/\|/g,' | ') }}</strong>
-      <span class="factor">{{factor}}×</span>
+      <span class="factor" :class="[tint]">{{factor}}×</span>
     </div>
     <svg class="graph" :width="width" :height="height + axisHeight">
       <clipPath :id="`mask-a-${id}`">
@@ -11,10 +11,11 @@
       <clipPath :id="`mask-b-${id}`">
         <rect x="-4" :y="base" :width="width + 8" :height="height - base + 4" fill="white"/>
       </clipPath>
-      <polyline class="area blue" :points="area" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="line blue" :points="line" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="area yellow" :points="area" :clip-path="`url(#mask-b-${id})`"/>
-      <polyline class="line yellow" :points="line" :clip-path="`url(#mask-b-${id})`"/>
+      <polyline class="area up" :class="[tint]" :points="area" :clip-path="`url(#mask-a-${id})`"/>
+      <polyline class="line up" :points="line" :clip-path="`url(#mask-a-${id})`"/>
+      <polyline class="area down" :class="[tint]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
+      <polyline class="line down" :points="line" :clip-path="`url(#mask-b-${id})`"/>
+      <!-- <polyline class="line up" :class="[tint]" :points="line"/> -->
       <g v-if="xDomain" :transform="`translate(0 ${height})`">
         <!-- <line :x2="width" y1="4" y2="4"/> -->
         <line :x1="xRange[0]" :x2="xRange[0]" y1="3" y2="6"/>
@@ -33,7 +34,7 @@
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
 export default {
-  name: 'intro',
+  name: 'chartLineFactor',
   props: {
     id: {
       type: Number,
@@ -62,6 +63,10 @@ export default {
     showZero: {
       type: Boolean,
       default: false
+    },
+    tint: {
+      type: String,
+      default: 'neon'
     }
   },
   computed: {
@@ -106,7 +111,6 @@ export default {
     },
     base () {
       const { yScale, data, min, height } = this
-      console.log(-yScale * (data[0].value - min) + height)
       return -yScale * (data[0].value - min) + height
     }
     // mask () {
@@ -132,26 +136,30 @@ export default {
     hyphens: auto;
     .factor {
       color: $color-neon;
+      // @include tint(color);
     }
   }
   svg {
     overflow: visible;
     .line {
       stroke: $color-neon;
+      // @include tint(stroke);
       stroke-width: 2;
       fill: none;
 
-      &.yellow {
-        stroke: $color-yellow;
+      &.down {
+        stroke: $color-blue;
       }
     }
     .area {
-      // fill: getColor(neon, 100);
       fill: $color-neon;
-      opacity: 0.1;
+      // @include tint(fill, 80);
+      opacity: 0.2;
 
-      &.yellow {
-        fill: $color-yellow;
+      &.down {
+        fill: $color-blue;
+        opacity: 0.1;
+        // @include tint(fill, 40);
       }
     }
     text {
