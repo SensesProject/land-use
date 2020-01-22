@@ -5,6 +5,7 @@
       <Intro/>
       <Pressure/>
       <Solution/>
+      <Cannot/>
     </article>
   </div>
 </template>
@@ -22,6 +23,7 @@ export default {
     Intro,
     Pressure,
     Solution,
+    Cannot
   }
 }
 </script>
