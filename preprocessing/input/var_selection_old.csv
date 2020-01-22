@@ -13,8 +13,20 @@ Demand|Food|+|Secondary products,neon
 Demand|+|Agricultural Supply Chain Loss,neon
 Demand|+|Food,neon
 Demand|+|Feed,neon
+Demand|+|Material,neon
+Demand|+|Processing,neon
++|Production,yellow
+Production|+|Crops,yellow
+Production|+|Crop residues,yellow
+Production|+|Forage,yellow
+Production|+|Livestock products,yellow
+Production|+|Pasture,yellow
+Production|+|Secondary products,yellow
+Production|+|Fish,yellow
+Prices|Agriculture|Maize,yellow
 Prices|Agriculture|Ruminant meat,yellow
 Prices|Agriculture|Temperate cereals,yellow
+Prices|Agriculture|Tropical cereals,yellow
 Prices|Agriculture|Rice,yellow
 Prices|Agriculture|Poultry meat,yellow
 Prices|Agriculture|Fish,yellow
@@ -22,6 +34,8 @@ Household Expenditure|Food|Expenditure Share,yellow
 Household Expenditure|Food|Expenditure Share|Crops,yellow
 Household Expenditure|Food|Expenditure Share|Livestock products,yellow
 Resources|Land Cover|+|Cropland,neon
+Resources|Land Cover|Cropland|+|Crops,neon
+Resources|Land Cover|Cropland|+|Forage,neon
 Resources|Land Cover|+|Pastures and Rangelands,neon
 Resources|Land Cover|+|Forest,neon
 Resources|Land Cover|Forest|+|Natural Forest,neon
@@ -37,6 +51,9 @@ Productivity|Yield|Crops|+|Sugar crops,neon
 Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer,yellow
 Resources|Water|Withdrawal|Agriculture,yellow
 Resources|Land Cover|Cropland|Area actually irrigated,yellow
+Resources|Nitrogen|Cropland Budget|Balance,yellow
+Resources|Nitrogen|Cropland Budget|Inputs,yellow
+Resources|Nitrogen|Cropland Budget|Withdrawals,yellow
 Emissions|CH4|Land|+|Agriculture,neon
 Emissions|CO2|Land|+|Land Use Change,neon
 Emissions|N2O|Land|+|Agriculture,neon
