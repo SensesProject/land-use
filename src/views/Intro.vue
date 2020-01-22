@@ -3,7 +3,7 @@
     <!-- <section class="cover"> -->
       <VisLandCover :cover="cover"/>
       <div class="overlay">
-        <section class="text wide">
+        <section class="text-col wide">
           <h1 class="serif">Land Use</h1>
           <p>
             Today, most of the global ice-free land is used by humans in some way or another. Land use change and sustainable land management play an important role in climate change adaptation and mitigation. But they also have an impact on food security, desertification, land degradation.
@@ -21,7 +21,7 @@
       </div>
 
       <div class="overlay bottom">
-        <section class="text wide">
+        <section class="text-col wide">
           <p>
             In this module we will show that the pressure on land has risen in recent decades. You will learn about the potentials of land use change to mitigate climate change as well as its limitations and potential trade-offs.
           </p>
@@ -107,7 +107,7 @@ export default {
     }
   }
 
-  .text {
+  .text-col {
     display: flex;
     flex-direction: column;
 

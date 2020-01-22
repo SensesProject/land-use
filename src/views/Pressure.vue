@@ -1,7 +1,7 @@
 <template>
-  <div class="pressure text wide">
+  <div class="pressure text-col wide">
     <section class="chapter-title">
-      <h2 cl ass="serif">Land is Under Pressure</h2>
+      <h2 class="serif">Land Is Under Pressure</h2>
     </section>
     <!-- <section> -->
       <VisPressure/>
@@ -20,6 +20,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: $spacing * 2;
   // .chapter-title {
 
   // }
