@@ -1,0 +1,5 @@
+name,removal,land,water,energy,cost
+BECCS,3.3,540,720,-170,130.5
+Direct Air Capture,3.3,0,300,156,650
+Afforestation & Reforrastation (realistic),1.1,320,370,0,10
+Afforestation & Reforrastation (maximum),3.3,970,1040,0,10
