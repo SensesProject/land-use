@@ -4,6 +4,7 @@
     <article>
       <Intro/>
       <Pressure/>
+      <Solution/>
     </article>
   </div>
 </template>
@@ -12,12 +13,15 @@
 import SensesMenu from 'library/src/components/SensesMenu.vue'
 import Intro from './views/Intro.vue'
 import Pressure from './views/Pressure.vue'
+import Solution from './views/Solution.vue'
+import Cannot from './views/Cannot.vue'
 export default {
   name: 'app',
   components: {
     SensesMenu,
     Intro,
-    Pressure
+    Pressure,
+    Solution,
   }
 }
 </script>
