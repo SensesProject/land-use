@@ -37,8 +37,8 @@ export default {
   name: 'chartLineFactor',
   props: {
     id: {
-      type: Number,
-      default: 0
+      type: String,
+      default: '0'
     },
     data: {
       type: Array,
