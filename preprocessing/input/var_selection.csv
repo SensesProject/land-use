@@ -1,44 +1,44 @@
-variable,tint
-Population,neon
-Income,neon
-Nutrition|Calorie Supply,neon
-Nutrition|Calorie Supply|+|Crops,neon
-Nutrition|Calorie Supply|+|Livestock products,neon
-Nutrition|Calorie Supply|+|Secondary products,neon
-Nutrition|Calorie Supply|+|Fish,neon
-Demand|Food|+|Crops,neon
-Demand|Food|+|Livestock products,neon
-Demand|Food|+|Fish,neon
-Demand|Food|+|Secondary products,neon
-Demand|+|Agricultural Supply Chain Loss,neon
-Demand|+|Food,neon
-Demand|+|Feed,neon
-Prices|Agriculture|Ruminant meat,yellow
-Prices|Agriculture|Temperate cereals,yellow
-Prices|Agriculture|Rice,yellow
-Prices|Agriculture|Poultry meat,yellow
-Prices|Agriculture|Fish,yellow
-Household Expenditure|Food|Expenditure Share,yellow
-Household Expenditure|Food|Expenditure Share|Crops,yellow
-Household Expenditure|Food|Expenditure Share|Livestock products,yellow
-Resources|Land Cover|+|Cropland,neon
-Resources|Land Cover|+|Pastures and Rangelands,neon
-Resources|Land Cover|+|Forest,neon
-Resources|Land Cover|Forest|+|Natural Forest,neon
-Resources|Land Cover|Forest|+|Managed Forest,neon
-Resources|Land Cover|+|Other Land,neon
-Resources|Land Cover|+|Urban Area,neon
-Productivity|Yield|+|Crops,neon
-Productivity|Yield|+|Forage,neon
-Productivity|Yield|+|Pasture,neon
-Productivity|Yield|Crops|+|Cereals,neon
-Productivity|Yield|Crops|+|Oil crops,neon
-Productivity|Yield|Crops|+|Sugar crops,neon
-Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer,yellow
-Resources|Water|Withdrawal|Agriculture,yellow
-Resources|Land Cover|Cropland|Area actually irrigated,yellow
-Emissions|CH4|Land|+|Agriculture,neon
-Emissions|CO2|Land|+|Land Use Change,neon
-Emissions|N2O|Land|+|Agriculture,neon
-Emissions|N2O|Agriculture,neon
-Emissions|CH4|Land|Agriculture,neon
+variable,group,name
+Population,0,Population
+Income,0,Income
+Nutrition|Calorie Supply,1,Calorie Supply per Capita
+Nutrition|Calorie Supply|+|Crops,1,Calorie Supply from Crops per Capita
+Nutrition|Calorie Supply|+|Livestock products,1,Calorie Supply from Livestock Products per Capita
+Nutrition|Calorie Supply|+|Secondary products,1,Calorie Supply from Secondary Products per Capita
+Nutrition|Calorie Supply|+|Fish,1,Calorie Supply from Fish per Capita
+Demand|Food|+|Crops,2,Demand for Crops
+Demand|Food|+|Livestock products,2,Demand for Livestock Products
+Demand|Food|+|Fish,2,Demand for Fish
+Demand|Food|+|Secondary products,2,Demand for Secondary Products
+Demand|+|Agricultural Supply Chain Loss,2,Demand for Agricultural Supply Chain Loss
+Demand|+|Food,2,Demand for Food
+Demand|+|Feed,2,Demand for Feed
+Prices|Agriculture|Ruminant meat,3,Prices for Ruminant meat
+Prices|Agriculture|Temperate cereals,3,Prices for Temperate cereals
+Prices|Agriculture|Rice,3,Prices for Rice
+Prices|Agriculture|Poultry meat,3,Prices for Poultry meat
+Prices|Agriculture|Fish,3,Prices for Fish
+Household Expenditure|Food|Expenditure Share,4,Household Expenditure Share for Food
+Household Expenditure|Food|Expenditure Share|Crops,4,Household Expenditure Share for Crops
+Household Expenditure|Food|Expenditure Share|Livestock products,4,Household Expenditure Share for Livestock Products
+Resources|Land Cover|+|Cropland,5,Cropland
+Resources|Land Cover|+|Pastures and Rangelands,5,Pastures and Rangelands
+Resources|Land Cover|+|Forest,5,Forest
+Resources|Land Cover|Forest|+|Natural Forest,5,Natural Forest
+Resources|Land Cover|Forest|+|Managed Forest,5,Managed Forest
+Resources|Land Cover|+|Other Land,5,Other Land
+Resources|Land Cover|+|Urban Area,5,Urban Area
+Productivity|Yield|+|Crops,6,Crop Yield
+Productivity|Yield|+|Forage,6,Forage Yield
+Productivity|Yield|+|Pasture,6,Pasture Yield
+Productivity|Yield|Crops|+|Cereals,6,Cereal Yield
+Productivity|Yield|Crops|+|Oil crops,6,Oil Crop Yield
+Productivity|Yield|Crops|+|Sugar crops,6,Sugar Crop Yield
+Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer,7,Nitrogen Input from Fertilization
+Resources|Water|Withdrawal|Agriculture,7,Water Withdrawal for Agriculture
+Resources|Land Cover|Cropland|Area actually irrigated,7,Irrigated Cropland
+Emissions|CH4|Land|+|Agriculture,8,CH₄ Emissions from Agriculture
+Emissions|CO2|Land|+|Land Use Change,8,CO₂ Emissions from Agriculture
+Emissions|N2O|Land|+|Agriculture,8,N₂O Emissions from Agriculture
+Emissions|N2O|Agriculture,8,N₂O Emissions from Agriculture
+Emissions|CH4|Land|Agriculture,8,CH₄ Emissions from Agriculture

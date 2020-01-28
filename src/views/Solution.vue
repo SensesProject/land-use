@@ -1,12 +1,13 @@
 <template>
   <div class="solution text wide">
+    <h2 class="serif text-col">Land Is Part of the Solution</h2>
     <LayoutScrollytelling>
       <template v-slot:vis="props">
         <VisEmissions slot="vis" v-bind="props"/>
       </template>
       <template v-slot:text="{ width, step }">
         <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="0" :class="{active: step === 0}">
-          <h2 class="serif">Land Is Part of the Solution</h2>
+
           <p>Today X.X% of yearly C0₂ emissions comes from land use. In contrast to the general trend of rising CO₂ emissions in the SSP2 Baseline scenario, the ones from land use are expected to decrease reaching net-zero by the end of the century. Looking at other emissions from land-use the outlook is less good. While land-uses share on CH₄ and N₂0 emissions will roughly stay the same, they'll increase overall.</p>
         </IntersectionObserver>
         <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="1" :class="{active: step === 1}">
@@ -72,6 +73,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h2.text-col {
+    padding-bottom: $spacing / 2;
+  }
 
   .layout-scrollytelling {
     width: 100vw;

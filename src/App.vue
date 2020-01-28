@@ -35,18 +35,18 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: $spacing * 2;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: $spacing * 2;
 
-    .text-col {
-      width: 100vw;
-      max-width: calc(768px + #{$spacing});
-      padding: $spacing $spacing / 2 0;
-    }
+  .text-col {
+    width: 100vw;
+    max-width: calc(768px + #{$spacing});
+    padding: $spacing $spacing / 2 0;
   }
 }
 </style>
