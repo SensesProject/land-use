@@ -7,23 +7,25 @@
       </template>
       <template v-slot:text="{ width, step }">
         <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="0" :class="{active: step === 0}">
-
-          <p>Today X.X% of yearly C0₂ emissions comes from land use. In contrast to the general trend of rising CO₂ emissions in the SSP2 Baseline scenario, the ones from land use are expected to decrease reaching net-zero by the end of the century. Looking at other emissions from land-use the outlook is less good. While land-uses share on CH₄ and N₂0 emissions will roughly stay the same, they'll increase overall.</p>
+          <p>Today about 13% of annual CO₂ emissions come from forestry, agriculture and other land uses (AFOLU). Most of the AFOLU CO₂ emissions are caused by deforestation. In contrast to the general trend of rising CO₂ emissions from burning fossil fuels in the SSP2 Baseline scenario, the AFOLU CO₂ emissions are projected to decrease, reaching net-zero by the end of the century. In contrast, AFOLU today is responsible for about 44% of all methane (CH₄) emissions for about 82% of all nitrous oxide (N₂O) emissions. The majority of AFOLU non-CO₂ emissions is caused by rice and livestock production (CH₄), and synthetic fertilizer application (N₂O). Since AFOLU non-CO₂ emissions are strongly linked to food production, they remain at relatively high levels throughout the century.</p>
         </IntersectionObserver>
         <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="1" :class="{active: step === 1}">
           <p>This has to be tackled. To be in line with RCP 1.9, CO₂ emissions from land use already need to reach net-zero in the early 2030s. While CH₄ and N₂0 emissions are inherent to agriculture and therefore can't be eliminated completely, they still need to be cut down by half.</p>
+        </IntersectionObserver>
+        <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="2" :class="{active: step === 2}">
+          <p>While CH₄ and N₂O emssions almost seem negligible compared to CO₂ emissions, their contribution to climate change per Mt is far greater. Looking at CO₂ equivalent instead gives us a better sense of their effect.</p>
         </IntersectionObserver>
       </template>
     </LayoutScrollytelling>
     <section class="text-col wide">
       <p>
-        Strategies to reduce emissions from land use entail making dietary changes to reduce the land cover of pastures and the demand for feed, reducing food waste, but also changing land use to allow for negative emission technologies. Some of these, i.e.; BECCS (Bioenergy with Carbon Capture and Strorage) and Afforestation & Reforastation demand high quantities of land to be deployed on a large scale.
+        Strategies to reduce emissions from AFOLU entail measures on the demand and the supply side. For instance, CH₄ and N₂O AFOLU emissions can be reduced by behavioral change towards diets with less animal products or by technical mitigation options, or by a combination of both. Reduction of AFOLU CO₂ emissions can be achieved by less deforestation. In addition, land can be used to remove carbon dioxide from the atmosphere (CDR or negative emission technologies), e.g. via afforestation or BECCS (Bioenergy with Carbon Capture and Strorage). Land-based CDR options have substantially different characteristics in terms of CDR potential, land, water and energy requirements as well as costs.
       </p>
       <VisNet/>
     </section>
     <section class="text-col wide">
       <p>
-        Looking at the SSP2-1.9 scenario in more depth we can make out how afforestation, reforastation and BECCS are applied to enable the reduction of emissions compared to the SSP2-Baseline.
+        Looking at the SSP2-1.9 scenario in more depth we can explore how the land-based CDR options afforestation and BECCS are used to offset CO₂ emissions from other sectors.
       </p>
     </section>
     <LayoutScrollytelling class="land-use-change">
