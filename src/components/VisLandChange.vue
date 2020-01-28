@@ -7,6 +7,7 @@
           v-bind="e" :width="innerWidth" :height="chartHeight" :margin="margin" :showRCP="showRCP" :yAxisWidth="yAxisWidth"
           :transform="`translate(0 ${(chartHeight + margin) * i})`"/> -->
         <g>
+          <line class="zero" :x1="yAxisWidth" :x2="innerWidth" :y1="yScale(0)" :y2="yScale(0)"/>
           <polyline v-for="(l, i) in lines" :key="`l-${i}`" :points="l.line"
             :class="[...l.class, {
               hide: (step === 0 && l.scenario === 'SSP2-19') || (step <= 2 && (l.variable === 'Non-Bioenergy Crops' || l.variable === 'Pasture')),
@@ -239,6 +240,11 @@ export default {
 
     .bold {
       font-weight: $font-weight-bold;
+    }
+
+    .zero {
+      stroke: $color-light-gray;
+      stroke-dasharray: 1 2;
     }
 
     .axis {
