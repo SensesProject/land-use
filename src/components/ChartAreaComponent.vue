@@ -73,6 +73,14 @@ export default {
     yAxisWidth: {
       type: Number,
       default: 64
+    },
+    factor: {
+      type: Number,
+      default: 1
+    },
+    useFactor: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -108,11 +116,17 @@ export default {
       })
     },
     yTicks () {
-      const { yScale } = this
-      return yScale.ticks(5).map(t => {
+      const { yScale, useFactor, factor } = this
+      let scale = yScale
+      if (useFactor) {
+        scale = scaleLinear()
+          .domain(yScale.domain().map(v => v * factor))
+          .range(yScale.range())
+      }
+      return (scale.ticks(5)).map(t => {
         return {
           value: format(',.0f')(t).replace(/,/, ' '),
-          y: yScale(t)
+          y: scale(t)
         }
       })
     }

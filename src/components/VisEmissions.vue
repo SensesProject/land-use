@@ -10,7 +10,7 @@
       <g :transform="`translate(${margin} ${0})`">
         <ChartAreaComponent v-for="(e, i) in emissions" :key="`em-${i}`" :id="`em-${i}`"
           v-bind="e" :width="innerWidth" :height="chartHeight" :margin="margin" :showRCP="showRCP" :yAxisWidth="yAxisWidth"
-          :transform="`translate(0 ${(chartHeight + margin) * i})`"/>
+          :transform="`translate(0 ${(chartHeight + margin) * i})`" :unit="step === 2 && i !== 0 ? 'Mt CO₂-eq/year' : 'Mt/year'" :use-factor="step === 2"/>
         <g class="x-axis axis" :transform="`translate(0 ${innerHeight - margin})`">
           <line :x1="yAxisWidth" :x2="innerWidth"/>
           <line :x1="yAxisWidth" :x2="yAxisWidth" y1="-0.5" y2="3"/>
@@ -59,15 +59,24 @@ export default {
   },
   data () {
     const years = [2005, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]
-    const variables = ['CO₂', 'CH₄', 'N₂0']
+    const variables = [{
+      variable: 'CO₂',
+      factor: 1
+    }, {
+      variable: 'CH₄',
+      factor: 28
+    }, {
+      variable: 'N₂0',
+      factor: 265
+    }]
     return {
       margin: 16,
       yAxisWidth: 64,
-      emissions: variables.map(variable => {
-        const rows = Emissions.filter(e => e.variable === variable).reverse()
+      emissions: variables.map(v => {
+        const rows = Emissions.filter(e => e.variable === v.variable).reverse()
         return {
-          variable,
-          unit: rows[0].unit,
+          ...v,
+          // unit: rows[0].unit,
           data: rows.map(r => {
             return {
               scenario: r.scenario,
