@@ -11,10 +11,10 @@
       <clipPath :id="`mask-b-${id}`">
         <rect x="-4" :y="base" :width="width + 8" :height="height - base + 4" fill="white"/>
       </clipPath>
-      <polyline class="area up" :class="[tint]" :points="area" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="line up" :points="line" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="area down" :class="[tint]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
-      <polyline class="line down" :points="line" :clip-path="`url(#mask-b-${id})`"/>
+      <polyline class="area up" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-a-${id})`"/>
+      <polyline class="line up" :points="line" :class="[tint]" :clip-path="`url(#mask-a-${id})`"/>
+      <polyline class="area down" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
+      <polyline class="line down" :points="line" :class="[tint]" :clip-path="`url(#mask-b-${id})`"/>
       <!-- <polyline class="line up" :class="[tint]" :points="line"/> -->
       <g v-if="xDomain" :transform="`translate(0 ${height})`">
         <!-- <line :x2="width" y1="4" y2="4"/> -->
@@ -66,7 +66,7 @@ export default {
     },
     tint: {
       type: String,
-      default: 'neon'
+      default: null
     }
   },
   computed: {
@@ -136,30 +136,37 @@ export default {
     hyphens: auto;
     .factor {
       color: $color-neon;
-      // @include tint(color);
+      @include tint(color);
     }
   }
   svg {
     overflow: visible;
     .line {
       stroke: $color-neon;
-      // @include tint(stroke);
+      @include tint(stroke);
       stroke-width: 2;
       fill: none;
 
       &.down {
         stroke: $color-blue;
+        @include tint(stroke);
       }
     }
     .area {
       fill: $color-neon;
-      // @include tint(fill, 80);
+      @include tint(fill, 50);
       opacity: 0.2;
 
       &.down {
         fill: $color-blue;
         opacity: 0.1;
-        // @include tint(fill, 40);
+        @include tint(fill, 50);
+        &.tint {
+         opacity: 0.15;
+        }
+      }
+      &.tint {
+        opacity: 0.3;
       }
     }
     text {

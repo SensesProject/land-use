@@ -3,3 +3,7 @@ BECCS,3.3,540,720,-170,130.5
 Direct Air Capture,3.3,0,300,156,650
 Afforestation & Reforrastation (realistic),1.1,320,370,0,10
 Afforestation & Reforrastation (maximum),3.3,970,1040,0,10
+Soil Carbon Storage (realisitc),0.7,0,0,0,-7.7
+Soil Carbon Storage (maximum),1.3,0,0,0,-7.7
+Biochar Addition to Soil (realisitc),0.7,150,0,-24.5,130
+Biochar Addition to Soil (maximum),1.3,150,0,-65,130

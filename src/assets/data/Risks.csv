@@ -1,0 +1,5 @@
+name,mitigation,adaptation,desertification,land degradation,food security
+BECCS,1,-0.33,-0.5,-0.5,-1
+Reforestation,1,1,1,1,-0.66
+Afforestation,1,1,1,1,-1
+Biochar Addition to Soil,1,0,0,0.5,-1

@@ -2,18 +2,26 @@
   <div class="vis-emissions narrow">
     <svg :height="svgHeight" :width="svgWidth">
       <g :transform="`translate(${margin} ${0})`">
-        <text :y="margin" :x="yAxisWidth"><tspan class="bold">Land Cover Change </tspan>in million ha</text>
+        <!-- <text :y="chartHeight" :x="yAxisWidth">SSP2–Baseline</text> -->
+        <!-- <text :x="chartWidth + margin" :y="chartHeight">SSP2–1.9</text> -->
+        <text :x="yAxisWidth" :y="margin">Land Cover Change in million ha</text>
         <!-- <ChartAreaComponent v-for="(e, i) in emissions" :key="`em-${i}`" :id="`em-${i}`"
           v-bind="e" :width="innerWidth" :height="chartHeight" :margin="margin" :showRCP="showRCP" :yAxisWidth="yAxisWidth"
           :transform="`translate(0 ${(chartHeight + margin) * i})`"/> -->
         <g>
-          <line class="zero" :x1="yAxisWidth" :x2="innerWidth" :y1="yScale(0)" :y2="yScale(0)"/>
-          <polyline v-for="(l, i) in lines" :key="`l-${i}`" :points="l.line"
-            :class="[...l.class, {
-              hide: (step === 0 && l.scenario === 'SSP2-19') || (step <= 2 && (l.variable === 'Non-Bioenergy Crops' || l.variable === 'Pasture')),
-              transparent: (step === 3 && (l.variable !== 'Non-Bioenergy Crops' && l.variable !== 'Pasture')),
-              dot: (step > 0 && l.scenario === 'SSP2-Baseline')
-            }]"/>
+          <text :y="chartHeight" :x="yAxisWidth"><tspan class="bold">SSP1-1.9</tspan></text>
+          <polyline v-for="(l, i) in lines.filter(l => l.scenario === 'SSP1-19')" :key="`l-${i}`" :points="l.line" :class="l.class"/>
+          <line class="zero" :x1="yAxisWidth" :x2="chartWidth + yAxisWidth" :y1="yScale(0)" :y2="yScale(0)"/>
+        </g>
+        <g :transform="`translate(${chartWidth + margin} 0)`">
+          <text :y="chartHeight" :x="yAxisWidth"><tspan class="bold">SSP2-1.9</tspan></text>
+          <polyline v-for="(l, i) in lines.filter(l => l.scenario === 'SSP2-19')" :key="`l-${i}`" :points="l.line" :class="l.class"/>
+          <line class="zero" :x1="yAxisWidth" :x2="chartWidth + yAxisWidth" :y1="yScale(0)" :y2="yScale(0)"/>
+        </g>
+        <g :transform="`translate(${(chartWidth + margin) * 2} 0)`">
+          <text :y="chartHeight" :x="yAxisWidth"><tspan class="bold">SSP5-1.9</tspan></text>
+          <polyline v-for="(l, i) in lines.filter(l => l.scenario === 'SSP5-19')" :key="`l-${i}`" :points="l.line" :class="l.class"/>
+          <line class="zero" :x1="yAxisWidth" :x2="chartWidth + yAxisWidth" :y1="yScale(0)" :y2="yScale(0)"/>
         </g>
         <g class="axis">
           <line :y2="chartHeight" :x1="yAxisWidth - margin" :x2="yAxisWidth - margin"/>
@@ -21,12 +29,14 @@
             <line :x1="yAxisWidth - margin - 3" :x2="yAxisWidth - margin + 0.5"/>
             <text :x="yAxisWidth - margin - 7" :y="margin / 2 - 3">{{ t.value }}</text>
           </g>
-          <g class="x-axis" :transform="`translate(0 ${innerHeight - margin})`">
-            <line :x1="yAxisWidth" :x2="innerWidth"/>
-            <line :x1="yAxisWidth" :x2="yAxisWidth" y1="-0.5" y2="3"/>
-            <line :x1="innerWidth" :x2="innerWidth" y1="-0.5" y2="3"/>
-            <text :x="yAxisWidth" :y="margin">2005</text>
-            <text :y="margin" :style="{'text-anchor': 'end'}" :x="innerWidth">2100</text>
+          <g v-for="i in [0, 1, 2]" :key="`k1-${i}`" :transform="`translate(${(chartWidth + margin) * i} 0)`">
+            <g class="x-axis" :transform="`translate(0 ${innerHeight - margin})`">
+              <line :x1="yAxisWidth" :x2="chartWidth + yAxisWidth"/>
+              <line :x1="yAxisWidth" :x2="yAxisWidth" y1="-0.5" y2="3"/>
+              <line :x1="chartWidth + yAxisWidth" :x2="chartWidth + yAxisWidth" y1="-0.5" y2="3"/>
+              <text :x="yAxisWidth" :y="margin">2005</text>
+              <text :y="margin" :style="{'text-anchor': 'end'}" :x="chartWidth + yAxisWidth">2100</text>
+            </g>
           </g>
         </g>
       </g>
@@ -40,31 +50,19 @@
         <rect width="12" height="12" class="green"/>
       </svg>
       <span>Forest</span>
-      <template v-if="step >= 3">
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="violet"/>
-        </svg>
-        <span>Non-Bioenergy Crops</span>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="red"/>
-        </svg>
-        <span>Pasture</span>
-      </template>
-      <div class="line-key">
-        <svg width="12" height="12" class="lines" v-if="step > 0">
-          <polyline points="0 6 12 6"/>
-        </svg>
-        <span v-if="step > 0">SSP2–1.9</span>
-        <svg width="12" height="12" v-if="step > 0" class="lines dot">
-          <polyline points="0 6 12 6"/>
-        </svg>
-        <span>SSP2–Baseline</span>
-      </div>
+      <svg width="12" height="12">
+        <rect width="12" height="12" class="violet"/>
+      </svg>
+      <span>Non-Bioenergy Crops</span>
+      <svg width="12" height="12">
+        <rect width="12" height="12" class="red"/>
+      </svg>
+      <span>Pasture</span>
     </div>
   </div>
 </template>
 <script>
-import Change from 'dsv-loader!@/assets/data/landusechange.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Change from 'dsv-loader!@/assets/data/landusechangessp.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
 // import resize from 'vue-resize-directive'
@@ -89,7 +87,7 @@ export default {
     return {
       margin: 16,
       yAxisWidth: 64,
-      change: Change.reverse().map(d => {
+      change: Change.map(d => {
         // const rows = Change.filter(e => e.variable === variable).reverse()
         return {
           variable: d.variable,
@@ -128,11 +126,15 @@ export default {
       const { innerHeight, margin } = this
       return (innerHeight - margin * 2)
     },
+    chartWidth () {
+      const { innerWidth, yAxisWidth, margin } = this
+      return ((innerWidth - yAxisWidth) - margin * 2) / 3
+    },
     xScale () {
-      const { innerWidth, yAxisWidth } = this
+      const { chartWidth, yAxisWidth } = this
       return scaleLinear()
         .domain([2005, 2100])
-        .range([yAxisWidth, innerWidth])
+        .range([yAxisWidth, chartWidth + yAxisWidth])
     },
     yDomain () {
       const { change } = this
@@ -218,23 +220,11 @@ export default {
   svg {
     display: block;
 
-     polyline, text {
-      // transition: opacity $transition;
-
-      &.transparent {
-        opacity: 0.4;
-        // &.dot {
-        //   stroke-dasharray: 4 4;
-        // }
-      }
+    g, text {
+      transition: opacity $transition;
 
       &.hide {
         opacity: 0;
-
-        // &.dot {
-        //   opacity: 0.4;
-        //   stroke-dasharray: 4 4;
-        // }
       }
     }
 
@@ -266,6 +256,7 @@ export default {
       @include tint(stroke);
       &.dot {
         stroke-dasharray: 4 4;
+        opacity: 0.5;
       }
     }
   }

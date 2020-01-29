@@ -73,7 +73,7 @@ export default {
   },
   data () {
     return {
-      yScale: 48,
+      yScale: 64,
       width: 320,
       columnSpacing: 16,
       pressure: Pressure.map(d => {

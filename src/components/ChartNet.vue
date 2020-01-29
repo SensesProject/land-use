@@ -21,6 +21,27 @@ export default {
     width: {
       type: Number,
       default: 320
+    },
+    dimensions: {
+      type: Array,
+      default () {
+        return [{
+          color: 'green',
+          key: 'removal'
+        }, {
+          color: 'red',
+          key: 'land'
+        }, {
+          color: 'yellow',
+          key: 'energy'
+        }, {
+          color: 'blue',
+          key: 'water'
+        }, {
+          color: 'violet',
+          key: 'cost'
+        }]
+      }
     }
   },
   computed: {
@@ -33,23 +54,8 @@ export default {
       return size / dims.length
     },
     dims () {
-      const { data, size } = this
-      return [{
-        color: 'green',
-        key: 'removal'
-      }, {
-        color: 'red',
-        key: 'land'
-      }, {
-        color: 'yellow',
-        key: 'energy'
-      }, {
-        color: 'blue',
-        key: 'water'
-      }, {
-        color: 'violet',
-        key: 'cost'
-      }].map(d => {
+      const { data, size, dimensions } = this
+      return dimensions.map(d => {
         const offset = 3
         const y = data[d.key] * (size / 2 - offset) * (d.key === 'removal' ? -1 : 1)
         return {

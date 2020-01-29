@@ -2,6 +2,7 @@
   <g class="chart-line-component">
     <text :y="margin" :x="yAxisWidth"><tspan class="bold">{{ variable }}</tspan> {{ unit }}</text>
     <g>
+      <line v-if="showZero" class="zero" :x1="yAxisWidth" :x2="width" :y1="yScale(0)" :y2="yScale(0)"/>
       <g v-for="(area, i) in areas" class="areas" :key="`a-${i}`">
         <!-- <polyline class="area positive" :class="[area.scenario, area.source]" :points="area.area"/> -->
         <!-- <polyline class="line" :class="[area.scenario, area.source]" :points="area.line"/> -->
@@ -9,12 +10,12 @@
       <g v-for="(area, i) in areas" class="lines" :key="`l-${i}`">
         <!-- <polyline class="area positive" :class="[area.scenario, area.source]" :points="area.area" :clip-path="`url(#mask-a-${id})`"/>
         <polyline class="area negative" :class="[area.scenario, area.source]" :points="area.area" :clip-path="`url(#mask-b-${id})`"/> -->
-        <polyline class="line" :class="[area.scenario, area.source]" :points="area.line"/>
+        <polyline v-if="showLines" class="line" :class="[area.scenario, area.source, area.tint]" :points="area.line"/>
       </g>
     </g>
     <g class="axis">
       <line :y2="height" :x1="yAxisWidth - margin" :x2="yAxisWidth - margin"/>
-      <g v-for="(t, i) in yTicks" class="ticks" :key="`t-${i}`" :transform="`translate(0 ${t.y})`">
+      <g v-for="(t, i) in yTicks.filter(t => t.y > 0)" class="ticks" :key="`t-${i}`" :transform="`translate(0 ${t.y})`">
         <line :x1="yAxisWidth - margin - 3" :x2="yAxisWidth - margin + 0.5"/>
         <text :x="yAxisWidth - margin - 7" :y="margin / 2 - 3">{{ t.value }}</text>
       </g>
@@ -34,6 +35,10 @@ export default {
     variable: {
       type: String,
       default: 'Label'
+    },
+    tint: {
+      type: String,
+      default: null
     },
     unit: {
       type: String,
@@ -58,6 +63,18 @@ export default {
     yAxisWidth: {
       type: Number,
       default: 64
+    },
+    showZero: {
+      type: Boolean,
+      default: false
+    },
+    signedAxis: {
+      type: Boolean,
+      default: false
+    },
+    showLines: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {
@@ -93,10 +110,11 @@ export default {
       })
     },
     yTicks () {
-      const { yScale } = this
+      const { yScale, signedAxis } = this
+      const formatString = signedAxis ? '+,.0f' : ',.0f'
       return yScale.ticks(5).map(t => {
         return {
-          value: format(',.0f')(t).replace(/,/, ' '),
+          value: format(formatString)(t).replace(/,/, ' ').replace(/\+0$/, '±0'),
           y: yScale(t)
         }
       })
@@ -115,6 +133,10 @@ export default {
 .chart-line-component {
   line {
     stroke: $color-black;
+    &.zero {
+      stroke: $color-light-gray;
+      stroke-dasharray: 1 2;
+    }
   }
   text {
     tspan.bold {
@@ -126,6 +148,7 @@ export default {
       fill: none;
       stroke: $color-blue;
       stroke-width: 2;
+      @include tint(stroke);
 
       opacity: 1;
       &.total {
