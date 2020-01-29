@@ -187,9 +187,6 @@ export default {
       fill: none;
       stroke-width: 2;
       @include tint(stroke);
-      &.dot {
-        // stroke-dasharray: 4 4;
-      }
     }
   }
 }
