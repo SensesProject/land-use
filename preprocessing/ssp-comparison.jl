@@ -16,6 +16,10 @@ first(df[df.variable .== "GDP|PPP", :], 2)
 
 # df[df.variable .== "GDP|PPP", :value] ./= df[df.variable .== "Population", :value]
 df = df[df.variable .!= "GDP|PPP", :]
+df = df[df.unit .!= "million ha", :]
+
 df = unstack(df, :year, :value)
+
+sort!(df, [order(:variable, rev=true), order(:scenario)])
 
 CSV.write("../src/assets/data/sspcomparison.csv", df)
