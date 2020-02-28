@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SensesMenu/>
+    <SensesMenu message="Work in Progress"/>
     <article>
       <Intro/>
       <Pressure/>
