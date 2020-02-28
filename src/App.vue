@@ -6,11 +6,13 @@
       <Pressure/>
       <Solution/>
       <Cannot/>
+      <SensesMeta class="senses-meta" id="land-transitions"/>
     </article>
   </div>
 </template>
 
 <script>
+import SensesMeta from 'library/src/components/SensesMeta.vue'
 import SensesMenu from 'library/src/components/SensesMenu.vue'
 import Intro from './views/Intro.vue'
 import Pressure from './views/Pressure.vue'
@@ -23,7 +25,8 @@ export default {
     Intro,
     Pressure,
     Solution,
-    Cannot
+    Cannot,
+    SensesMeta
   }
 }
 </script>
@@ -47,6 +50,14 @@ article {
     width: 100vw;
     max-width: calc(768px + #{$spacing});
     padding: $spacing $spacing / 2 0;
+  }
+}
+</style>
+<style lang="scss" scoped>
+@import "library/src/style/global.scss";
+#app {
+  .senses-meta {
+    margin: $spacing $spacing / 2 0;
   }
 }
 </style>

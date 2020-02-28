@@ -12,7 +12,7 @@
     "d3-format": "^1.4.3",
     "d3-scale": "^3.2.1",
     "dsv-loader": "^2.0.0",
-    "library": "github:SensesProject/library#1.2.0",
+    "library": "github:SensesProject/library",
     "vue": "^2.6.10",
     "vue-masonry": "^0.11.8",
     "vue-resize-directive": "^1.2.0",
