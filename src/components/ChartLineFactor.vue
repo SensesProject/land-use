@@ -1,40 +1,52 @@
 <template>
-  <div class="chart-line-factor narrow">
-    <div class="label tiny" :style="{width: `${width}px`}">
-      <strong>{{ label.replace(/\|/g,' | ') }}</strong>
+  <div class="chart-line-factor narrow" v-resize:debounce.initial="onResize">
+    <div class="label tiny">
+      <span>{{ label.replace(/\|/g,' | ') }}</span>
       <span class="factor" :class="[tint]">{{factor}}×</span>
     </div>
-    <svg class="graph" :width="width" :height="height + axisHeight">
-      <clipPath :id="`mask-a-${id}`">
-        <rect x="-4" y="-4" :width="width + 8" :height="base + 4" fill="white"/>
-      </clipPath>
-      <clipPath :id="`mask-b-${id}`">
-        <rect x="-4" :y="base" :width="width + 8" :height="height - base + 4" fill="white"/>
-      </clipPath>
-      <polyline class="area up" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="line up" :points="line" :class="[tint]" :clip-path="`url(#mask-a-${id})`"/>
-      <polyline class="area down" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
-      <polyline class="line down" :points="line" :class="[tint]" :clip-path="`url(#mask-b-${id})`"/>
-      <!-- <polyline class="line up" :class="[tint]" :points="line"/> -->
-      <g v-if="xDomain" :transform="`translate(0 ${height})`">
-        <!-- <line :x2="width" y1="4" y2="4"/> -->
-        <line :x1="xRange[0]" :x2="xRange[0]" y1="3" y2="6"/>
-        <line :x1="xRange[1]" :x2="xRange[1]" y1="3" y2="6"/>
-        <text :x="xRange[0]" :y="axisHeight - 1">{{data[0].year}}</text>
-        <text :x="xRange[1]" :y="axisHeight - 1">{{data[data.length - 1].year}}</text>
-      </g>
-    </svg>
-    <div v-if="!xDomain" class="years tiny" :style="{width: `${width}px`}">
-      <span class="year">{{data[0].year}}</span>
-      <span class="year">{{data[data.length - 1].year}}</span>
+    <div>
+      <svg class="graph" width="100%" :height="height + axisHeight">
+        <clipPath :id="`mask-a-${id}`">
+          <rect x="-4" y="-4" :width="width + 8" :height="base + 4" fill="white"/>
+        </clipPath>
+        <clipPath :id="`mask-b-${id}`">
+          <rect x="-4" :y="base" :width="width + 8" :height="height - base + 4" fill="white"/>
+        </clipPath>
+        <polyline class="area up" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-a-${id})`"/>
+        <polyline class="line up" :points="line" :class="[tint]" :clip-path="`url(#mask-a-${id})`"/>
+        <polyline class="area down" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
+        <polyline class="line down" :points="line" :class="[tint]" :clip-path="`url(#mask-b-${id})`"/>
+        <!-- <polyline class="line up" :class="[tint]" :points="line"/> -->
+        <g v-if="xDomain" :transform="`translate(0 ${height})`">
+          <!-- <line :x2="width" y1="4" y2="4"/> -->
+          <line :x1="xRange[0]" :x2="xRange[0]" y1="3" y2="6"/>
+          <line :x1="xRange[1]" :x2="xRange[1]" y1="3" y2="6"/>
+          <text :x="xRange[0]" :y="axisHeight - 1">{{data[0].year}}</text>
+          <text :x="xRange[1]" :y="axisHeight - 1">{{data[data.length - 1].year}}</text>
+        </g>
+      </svg>
+      <div v-if="!xDomain" class="years tiny">
+        <span class="year">{{data[0].year}}</span>
+        <span class="year">{{data[data.length - 1].year}}</span>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
+import resize from 'vue-resize-directive'
+
 export default {
   name: 'chartLineFactor',
+  directives: {
+    resize
+  },
+  data () {
+    return {
+      width: 100
+    }
+  },
   props: {
     id: {
       type: String,
@@ -47,10 +59,6 @@ export default {
     label: {
       type: String,
       default: 'Label'
-    },
-    width: {
-      type: Number,
-      default: 320
     },
     yScale: {
       type: Number,
@@ -119,21 +127,30 @@ export default {
     //   const mask = `<rect x='-4' y='-4' width='${width + 8}' height='${base + 4}' fill='white'/>`
     //   return `url("data:image/svg+xml;utf8,${mask}")`
     // }
+  },
+  methods: {
+    onResize (el) {
+      this.width = el.getBoundingClientRect().width
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .chart-line-factor {
-  padding: $spacing / 4;
+  // padding: $spacing / 4;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   .label {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     padding-bottom: $spacing / 8;
     hyphens: auto;
+    :first-child {
+      padding-right: $spacing / 2;
+    }
     .factor {
       color: $color-neon;
       @include tint(color);
