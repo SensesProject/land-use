@@ -1,7 +1,7 @@
 <template>
   <div class="solution text wide">
     <section class="text-col">
-      <h2 class="serif">Land Cannot Do All</h2>
+      <h2 class="serif">Land Solutions Need to Be Sustainable</h2>
       <p>
         With a decline in available land for food production food prices rise and food security declines. How this plays out in detail greatly depends on socioeconomic factors – mainly population developement and diets.
       </p>

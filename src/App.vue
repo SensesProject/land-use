@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <SensesMenu message="Work in Progress"/>
+    <SensesMenu/>
     <article>
       <Intro/>
       <Pressure/>
       <Solution/>
-      <Cannot/>
+      <Sustainable/>
       <SensesMeta class="senses-meta" id="land-transitions"/>
     </article>
   </div>
@@ -17,7 +17,7 @@ import SensesMenu from 'library/src/components/SensesMenu.vue'
 import Intro from './views/Intro.vue'
 import Pressure from './views/Pressure.vue'
 import Solution from './views/Solution.vue'
-import Cannot from './views/Cannot.vue'
+import Sustainable from './views/Sustainable.vue'
 export default {
   name: 'app',
   components: {
@@ -25,7 +25,7 @@ export default {
     Intro,
     Pressure,
     Solution,
-    Cannot,
+    Sustainable,
     SensesMeta
   }
 }
