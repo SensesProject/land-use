@@ -1,49 +1,18 @@
 <template>
   <div class="vis-net narrow" v-resize:debounce.initial="onResize" ref="visNet">
-    <div class="key tiny">
-      <svg width="12" height="12">
-        <polyline points="0 12 6 0 12 12" class="violet"/>
-      </svg>
-      <span>Gains</span>
-      <svg width="12" height="12">
-        <polyline points="0 0 6 12 12 0" class="violet"/>
-      </svg>
-      <span>Requierements</span>
-    </div>
     <div class="key tiny last">
-      <div>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="green"/>
-        </svg>
-        <span>Emission Removal</span>
-      </div>
-      <div>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="red"/>
-        </svg>
-        <span>Land</span>
-      </div>
-      <div>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="yellow"/>
-        </svg>
-        <span>Energy</span>
-      </div>
-      <div>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="blue"/>
-        </svg>
-        <span>Water</span>
-      </div>
-      <div>
-        <svg width="12" height="12">
-          <rect width="12" height="12" class="violet"/>
-        </svg>
-        <span>Costs</span>
-      </div>
+      <span class="highlight no-hover green">Emission removal</span><span v-html="`&nbsp;`"/>
+      <span class="highlight no-hover yellow">energy</span><span v-html="`&nbsp;`"/>
+      <span class="highlight no-hover purple">capital</span><span v-html="`&nbsp;`"/>
+      <span class="highlight no-hover blue">water</span>
+      and<span v-html="`&nbsp;`"/>
+      <span class="highlight no-hover red">land</span>
+      gained and needed by different negative emission technoligies realtive to BECCS. Light colors show the potential of a maximal, saturated colors of a realistic implementation.
     </div>
     <div class="charts">
-      <ChartNet v-for="(n, i) in nets" :key="`n-${i}`" :data="n" :width="width"/>
+      <ChartNet v-for="(n, i) in nets" :key="`n-${i}`"
+        :data="n" :dimensions="dimensions" :width="width"
+        :label="i === 0 || cols === 2 && i === 2" :explain="i === 1"/>
     </div>
   </div>
 </template>
@@ -52,7 +21,7 @@ import Nets from 'dsv-loader!@/assets/data/NegativeEmissionTechnoligies.csv' // 
 import ChartNet from '@/components/ChartNet.vue'
 import resize from 'vue-resize-directive'
 export default {
-  name: 'VisPressure',
+  name: 'vis-net',
   components: {
     ChartNet
   },
@@ -60,34 +29,72 @@ export default {
     resize
   },
   data () {
-    const cols = ['removal', 'land', 'water', 'energy', 'cost']
+    const dimensions = [{
+      color: 'green',
+      key: 'removal'
+    }, {
+      color: 'yellow',
+      key: 'energy'
+    }, {
+      color: 'purple',
+      key: 'cost'
+    }, {
+      color: 'blue',
+      key: 'water'
+    }, {
+      color: 'red',
+      key: 'land'
+    }]
+    const nets = ['BECCS',
+      'Afforestation & Reforrastation',
+      'Soil Carbon Storage',
+      'Biochar Addition to Soil'
+    ]
     const max = {}
-    cols.forEach(c => {
-      max[c] = Math.max(...Nets.map(d => Math.abs(d[c])))
+    dimensions.forEach(c => {
+      // max[c] = Math.max(...Nets.map(d => Math.abs(d[c])))
+      max[c.key] = Math.abs(Nets[0][c.key])
     })
-    const nets = Nets.map(n => {
-      const obj = {
-        name: n.name
-      }
-      cols.forEach(c => {
-        obj[c] = n[c] / max[c]
-      })
-      return obj
-    })
+    // const nets = Nets.map(n => {
+    //   const obj = {
+    //     name: n.name
+    //   }
+    //   cols.forEach(c => {
+    //     obj[c] = n[c] / max[c]
+    //   })
+    //   return obj
+    // })
     return {
       width: 320,
       columnSpacing: 16,
-      nets
+      cols: 2,
+      nets: nets.map(name => {
+        const realistic = Nets.find(n => n.name === name && n.cat === 'realistic')
+        const maximum = Nets.find(n => n.name === name && n.cat === 'maximum')
+        const obj = {
+          name,
+          realistic: {},
+          maximum: maximum ? {} : null
+        }
+        dimensions.forEach(c => {
+          obj.realistic[c.key] = realistic[c.key] / max[c.key]
+          if (maximum != null) {
+            obj.maximum[c.key] = maximum[c.key] / max[c.key]
+          }
+        })
+        return obj
+      }),
+      dimensions
     }
   },
   computed: {
   },
   methods: {
     onResize (a, b, c) {
-      const { columnSpacing } = this
+      // const { columnSpacing } = this
       const iw = this.$refs.visNet.getBoundingClientRect().width
-      const cols = iw < 480 ? 2 : 4
-      this.width = (iw - columnSpacing) / cols - columnSpacing // * 3
+      this.cols = iw < 480 ? 2 : 4
+      this.width = (iw) / this.cols // - columnSpacing // * 3
     }
   }
 }
@@ -107,38 +114,9 @@ export default {
     align-items: flex-start;
   }
   .key {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &.last {
-      padding-top: $spacing / 8;
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    span {
-      margin-right: $spacing / 4;
-
-      &.before-line-key {
-        margin-right: $spacing / 2;
-      }
-    }
-    svg {
-      margin-right: $spacing / 8;
-      rect {
-        @include tint(fill);
-      }
-    }
-    .line-key {
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-    }
+    text-align: center;
+    max-width: 460px;
+    width: 100%;
   }
 }
 </style>
