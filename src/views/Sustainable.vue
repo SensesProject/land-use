@@ -31,7 +31,7 @@
       <p>
         BECCS demands less land and water resources to achieve the same amount of emission removal than afforestation and reforrastation, which makes it a quite attractive negative emissions technology. But it can have negative side-effects that become apparent if implemented on a large scale.
       </p>
-      <VisRisks/>
+      <!-- <VisRisks/> -->
     </section>
     <section class="text-col wide">
       <p>
@@ -50,15 +50,15 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 import VisSSPPressure from '@/components/VisSSPPressure.vue'
 import VisSSPLandChange from '@/components/VisSSPLandChange.vue'
 import VisSSPEffects from '@/components/VisSSPEffects.vue'
-import VisRisks from '@/components/VisRisks.vue'
+// import VisRisks from '@/components/VisRisks.vue'
 export default {
   components: {
     LayoutScrollytelling,
     IntersectionObserver,
     VisSSPPressure,
     VisSSPLandChange,
-    VisSSPEffects,
-    VisRisks
+    VisSSPEffects
+    // VisRisks
   }
 }
 </script>
