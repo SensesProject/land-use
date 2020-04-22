@@ -1,6 +1,6 @@
 using DataFrames, CSV, Statistics, StatsBase
 
-df = CSV.read("./input/land-use-change.csv")
+df = CSV.read("./input/land-use-change-ssp.csv")
 
 # remove last (empty) column
 df = df[.!ismissing.(df.Scenario),:]
@@ -25,4 +25,4 @@ df[df.variable .== "Land Cover|Forest",:variable] .= "Forest"
 
 df = unstack(df, :year, :value)
 
-CSV.write("../src/assets/data/landusechange.csv", df)
+CSV.write("../src/assets/data/landusechangessp.csv", df)
