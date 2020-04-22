@@ -1,7 +1,7 @@
 <template>
   <div class="chart-line-factor narrow" v-resize:debounce.initial="onResize">
     <div class="label tiny">
-      <span>{{ label.replace(/\|/g,' | ') }}</span>
+      <span>{{ label.replace(/\|/g,' | ') }}<sup>{{source + 1}}</sup></span>
       <span class="factor" :class="[tint]">{{factor}}×</span>
     </div>
     <div>
@@ -74,6 +74,10 @@ export default {
     },
     tint: {
       type: String,
+      default: null
+    },
+    source: {
+      type: Number,
       default: null
     }
   },
@@ -154,6 +158,9 @@ export default {
     .factor {
       color: $color-neon;
       @include tint(color);
+    }
+    sup {
+      color: $color-light-gray;
     }
   }
   svg {
