@@ -18,7 +18,7 @@ df = df[.!ismissing.(df.value),:]
 # remove rows where region != world
 df = df[df.region .== "World",:]
 select!(df, Not(:region))
-# remove rows with unwanted variables
+# remove rows with unwanted variable
 df = df[map(v -> in(v, vars[:, 1]), df.variable), :]
 
 # limit years between 1960 and 2019
@@ -31,29 +31,35 @@ df[ismissing.(df.scenario), :scenario] .= ""
 df[ismissing.(df.model), :model] .= ""
 
 # filter to remove duplicates
-df = df[df.model .!= "Bodirsky2015", :]
-df = df[df.model .!= "FAO_crop_past", :]
-df = df[df.model .!= "FAOmassbalance", :]
-df = df[df.scenario .!= "projection", :]
-# df = df[df.model .!= "MAgPIEown", :]
-
-df = df[.!.&(df.model .== "MAgPIEown", df.variable .!= "Resources|Land Cover|Forest|+|Managed Forest", df.variable .!= "Resources|Land Cover|Forest|+|Natural Forest"), :]
-df = df[.!.&(df.model .== "Bodirsky", df.variable .== "Resources|Nitrogen|Cropland Budget|Inputs|+|Fertilizer"), :]
 df = df[.!.&(df.variable .== "Income", df.unit .!= "US\$05 PPP/cap/yr"), :]
-df = df[.|(df.model .!= "EDGAR_LU", df.variable .== "Emissions|CO2|Land|+|Land Use Change"), :]
+df = df[.!.&(occursin.(r"Calorie Supply", df.variable), df.model .!= "FAO"), :]
+df = df[.!.&(occursin.(r"Land Cover.*\+", df.variable), df.model .!= "MAgPIEown"), :]
+df = df[.!.&(occursin.(r"Nitrogen", df.variable), df.model .!= "Lassaletta2014"), :]
+df = df[.!.&(occursin.(r"Emissions", df.variable), df.model .!= "PRIMAPhist"), :]
+
+# calc afolu emissions
+emissionsAgr = stack(df[occursin.(r"\+\|Agriculture", df.variable), :], 5:size(df)[2]; variable_name = :year)
+emissionsLand = stack(df[occursin.(r"\+\|Land-use Change", df.variable), :], 5:size(df)[2]; variable_name = :year)
+
+emissionsAgr.value += emissionsLand.value
+agr = unstack(emissionsAgr, :year, :value)
+df = df[.!occursin.(r"Emissions", df.variable), :]
+df = vcat(agr, df)
 
 # fix fish prices
 foreach(v -> df[df.variable .== "Prices|Agriculture|Fish", Symbol(v)] .= missing, 1960:1979)
 
 # sort based on var-selection
 df = join(vars,df,on = :variable, kind= :outer)
+df = df[.!occursin.(r"Land-use Change", df.variable), :]
 CSV.write("../src/assets/data/landpressure.csv", df)
+CSV.write("./output/landpressure.csv", df)
 
 # check for duplicates
 
 nonunique(df, :variable)
 dupVars = unique(df[nonunique(df, :variable), :variable])
 dfDupVars = df[map(v -> in(v, dupVars[:, 1]), df.variable), :]
-sort!(dfDupVars, [order(:variable), order(:model), order(:scenario)])
+# sort!(dfDupVars, [order(:variable), order(:model), order(:scenario)])
 
 CSV.write("./output/landpressure-duplicates.csv", dfDupVars)
