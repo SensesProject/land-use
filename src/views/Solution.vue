@@ -30,8 +30,9 @@
     </section>
     <LayoutScrollytelling class="land-use-change">
       <template v-slot:vis="props">
-        <VisLandChange slot="vis" v-bind="props" v-if="props.step !== 2"/>
-        <VisEffects slot="vis" v-bind="props" v-else/>
+        <VisLandChange slot="vis" v-bind="props" v-if="props.step !== 2 && props.step !== 4"/>
+        <VisEffects slot="vis" v-bind="props" v-if="props.step === 2"/>
+        <VisPrices slot="vis" v-bind="props" v-if="props.step === 4"/>
         <!-- <VisLandChange slot="vis" v-bind="props" v-else/> -->
       </template>
       <template v-slot:text="{ width, step }">
@@ -47,6 +48,11 @@
         <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="3" :class="{active: step === 3}">
           <p>But it also means overall land pressure is rising further and land cover of non-bioenergy crops decreases and even more drastically so does land cover of pastures.</p>
         </IntersectionObserver>
+        <IntersectionObserver :align="width >= 900 ? 'right' : 'center'" :step="4" :class="{active: step === 4}">
+          <p>This in turn drastically increases food prices in SSP2–1.9 compared to the baseline scenario.
+            <span class="highlight no-hover orange">incorrect data, needs updating</span>
+          </p>
+        </IntersectionObserver>
       </template>
     </LayoutScrollytelling>
   </div>
@@ -58,6 +64,7 @@ import VisEmissions from '@/components/VisEmissions.vue'
 import VisLandChange from '@/components/VisLandChange.vue'
 import VisEffects from '@/components/VisEffects.vue'
 import VisNet from '@/components/VisNet.vue'
+import VisPrices from '@/components/VisPrices.vue'
 export default {
   components: {
     LayoutScrollytelling,
@@ -65,7 +72,8 @@ export default {
     VisEmissions,
     VisLandChange,
     VisEffects,
-    VisNet
+    VisNet,
+    VisPrices
   }
 }
 </script>
@@ -99,7 +107,7 @@ export default {
       }
 
       &:last-of-type {
-        padding-bottom: $spacing * 10;
+        padding-bottom: $spacing * 15;
       }
     }
   }
