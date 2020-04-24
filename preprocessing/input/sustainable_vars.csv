@@ -1,15 +1,15 @@
-variable,group,name
-"Land Cover|Cropland|Energy Crops",0,"Energy Crops"
-"Land Cover|Forest|Afforestation and Reforestation",0,"Afforestation"
-"Primary Energy|Biomass",0,"Bioenergy"
-"Food Demand|Crops",1,"Demand for Crops"
-"Food Demand|Livestock",1,"Demand for Livestock"
-"Land Cover|Cropland",1,"Food Crops"
-"Land Cover|Pasture",1,"Pasture"
-"Emissions|CO2|AFOLU",2,"AFOLU CH₄ Emissions"
-"Emissions|CH4|AFOLU",2,"AFOLU CO₂ Emissions"
-"Emissions|N2O|AFOLU",2,"AFOLU N₂O Emissions"
-"Price|Agriculture|Non-Energy Crops|Index",3,"Price Index for Food Crops"
-"Price|Agriculture|Livestock|Index",3,"Price Index for Livestock"
-"Land Cover|Cropland|Irrigated",3,"Irrigated Cropland"
-"Water Consumption|Irrigation",3,"Water Consumption for Irrigation"
+variable,group,name,min,max
+"Land Cover|Cropland|Energy Crops",0,"Energy Crops",0,1000
+"Land Cover|Forest|Afforestation and Reforestation",0,"Afforestation",0,1000
+"Primary Energy|Biomass",0,"Bioenergy",,
+"Food Demand|Crops",1,"Demand for Crops",0,2500
+"Food Demand|Livestock",1,"Demand for Livestock",0,2500
+"Land Cover|Cropland",1,"Food Crops",0,3000
+"Land Cover|Pasture",1,"Pasture",0,3000
+"Emissions|CO2|AFOLU",2,"AFOLU CH₄ Emissions",,
+"Emissions|CH4|AFOLU",2,"AFOLU CO₂ Emissions",,
+"Emissions|N2O|AFOLU",2,"AFOLU N₂O Emissions",,
+"Price|Agriculture|Non-Energy Crops|Index",3,"Price Index for Food Crops",0,3
+"Price|Agriculture|Livestock|Index",3,"Price Index for Livestock",0,3
+"Land Cover|Cropland|Irrigated",3,"Irrigated Cropland",,
+"Water Consumption|Irrigation",3,"Water Consumption for Irrigation",0,5000

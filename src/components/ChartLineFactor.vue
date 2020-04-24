@@ -161,6 +161,8 @@ export default {
     }
     sup {
       color: $color-light-gray;
+      vertical-align: top;
+       font-size: 0.8em;
     }
   }
   svg {
