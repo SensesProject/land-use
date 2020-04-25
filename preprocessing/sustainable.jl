@@ -15,6 +15,9 @@ df[occursin.("CO2", df.variable), :unit] = "Mt CO₂/yr"
 df[occursin.("CH4", df.variable), :unit] = "Mt CH₄/yr"
 df = unstack(df, :year, :value)
 
+df[occursin.("Def", df.scenario), :scenario] = "default"
+df[occursin.("Sust", df.scenario), :scenario] = "sustainable"
+
 # sort!(df, [order(:variable, rev=true), order(:scenario)])
 df = join(vars,df,on = :variable, kind= :outer)
 CSV.write("../src/assets/data/sustainable.csv", df)
