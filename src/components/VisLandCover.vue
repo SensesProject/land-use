@@ -4,10 +4,10 @@
       v-for="(c, i) in cover" :key="`c-${i}`"
       :style="{width: `${c.value}vw`, opacity: c.opacity}"
       :class="['area', c.color]"
-      @mouseover="highlight = c.name" @mouseleave="highlight = null" @mouseout="highlight = null">
+      @mouseover="highlight = c.group" @mouseleave="highlight = null" @mouseout="highlight = null">
       <v-popover offset="0" :popoverClass="['senses-tooltip', 'senses-tooltip-custom']" class="trigger" placement="right"
-        :open="group === c.group || highlight === c.name ? true : null"
-        :style="{transform: `translateY(${-20 + (group != null ? c.offset : 0)}px)`}">
+        :open="group === c.group || highlight === c.group ? true : null"
+        :style="{transform: `translateY(${-20 + c.offset}px)`}">
         <div slot="popover" class="tiny">
           <span :class="['glyph-dot', c.color]" :style="{opacity: c.opacity}"></span>
           <span>{{ c.value }}%</span> <strong>{{ c.name }}</strong>
