@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <!-- <section class="cover"> -->
-      <VisLandCover :cover="cover"/>
+      <VisLandCover class="background" :cover="cover"/>
       <div class="overlay">
         <section class="text-col wide">
           <h1 class="serif">Land Use</h1>
@@ -12,14 +12,17 @@
             <span class="tiny key-title">
               <strong>Global ice-free land cover:</strong>
             </span>
-            <span class="tiny" v-for="(c, i) in cover" :key="`ck-${i}`">
-              <span :style="{opacity: c.opacity}" :class="['glyph-dot', c.color]">{{c.value}}%</span>
-              {{c.name}}
+            <span v-for="(c, i) in groups" :key="`ck-${i}`" class="tiny highlight" :class="[c.color]"
+              @mouseover="group = c.label" @mouseleave="group = null" @mouseout="group = null">
+              <!-- <span :style="{opacity: c.opacity}" :class="['glyph-dot', c.color]">{{c.value}}%</span> -->
+              {{c.label}}
             </span>
           </div>
         </section>
       </div>
-
+      <div class="tooltips">
+        <VisLandCover :cover="cover" :group="group"/>
+      </div>
       <div class="overlay bottom">
         <section class="text-col wide">
           <p>
@@ -37,7 +40,24 @@ export default {
   components: { VisLandCover },
   data () {
     return {
-      cover
+      cover,
+      group: null,
+      groups: [{
+        label: 'Infrastructure',
+        color: 'red'
+      }, {
+        label: 'Cropland',
+        color: 'yellow'
+      }, {
+        label: 'Grazing land',
+        color: 'green'
+      }, {
+        label: 'Used forests',
+        color: 'blue'
+      }, {
+        label: 'Unused land',
+        color: 'purple'
+      }]
     }
   }
 }
@@ -83,6 +103,9 @@ export default {
     }
   }
 
+  .background {
+    z-index: -1;
+  }
   .overlay {
     width: 100vw;
     display: flex;
@@ -97,7 +120,6 @@ export default {
     }
 
     &.bottom {
-      margin-top: 40vh;
       background: linear-gradient(transparentize($color-white, 0.3), $color-white);
       // @supports ((-webkit-backdrop-filter: saturate(180%) blur(20px)) or(backdrop-filter: saturate(180%) blur(20px))) {
       //   background: linear-gradient(to top, transparentize($color-white, 0.3), $color-white);
@@ -105,6 +127,11 @@ export default {
       //   backdrop-filter:saturate(180%) blur(10px)
       // }
     }
+  }
+
+  .tooltips {
+    height: 40vh;
+    position: relative;
   }
 
   .text-col {
