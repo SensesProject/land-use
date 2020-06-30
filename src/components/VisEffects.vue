@@ -29,7 +29,7 @@
         <svg width="12" height="12">
           <rect width="12" height="12" class="violet"/>
         </svg>
-        <span>Non-Bioenergy Crops</span>
+        <span>Food and Feed Crops</span>
         <svg width="12" height="12">
           <rect width="12" height="12" class="red"/>
         </svg>
@@ -64,8 +64,8 @@ export default {
   },
   data () {
     const years = [2005, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]
-    // const variables = ['Biomass Energy', 'Carbon Sequestration from Biomass CCS', 'Food Price']
-    const variables = ['Biomass Energy', 'Carbon Sequestration from Biomass CCS']
+    // const variables = ['Bioenergy', 'Carbon Sequestration from Biomass CCS', 'Food Price']
+    const variables = ['Bioenergy', 'Carbon Sequestration from Biomass CCS']
     return {
       margin: 16,
       yAxisWidth: 64,

@@ -14,7 +14,7 @@ rename!(df, [:year, :value, :scenario, :variable, :unit])
 
 println(first(df, 8))
 
-df[df.variable .== "Primary Energy|Biomass",:variable] .= "Biomass Energy"
+df[df.variable .== "Primary Energy|Biomass",:variable] .= "Bioenergy"
 df[df.variable .== "Carbon Sequestration|CCS|Biomass",:variable] .= "Carbon Sequestration from Biomass CCS"
 df[df.variable .== "Price|Agriculture|Non-Energy Crops and Livestock|Index",:variable] .= "Food Price"
 

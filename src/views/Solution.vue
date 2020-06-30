@@ -66,7 +66,7 @@
         <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="2" :class="{active: step === 2}">
           <p>
             This pays off – biomass energy becomes far more relevant and carbon sequestration unfolds its potential in the second half of the century.
-            <ChartLine label="Biomass Energy" unit="EJ/yr" difftint="red" :years="years" :scenarios="biomass" />
+            <ChartLine label="Bioenergy" unit="EJ/yr" difftint="red" :years="years" :scenarios="biomass" />
             <span class="key tiny">
               <span v-for="(c, i) in Object.keys(colors)" :key="`cb-${i}`" class="highlight no-hover" :class="[colors[c]]">
                 {{c}}
@@ -77,7 +77,7 @@
         <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="3" :class="{active: step === 3}">
           <p>
             But it also means overall land pressure is rising further and land cover of non-bioenergy crops decreases and even more drastically so does land cover of pastures.
-            <ChartLine label="Food Price" unit="Index (2005 = 1)" difftint="red" :years="years" :scenarios="price" />
+            <ChartLine label="Food Price" unit="Index (2010 = 1)" difftint="red" :years="years" :scenarios="price"/>
             <span class="key tiny">
               <span v-for="(c, i) in Object.keys(colors)" :key="`cb-${i}`" class="highlight no-hover" :class="[colors[c]]">
                 {{c}}
@@ -128,7 +128,7 @@ export default {
       return this.getScenario('Carbon Sequestration from Biomass CCS')
     },
     price () { return this.getScenario('Food Price') },
-    biomass () { return this.getScenario('Biomass Energy') }
+    biomass () { return this.getScenario('Bioenergy') }
   },
   methods: {
     getScenario (variable) {

@@ -53,7 +53,7 @@
       <svg width="12" height="12">
         <rect width="12" height="12" class="violet"/>
       </svg>
-      <span>Non-Bioenergy Crops</span>
+      <span>Food and Feed Crops</span>
       <svg width="12" height="12">
         <rect width="12" height="12" class="red"/>
       </svg>
@@ -81,7 +81,7 @@ export default {
     const colors = {
       'Bioenergy Crops': 'yellow',
       'Forest': 'green',
-      'Non-Bioenergy Crops': 'violet',
+      'Food and Feed Crops': 'violet',
       'Pasture': 'red'
     }
     return {

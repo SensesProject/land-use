@@ -50,7 +50,7 @@ export default {
   },
   data () {
     const years = [2005, 2010, 2020, 2030, 2040, 2050, 2060, 2070, 2080, 2090, 2100]
-    // const variables = ['Biomass Energy', 'Carbon Sequestration from Biomass CCS', 'Food Price']
+    // const variables = ['Bioenergy', 'Carbon Sequestration from Biomass CCS', 'Food Price']
     const variables = ['Population', 'Food Demand|Crops', 'Food Demand|Livestock']
     const tints = {
       'SSP1-19': 'green',

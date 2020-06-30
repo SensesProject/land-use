@@ -14,7 +14,7 @@ rename!(df, [:year, :value, :scenario, :variable, :unit])
 
 df[df.variable .== "Land Cover|Cropland",:value] -= df[df.variable .== "Land Cover|Cropland|Energy Crops",:value]
 
-df[df.variable .== "Land Cover|Cropland",:variable] .= "Non-Bioenergy Crops"
+df[df.variable .== "Land Cover|Cropland",:variable] .= "Food and Feed Crops"
 df[df.variable .== "Land Cover|Cropland|Energy Crops",:variable] .= "Bioenergy Crops"
 df[df.variable .== "Land Cover|Pasture",:variable] .= "Pasture"
 df[df.variable .== "Land Cover|Forest",:variable] .= "Forest"

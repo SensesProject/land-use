@@ -5,7 +5,9 @@
     </div>
     <div class="grid">
       <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="SSP2-Baseline"/>
-      <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="SSP2-1.9"/>
+      <transition name="fade">
+        <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="SSP2-1.9"/>
+      </transition>
     </div>
     <div class="key tiny">
       <span v-for="(c, i) in Object.keys(colors).reverse()" :key="`c-${i}`" class="highlight no-hover" :class="[colors[c]]">
@@ -36,7 +38,7 @@ export default {
       'Other Natural Land': 'purple',
       'Forest': 'blue',
       'Pasture': 'green',
-      'Non-Bioenergy Crops': 'yellow',
+      'Food and Feed Crops': 'yellow',
       'Bioenergy Crops': 'orange'
     }
     return {
@@ -159,6 +161,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing $spacing / 2;
+
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity $transition;
+    }
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
   }
   @include min-width($narrow) {
     width: calc(100% / 3 * 2 - #{$spacing / 2});

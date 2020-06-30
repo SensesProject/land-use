@@ -4,9 +4,9 @@
       <VisLandCover class="background" :cover="cover"/>
       <div class="overlay">
         <section class="text-col wide">
-          <h1 class="serif">Land Use</h1>
+          <h1 class="serif">Towards Sustainable Land Use</h1>
           <p>
-            Today, most of the global ice-free land is used by humans in some way or another. Land use change and sustainable land management play an important role in climate change adaptation and mitigation. But they also have an impact on food security, desertification, land degradation.
+            Today, most of the global ice-free land is used by humans in some way or another. Land use change and sustainable land management play an important role in climate change adaptation and mitigation. But they also have an impact on food security, desertification, and land degradation.
           </p>
           <div class="key narrow">
             <span class="tiny key-title">
