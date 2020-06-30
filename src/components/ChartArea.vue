@@ -1,57 +1,60 @@
 <template>
-  <div class="chart-line">
-    <div class="narrow" v-resize:debounce.initial="onResize">
-      <div class="tiny title">{{ label }}</div>
-      <svg v-if="scenarios.length > 0" width="100%" :height="height"
+  <div class="chart-area">
+    <div class="narrow">
+      <svg v-if="scenarios.length > 0" width="100%" height="100%" v-resize:debounce.initial="onResize"
         @mousemove="setYear($event)" @mouseenter="setYear($event)" @mouseout="resetYear()">
-        <g class="axes">
-          <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
-            <g class="ticks ticks-y">
-              <g class="tick tick-y" v-for="(t, i) in yTicks" :key="`y${i}`" :transform="`translate(0, ${t.y})`">
-                <line :x2="width" :class="{ zero: t.value === 0 }"/>
+        <text class="strong" y="16">{{ label }}</text>
+        <g transform="translate(0 8)">
+          <g class="lines">
+            <path v-for="(l, i) in lines" :key="`lb${i}`" class="background" :class="[l.color, l.type]" :d="l.points.replace(/M/g, 'L').replace(/L/, 'M')"/>
+          </g>
+          <g class="axes">
+            <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
+              <g class="ticks ticks-y">
+                <g class="tick tick-y" v-for="(t, i) in yTicks" :key="`y${i}`" :transform="`translate(0, ${t.y})`">
+                  <line :x2="width" :class="{ zero: t.value === 0 }"/>
+                </g>
+              </g>
+              <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, ${padding[0]})`">
+                <!-- <line class="ruler" :y2="height - padding[0] - padding[2]" :y1="Math.min(0, ...points.map(p => p.y - padding[0]))" /> -->
               </g>
             </g>
-            <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, ${padding[0]})`">
-              <line class="ruler" :y2="height - padding[0] - padding[2]" :y1="Math.min(0, ...points.map(p => p.y - padding[0]))" />
-            </g>
           </g>
-        </g>
-        <g class="lines">
-          <polyline v-for="(l, i) in lines" :key="`l${i}`" :class="[l.color, l.type]" :points="l.points"/>
-        </g>
-        <polyline class="diff" :class="difftint" :points="diff"/>
-        <g class="points">
-          <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
-            <polyline class="shadow" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/>
-            <polyline :class="[p.color]" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/>
-            <circle :class="[p.color]" r="2" :transform="`translate(0, ${p.y})`"/>
-            <g :transform="`translate(0, ${p.y2})`">
-              <text y="4" :x="ruler.x < width / 2 ? 14 : -14" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
-              <text y="4" :x="ruler.x < width / 2 ? 14 : -14" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
-            </g>
-          </g>
-        </g>
-        <g class="axes">
-          <g class="axis-x" :transform="`translate(0, ${height - padding[2]})`">
-            <g class="ticks ticks-x">
-              <g class="tick tick-x" v-for="(t, i) in xTicks" :key="`x${i}`" :transform="`translate(${t.x}, 0)`">
-                <text :y="tickSize" :class="{transparent: ruler !== null && Math.abs(ruler.x - t.x) < 60}">
-                  {{ t.value }}
-                </text>
+          <polyline class="diff" :points="diff"/>
+          <g class="points">
+            <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
+              <!-- <polyline class="shadow" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
+              <!-- <polyline :class="[p.color]" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
+              <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/>
+              <circle :class="[p.color]" r="2" :transform="`translate(0, ${p.y})`"/>
+              <g :transform="`translate(0, ${p.y})`">
+                <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
+                <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
               </g>
             </g>
-            <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, 0)`">
-              <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ year }}</text>
-            </g>
           </g>
-          <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
-            <g class="ticks ticks-y">
-              <g class="tick tick-y" v-for="(t, i) in yTicks" :key="`y${i}`"
-                :transform="`translate(0, ${t.y})`" :class="{transparent: ruler !== null && ruler.x < 60 && i !== 0}">
-                <text y="-4" class="shadow">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
-                <text y="-4">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
+          <g class="axes">
+            <g class="axis-x" :transform="`translate(0, ${height - padding[2]})`">
+              <g class="ticks ticks-x">
+                <g class="tick tick-x" v-for="(t, i) in xTicks" :key="`x${i}`" :transform="`translate(${t.x}, 0)`">
+                  <text :y="tickSize" :class="{transparent: ruler !== null && Math.abs(ruler.x - t.x) < 60}">
+                    {{ t.value }}
+                  </text>
+                </g>
+              </g>
+              <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, 0)`">
+                <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ year }}</text>
               </g>
             </g>
+            <!-- <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
+              <g class="ticks ticks-y">
+                <g class="tick tick-y" v-for="(t, i) in yTicks" :key="`y${i}`"
+                  :transform="`translate(0, ${t.y})`" :class="{transparent: ruler !== null && ruler.x < 60 && i !== 0}">
+                  <text y="-4" class="shadow">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
+                  <text y="-4">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
+                </g>
+              </g>
+            </g> -->
           </g>
         </g>
       </svg>
@@ -67,18 +70,18 @@ import resize from 'vue-resize-directive'
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
 export default {
-  name: 'ChartLine',
+  name: 'ChartArea',
   directives: {
     resize
   },
   props: {
+    value: {
+      type: Number,
+      default: null
+    },
     label: {
       type: String,
       default: null
-    },
-    difftint: {
-      type: String,
-      default: 'green'
     },
     unit: {
       type: String,
@@ -108,14 +111,18 @@ export default {
       type: Array,
       default: null
     }
+    // height: {
+    //   type: Number,
+    //   default: 200
+    // }
   },
   data () {
     return {
       width: null,
-      height: 200,
-      padding: [18, 0, 16, 0],
+      height: null,
+      padding: [18, 0, 32, 0],
       tickSize: 16,
-      year: null
+      year: 2100
     }
   },
   computed: {
@@ -163,7 +170,14 @@ export default {
       return scenarios.map((s, i) => {
         return {
           ...s,
-          points: s.series.map(d => `${xScale(d.year)}, ${yScale(d.value)}`).join(' ')
+          points: [...s.series.map((d, di) => {
+            const sum = scenarios.filter((s2, i2) => i2 <= i).map(s2 => s2.series.find(s2s => s2s.year === d.year).value).reduce((a, b) => +a + +b, 0)
+            return `${di === 0 ? 'M' : 'L'} ${xScale(d.year)},${yScale(sum)}`
+          }),
+          ...s.series.reverse().map((d, di) => {
+            const sum = scenarios.filter((s2, i2) => i2 < i).map(s2 => s2.series.find(s2s => s2s.year === d.year).value).reduce((a, b) => +a + +b, 0)
+            return `${di === 0 ? 'M' : 'L'} ${xScale(d.year)},${yScale(sum)}`
+          })].join(' ')
         }
       })
     },
@@ -175,7 +189,8 @@ export default {
       return `${s1} ${s2}`
     },
     ruler () {
-      const { year, xScale } = this
+      const { xScale } = this
+      const year = this.value || this.year
       if (year === null) return null
 
       return {
@@ -183,43 +198,25 @@ export default {
       }
     },
     points () {
-      const { year, scenarios, yScale, numberFormat, height, padding } = this
+      const { scenarios, yScale } = this
+      const year = this.value || this.year
       if (year === null) return null
       const points = scenarios.map((c, i) => {
         const d = c.series.find(v => v.year === year)
         if (d == null) return null
-        const y = yScale(d.value)
+        const sum = scenarios.filter((s2, i2) => i2 < i).map(s2 => s2.series.find(s2s => s2s.year === d.year).value).reduce((a, b) => +a + +b, 0)
+        const y = yScale(sum + d.value / 2)
+        const diff = Math.round(d.value - c.series.find(v => v.year === 2005).value)
+        const labelValue = year === 2005 ? Math.round(d.value) : diff >= 0 ? `+${diff}` : diff
         return {
-          label: format(numberFormat)(d.value).replace(/,/, ' '),
+          label: `${labelValue} Mha`,
           color: c.color,
-          // scenario: c.scenario,
-          // shade: runs.length > 6 ? i >= 6 ? 'light' : 'dark' : null,
           y,
-          y2: y,
+          y1: yScale(sum) - 4,
+          y2: yScale(sum + +d.value) + 4,
           validPosition: false
         }
       }).filter(d => d != null)
-        .sort((a, b) => a.y - b.y)
-
-      const positions = points.map(p => p.y2)
-      const minDist = 14
-      let diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-      while (diffs.find(d => d < minDist) != null) {
-        diffs.forEach((d, i) => {
-          if (d < minDist) {
-            positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
-            positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
-            if (positions[i + 1] >= height - padding[2]) {
-              positions[i + 1] = height - padding[2]
-            }
-          }
-        })
-        diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-      }
-      points.forEach((p, i) => {
-        p.y2 = positions[i]
-      })
-
       return points
     }
   },
@@ -229,22 +226,25 @@ export default {
     onResize (el) {
       this.date = new Date().getTime()
       this.width = el.getBoundingClientRect().width
+      this.height = el.getBoundingClientRect().height
     },
     setYear (e) {
       const { xScale, years } = this
       const year = xScale.invert(e.offsetX)
       const closestYear = years.reduce((a, b) => (Math.abs(b - year) < Math.abs(a - year) ? b : a))
       this.year = closestYear
+      this.$emit('input', closestYear)
     },
     resetYear (e) {
-      this.year = null
+      this.year = 2100
+      this.$emit('input', null)
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
-.chart-line {
+.chart-area {
   // background: $color-neon;
   // margin-bottom: $spacing;
   // display: flex;
@@ -255,22 +255,17 @@ export default {
     font-weight: bold;
   }
 
-  .warn {
-    color: getColor(red, 50);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid getColor(orange, 100);
-    span {
-      // background: getColor(red, 100);
-      border: 1px solid getColor(red, 50);
-      padding: $spacing / 2 $spacing;
-    }
+  .narrow {
+    height: 100%;
   }
 
   svg {
     overflow: visible;
-
+    display: block;
+    .strong {
+      fill: $color-black;
+      font-weight: $font-weight-bold;
+    }
     * {
       pointer-events: none;
     }
@@ -281,14 +276,14 @@ export default {
       font-weight: $font-weight-bold;
     }
     .lines, .points {
-      polyline {
+      polyline, path {
         fill: none;
         stroke: $color-black;
         stroke-width: 1.5;
         transition: opacity $transition;
         // mix-blend-mode: multiply;
-
-        @include tint(stroke);
+        stroke: $color-white;
+        // @include tint(stroke);
         &.shadow {
           stroke-width: 3.5;
           stroke: $color-white;
@@ -300,16 +295,25 @@ export default {
           stroke: $color-black;
           stroke-dasharray: 4 4;
         }
+
+        &.background {
+          @include tint(fill);
+          stroke: none;
+          // opacity: 0.1;
+        }
       }
     }
     .diff {
-      @include tint(fill);
+      fill: $color-green;
       opacity: 0.05;
     }
     .points {
+      .ruler {
+        stroke: $color-white;
+      }
       circle {
         fill: $color-white;
-        stroke: $color-black;
+        stroke: $color-white;
         stroke-width: 1.5;
         // mix-blend-mode: multiply;
 
@@ -323,7 +327,7 @@ export default {
         // }
       }
       text {
-        fill: $color-deep-gray;
+        fill: $color-white;
         // @include tint(fill);
         // &.light {
         //   @include tint(fill, 60);
@@ -334,15 +338,17 @@ export default {
         // font-size: 0.7em;
 
         &.shadow {
-          fill: $color-white;
-          stroke: transparentize($color: $color-white, $amount: .2);
+          // fill: $color-white;
+          // stroke: transparentize($color: $color-white, $amount: .2);
+          @include tint(stroke);
+          @include tint(fill);
           stroke-width: 3px;
         }
       }
     }
     .axes {
       line {
-        stroke: $color-pale-gray;
+        stroke: $color-white;
 
         &.zero {
           stroke: $color-dark-gray;
@@ -350,6 +356,7 @@ export default {
       }
       .ticks, .ruler {
         transition: opacity $transition;
+        stroke-width: 1.5;
         text {
           fill: $color-deep-gray;
           transition: opacity $transition;
