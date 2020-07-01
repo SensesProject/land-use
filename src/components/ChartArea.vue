@@ -1,7 +1,7 @@
 <template>
   <div class="chart-area">
-    <div class="narrow">
-      <svg v-if="scenarios.length > 0" width="100%" height="100%" v-resize:debounce.initial="onResize"
+    <div class="narrow" v-resize:debounce.initial="onResize">
+      <svg v-if="scenarios.length > 0" width="100%" height="100%"
         @mousemove="setYear($event)" @mouseenter="setYear($event)" @mouseout="resetYear()">
         <text class="strong" y="16">{{ label }}</text>
         <g transform="translate(0 8)">
@@ -224,7 +224,6 @@ export default {
   },
   methods: {
     onResize (el) {
-      this.date = new Date().getTime()
       this.width = el.getBoundingClientRect().width
       this.height = el.getBoundingClientRect().height
     },

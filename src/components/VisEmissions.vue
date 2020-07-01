@@ -1,5 +1,5 @@
 <template>
-  <div class="vis-emissions narrow">
+  <div class="vis-emissions narrow" v-resize:debounce.initial="onResize">
     <svg :height="svgHeight" :width="svgWidth">
       <g :transform="`translate(${offsetX} ${0})`">
         <g>
@@ -86,13 +86,16 @@
 <script>
 import Emissions from 'dsv-loader!@/assets/data/landemissions.csv' // eslint-disable-line import/no-webpack-loader-syntax
 // import ChartAreaComponent from '@/components/ChartAreaComponent.vue'
-// import resize from 'vue-resize-directive'
+import resize from 'vue-resize-directive'
 import { scalePow } from 'd3-scale'
 export default {
   name: 'VisEmissions',
+  directives: {
+    resize
+  },
   props: {
-    width: Number,
-    height: Number,
+    // width: Number,
+    // height: Number,
     step: Number
   },
   components: {
@@ -111,6 +114,8 @@ export default {
       factor: 265
     }]
     return {
+      width: null,
+      height: null,
       margin: 16,
       lineHeight: 16,
       variables,
@@ -228,12 +233,17 @@ export default {
     }
   },
   methods: {
+    onResize (el) {
+      this.width = el.getBoundingClientRect().width
+      this.height = el.getBoundingClientRect().height
+    }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .vis-emissions {
+  height: 100%;
   svg {
     display: block;
     overflow: visible;
