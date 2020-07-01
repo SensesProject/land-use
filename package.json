@@ -11,8 +11,10 @@
     "core-js": "^3.4.3",
     "d3-format": "^1.4.3",
     "d3-scale": "^3.2.1",
+    "dompurify": "^2.0.12",
     "dsv-loader": "^2.0.0",
     "library": "github:SensesProject/library",
+    "marked": "^1.1.0",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.10",
     "vue-masonry": "^0.11.8",
@@ -28,6 +30,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "raw-loader": "^4.0.1",
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"

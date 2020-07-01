@@ -4,10 +4,11 @@
       <VisLandCover class="background" :cover="cover"/>
       <div class="overlay">
         <section class="text-col wide">
-          <h1 class="serif">Transition to Sustainable Land-Use</h1>
+          <!-- <h1 class="serif">Transition to Sustainable Land-Use</h1>
           <p>
             Today, most of the global ice-free land is used by humans in some way or another. Land use change and sustainable land management play an important role in climate change adaptation and mitigation. But they also have an impact on food security, desertification, and land degradation.
-          </p>
+          </p> -->
+          <div v-html="getText('intro')[0]"/>
           <div class="key narrow">
             <span class="tiny key-title">
               <strong>Global ice-free land cover:</strong>
@@ -24,17 +25,14 @@
         <VisLandCover :cover="cover" :group="group"/>
       </div>
       <div class="overlay bottom">
-        <section class="text-col wide">
-          <p>
-            In this module we will show that the pressure on land has risen in recent decades. You will learn about the potentials of land use change to mitigate climate change as well as its limitations and potential trade-offs.
-          </p>
-        </section>
+        <section class="text-col wide" v-html="getText('intro')[1]"/>
       </div>
   </div>
 </template>
 <script>
 import VisLandCover from '@/components/VisLandCover.vue'
 import cover from '@/assets/data/land-cover'
+import { mapGetters } from 'vuex'
 export default {
   name: 'intro',
   components: { VisLandCover },
@@ -59,6 +57,9 @@ export default {
         color: 'purple'
       }]
     }
+  },
+  computed: {
+    ...mapGetters(['getText'])
   }
 }
 </script>

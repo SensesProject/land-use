@@ -6,10 +6,7 @@
     </div>
     <template v-for="(g, i) in groups">
       <div class="text" :key="`g-${i}`">
-        <div class="sticky">
-          <h3>{{ g.title }}</h3>
-          <p>{{ g.text }}</p>
-        </div>
+        <div class="sticky" v-html="g.html"/>
       </div>
       <div class="chart-group" :key="`gc-${i}`">
         <ChartLine class="chart" v-for="(c, i2) in g.charts" :key="`gc-${i}-${i2}`"
@@ -28,6 +25,7 @@
 import Sustainable from 'dsv-loader!@/assets/data/sustainable.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLine from '@/components/ChartLine.vue'
 import resize from 'vue-resize-directive'
+import { mapGetters } from 'vuex'
 export default {
   name: 'vis-sustainable',
   components: {
@@ -39,26 +37,20 @@ export default {
   data () {
     const years = [2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2070, 2080, 2090, 2100]
     // const vars = [...new Set(Sustainable.map(s => s.variable))]
-    const text = [{
-      title: 'Land based mitigation / Supply side mitigation CO2',
-      text: ''
-    }, {
-      title: 'Demand side mitigation non-CO2',
-      text: ''
-    }, {
-      title: 'Emissions',
-      text: ''
-    }, {
-      title: 'Indices',
-      text: ''
-    }]
     return {
       yScale: 64,
-      groups: text.map((t, g) => {
+      years
+    }
+  },
+  computed: {
+    ...mapGetters(['getText']),
+    groups () {
+      const { years, getText } = this
+      return getText('sustainable').filter((t, i) => i !== 0).map((t, g) => {
         const group = Sustainable.filter(d => +d.group === g)
         const vars = [...new Set(group.map(s => s.name))]
         return {
-          ...t,
+          html: t,
           charts: vars.map(v => {
             const scenarios = group.filter(d => d.name === v)
             const s0 = scenarios[0]
@@ -82,8 +74,6 @@ export default {
         }
       })
     }
-  },
-  computed: {
   },
   methods: {
   }

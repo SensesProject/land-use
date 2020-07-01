@@ -2,9 +2,9 @@
   <div class="vis-pressure narrow">
     <template v-for="(s, i) in sections">
       <div class="text" :key="`st-${i}`">
-        <div class="sticky">
-          <h3 :class="s.color">{{ s.title }}</h3>
-          <p>{{ s.text }}</p>
+        <div class="sticky" v-html="s.html">
+          <!-- <h3 :class="s.color">{{ s.title }}</h3>
+          <p>{{ s.text }}</p> -->
           <!-- <p class="tiny sources">
             <span v-for="(source, i2) in s.sources" :key="`source-${i}-${i2}`">
               <sup>{{source.ref}}</sup>{{source.label}}
@@ -29,6 +29,7 @@
 import Pressure from 'dsv-loader!@/assets/data/landpressure.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLineFactor from '@/components/ChartLineFactor.vue'
 import resize from 'vue-resize-directive'
+import { mapGetters } from 'vuex'
 export default {
   name: 'VisPressure',
   components: {
@@ -67,39 +68,13 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['getText']),
     sections () {
       const { pressure, sources } = this
-      return [{
-        title: 'Population and Income',
-        text: 'Population growth and higher income are at the core of rising pressure on land. Rising living standards led to higher overall calorie intake per capita.'
-      }, {
-        title: 'Calorie supply',
-        text: 'Calorie supply from fish – which does not directly impact land use – almost doubled, but the increase from livestock and secondary products is also remarkable.'
-      }, {
-        title: 'Demand',
-        text: 'Higher Calory intake combination with an overall growth in poulation increases the global demand for these reseources.'
-      }, {
-        title: 'Prices',
-        text: 'While prices for most agricultural products also increased, they did not keep up with increasing income. So actually household expenditure shares for food decreased.'
-      }, {
-        title: 'Household Expenditure',
-        text: 'While prices for most agricultural products also increased, they did not keep up with increasing income. So actually household expenditure shares for food decreased.'
-      }, {
-        title: 'Land Cover',
-        text: 'Since land is a limited resource, the rising demand could hardly be met by increasing cropland and pastures. And with the exception of managed forests and urban areas, which both remain quite low in absolute numbers, land use changed only slightly.'
-      }, {
-        title: 'Yields',
-        text: 'Instead productivity could be increased leading to bigger and bigger yields…'
-      }, {
-        title: 'Productivity',
-        text: 'Instead productivity could be increased leading to bigger and bigger yields…'
-      }, {
-        title: 'Emissions',
-        text: 'Which also meant increasing emissions especially in regards to N₂O.'
-      }].map((s, i) => {
+      return this.getText('pressure').filter((t, i) => i !== 0).map((s, i) => {
         const data = pressure.filter(d => d.group === i)
         return {
-          ...s,
+          html: s,
           data,
           color: i % 2 === 0 ? 'purple' : 'yellow',
           sources: [...new Set(data.map(d => d.source))].map(source => ({
@@ -114,6 +89,21 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@import "library/src/style/global.scss";
+.vis-pressure {
+  >:nth-child(4n+1) {
+    h3 {
+      color: $color-purple;
+    }
+  }
+  >:nth-child(4n+3) {
+    h3 {
+      color: $color-yellow;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .vis-pressure {

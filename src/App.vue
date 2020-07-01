@@ -39,6 +39,15 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
+h1, h2 {
+  font-family: $font-serif;
+
+  + p {
+    margin: $spacing / 2 0 $spacing;
+  }
+}
+
 article {
   display: flex;
   flex-direction: column;

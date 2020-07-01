@@ -1,17 +1,19 @@
 <template>
   <div class="pressure text-col wide">
-    <section class="chapter-title">
-      <h2 class="serif">Land Is Under Pressure</h2>
-    </section>
+    <section class="chapter-title" v-html="getText('pressure')[0]"/>
     <!-- <section> -->
       <VisPressure/>
     <!-- </section> -->
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import VisPressure from '@/components/VisPressure.vue'
 export default {
-  components: { VisPressure }
+  components: { VisPressure },
+  computed: {
+    ...mapGetters(['getText'])
+  }
 }
 </script>
 <style lang="scss" scoped>
