@@ -43,7 +43,7 @@
                 </g>
               </g>
               <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, 0)`">
-                <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ year }}</text>
+                <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ value || year }}</text>
               </g>
             </g>
             <!-- <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
