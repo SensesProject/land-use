@@ -2,7 +2,7 @@
   <div class="solution text-col wide">
     <section class="text" v-html="getText('sustainable')[0]"/>
     <VisSustainable/>
-    <section class="text" v-html="getText('conclusion')[0]"/>
+    <section class="text conclusion" v-html="getText('conclusion')[0]"/>
   </div>
 </template>
 <script>
@@ -27,6 +27,10 @@ export default {
 
   .text {
     // margin: $spacing 0;
+
+    &.conclusion {
+      margin-top: $spacing;
+    }
 
     h2 {
       margin-bottom: $spacing / 2;

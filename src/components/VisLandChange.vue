@@ -3,11 +3,13 @@
     <div class="title tiny">
       Land cover change
     </div>
-    <div class="grid">
-      <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="SSP2-Baseline"/>
-      <transition name="fade">
-        <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="SSP2-1.9"/>
-      </transition>
+    <div class="safari-fix">
+      <div class="grid">
+        <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="SSP2-Baseline"/>
+        <transition name="fade">
+          <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="SSP2-1.9"/>
+        </transition>
+      </div>
     </div>
     <div class="key tiny">
       <span v-for="(c, i) in Object.keys(colors).reverse()" :key="`c-${i}`" class="highlight no-hover" :class="[colors[c]]">
@@ -156,11 +158,22 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  .safari-fix {
+    display: flex;
+    height: 100%;
+  }
   .grid {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing $spacing / 2;
+    // display: flex;
+    // :first-child {
+    //   margin-right: $spacing / 4;
+    // }
+    // :last-child {
+    //   margin-left: $spacing / 4;
+    // }
 
     .fade-enter-active, .fade-leave-active {
       transition: opacity $transition;
