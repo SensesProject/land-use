@@ -22,6 +22,16 @@
           </g>
           <polyline class="diff" :points="diff"/>
           <g class="points">
+            <g v-if="ruler.year !== 2005">
+              <g v-for="(p, i) in basePoints" :key="`p${i}`"  :transform="`translate(${0}, 0)`">
+                <!-- <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/> -->
+                <circle class="dark" :class="[p.color]" r="1.5" :cx="0.5" :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'"/>
+                <g :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'">
+                  <!-- <text y="4" :x="7" :style="{ 'text-anchor': 'start'}" :class="[p.color]" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text> -->
+                  <text y="4" :x="4" :style="{ 'text-anchor': 'start', 'opacity': 0.8}" :class="[p.color]" class="dark">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
+                </g>
+              </g>
+            </g>
             <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
               <!-- <polyline class="shadow" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
               <!-- <polyline :class="[p.color]" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
@@ -194,6 +204,7 @@ export default {
       if (year === null) return null
 
       return {
+        year,
         x: xScale(year)
       }
     },
@@ -201,6 +212,27 @@ export default {
       const { scenarios, yScale } = this
       const year = this.value || this.year
       if (year === null) return null
+      const points = scenarios.map((c, i) => {
+        const d = c.series.find(v => v.year === year)
+        if (d == null) return null
+        const sum = scenarios.filter((s2, i2) => i2 < i).map(s2 => s2.series.find(s2s => s2s.year === d.year).value).reduce((a, b) => +a + +b, 0)
+        const y = yScale(sum + d.value / 2)
+        const diff = Math.round(d.value - c.series.find(v => v.year === 2005).value)
+        const labelValue = year === 2005 ? Math.round(d.value) : diff >= 0 ? `+${diff}` : diff
+        return {
+          label: `${labelValue} Mha`,
+          color: c.color,
+          y,
+          y1: yScale(sum) - 4,
+          y2: yScale(sum + +d.value) + 4,
+          validPosition: false
+        }
+      }).filter(d => d != null)
+      return points
+    },
+    basePoints () {
+      const { scenarios, yScale } = this
+      const year = 2005
       const points = scenarios.map((c, i) => {
         const d = c.series.find(v => v.year === year)
         if (d == null) return null
@@ -318,6 +350,12 @@ export default {
 
         @include tint(stroke);
 
+        &.dark {
+          @include tint(fill, 20);
+          stroke: none;
+          opacity: 0.8;
+        }
+
         // &.light {
         //   @include tint(stroke, 60);
         // }
@@ -342,6 +380,15 @@ export default {
           @include tint(stroke);
           @include tint(fill);
           stroke-width: 3px;
+        }
+        &.dark {
+          @include tint(fill, 20);
+          opacity: 0.8;
+          // fill: $color-white;
+          // stroke: transparentize($color: $color-white, $amount: .2);
+          // @include tint(stroke);
+          // @include tint(fill);
+          // stroke-width: 3px;
         }
       }
     }
