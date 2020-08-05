@@ -1,36 +1,36 @@
 +++ intro 1
 
-# Transition to Sustainable Land-Use
+# The nexus of Land, Water, Food, Emissions and CDR
 
-Today, most of the global ice-free land is used by humans in some way or another. Land-use change and sustainable land management play an integral part in climate change adaptation and mitigation. But they also have an impact on food security, desertification, and land degradation.
+Today, a large share of the global ice-free land is used by humans in some way or another. Man-made infrastructure, such as cities and roads, is considered as the most intensive use of land, followed by agriculture and forestry. Notably, infrastructure accounts only for about 1-2% of the global ice-free land. In contrast, about 70% of the global ice-free land is presently used for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, currently prevailing practices in agriculture and forestry have negative impacts on climate change, biodiversity, desertification and land degradation.
 
 +++ intro 2
 
-In this module, we first show how changing socioeconomics affected land use in recent decades. We then demonstrate the potentials of land-use change to mitigate climate change. But also its limitations and potential trade-offs. Finally, we emphasise the need for sustainable land solutions.
+We start this module by explaining the causes and consequences of increasing pressure on land during the last decades, largely based on historic time series from FAO. Subsequently, we take a look into the future of land use and its consequences, based on IAM scenarios from the IPCC 1.5°C database. In these forward looking scenarios, land-related GHG emission reduction and land-based Carbon Dioxide Removal (CDR) play a central role. However, depending on the underlying socio-economic assumptions, there can be are trade-offs between large-scale land-based mitigation and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through demand and supply-side measures.
 
 +++ pressure 0
 
 ## Land Is Under Pressure
 
-Demand for food is rising and so that for land to produce food on. But land is ultimately a finite resource, which heightens the pressure on it and the need for increased productivity.
+Since the 1960s the world population more than doubled (factor 2.5), while the per-capita income tripled in the same period. Both factors, population and income, substantically increased the demand for agricultural commodites in the last decades. While higher population increases the demand direclty, higher incomes shift the dietary patterns away from crops and vegetables towards animal-based products, which are more resource-intensive. Today, about 60-80% of all agricultural land is used for livestock production, either for livestock grazing on pasture or for growing feed on cropland. The increase of crop and livestock production in the last decades is also reflected in rising N2O emissions (e.g. from synthetic fertilizer application) and CH4 emissions (e.g. from enteric fermentation).
 
 +++ pressure 1
 
 ### Population and Income
 
-At the core of rising pressure on land lie population and income growth, the latter leading to higher living standards and higher calorie intake per capita.
+Growing population and higher per-capita incomes have been key drivers of the rising pressure on land in the last decades.
 
 +++ pressure 2
 
 ### Calorie supply
 
-Per capita calorie supply from fish – which only impacts land use indirectly – almost doubled. But the increase from livestock and secondary products, like dairy, oils, and refined sugars, is also remarkable.
+Higher per-capita incomes increase the per-capita calorie intake and shift the dietary patterns towards animal-based and processed products.
 
 +++ pressure 3
 
 ### Demand
 
-Higher calory intake combined with a growing population increases the global demand for these resources. Indirectly they also increase the demand for feed and supply chain loss.
+Higher per-capita calory intake combined with a growing population increases the global demand for these resources. Indirectly they also increase the demand for feed and supply chain loss.
 
 +++ pressure 4
 
