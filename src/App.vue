@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SensesMenu/>
+    <SensesMenu id="land-transitions"/>
     <article>
       <Intro/>
       <Pressure/>
