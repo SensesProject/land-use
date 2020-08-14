@@ -19,8 +19,8 @@
     </template>
     <p class="tiny sources">
       <strong>Sources: </strong>
-      <span v-for="(source, i) in sources" :key="`source-${i}`">
-        <strong>{{i + 1}}</strong><span v-html="`&nbsp;${source || '?'}`"/><span v-if="i !== sources.length - 1" v-html="`; `"/>
+      <span v-for="(source, i) in sourceUrls" :key="`source-${i}`">
+        <strong>{{i + 1}}</strong>&nbsp;<component :is="source.url ? 'a':'span'" :href="source.url" target="_blank" v-html="`${source.model}`"/><span v-if="i !== sources.length - 1" v-html="`; `"/>
       </span>
     </p>
   </div>
@@ -40,9 +40,11 @@ export default {
   },
   data () {
     const sources = [...new Set(Pressure.map(d => d.model))]
+    const sourceUrls = sources.map(s => Pressure.find(d => d.model === s))
     return {
       yScale: 64,
       sources,
+      sourceUrls,
       pressure: Pressure.map(d => {
         return {
           type: 'data',
@@ -168,6 +170,14 @@ export default {
     }
     span span {
       color: $color-deep-gray;
+    }
+    a {
+      color: $color-deep-gray;
+      background: none;
+      text-decoration: underline;
+      &:hover {
+        color: getColor(neon, 40);
+      }
     }
   }
 }

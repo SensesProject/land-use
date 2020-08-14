@@ -1,6 +1,6 @@
 using DataFrames, CSV, Statistics, StatsBase
 
-df = CSV.read("./input/sustainable.csv";)
+df = CSV.read("./input/sustainable.csv")
 vars = CSV.read("./input/sustainable_vars.csv")
 
 # remove last row 🙄
@@ -9,9 +9,12 @@ df = df[.!ismissing.(df.Scenario),:]
 select!(df, Not(:Region))
 df = stack(df, 5:size(df)[2])
 rename!(df, [:year, :value, :model, :scenario, :variable, :unit])
-# df[occursin.("N2O", df.variable), :value] /= 1000
+df[occursin.("N2O", df.variable), :value] /= 1000
+df[occursin.("CO2", df.variable), :value] /= 1000
+df[occursin.("Sequestration", df.variable), :value] /= 1000
 df[occursin.("N2O", df.variable), :unit] = "Mt N₂O/yr"
 df[occursin.("CO2", df.variable), :unit] = "Gt CO₂/yr"
+df[occursin.("Sequestration", df.variable), :unit] = "Gt CO₂/yr"
 df[occursin.("CH4", df.variable), :unit] = "Mt CH₄/yr"
 df = unstack(df, :year, :value)
 

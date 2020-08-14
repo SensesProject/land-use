@@ -46,7 +46,7 @@ export default {
       key: 'land'
     }]
     const nets = ['BECCS',
-      'Afforestation & Reforrastation',
+      'Afforestation & Reforestation',
       'Soil Carbon Storage',
       'Biochar Addition to Soil'
     ]

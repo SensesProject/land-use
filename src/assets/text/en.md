@@ -12,7 +12,7 @@ We start this module by explaining the causes and consequences of increasing pre
 
 ## Land Is Under Pressure
 
-Since the 1960s the world population more than doubled (factor 2.5), while the per-capita income tripled in the same period. Both factors, population and income, substantically increased the demand for agricultural commodites in the last decades. While higher population increases the demand direclty, higher incomes shift the dietary patterns away from crops and vegetables towards animal-based products, which are more resource-intensive. Today, about 60-80% of all agricultural land is used for livestock production, either for livestock grazing on pasture or for growing feed on cropland. The increase of crop and livestock production in the last decades is also reflected in rising N2O emissions (e.g. from synthetic fertilizer application) and CH4 emissions (e.g. from enteric fermentation).
+Since the 1960s the world population more than doubled (factor 2.5), while the per-capita income tripled in the same period. Both factors, population and income, substantically increased the demand for agricultural commodites in the last decades. While higher population increases the demand directly, higher incomes shift the dietary patterns away from crops and vegetables towards animal-based products, which are more resource-intensive. Today, about 60-80% of all agricultural land is used for livestock production, either for livestock grazing on pasture or for growing feed on cropland. The increase of crop and livestock production in the last decades is also reflected in rising N2O emissions (e.g. from synthetic fertilizer application) and CH4 emissions (e.g. from enteric fermentation).
 
 +++ pressure 1
 
@@ -48,116 +48,118 @@ But rising prices did not keep up with rising incomes. The actual household expe
 
 ### Land Cover
 
-Land being a limited resource, the rising demand can hardly be met, by increasing cropland and pastures. Except for managed forests and urban areas, which both are quite low in absolute numbers, land-use changes remain modest.
+A key insight is that higher production of agricultural commodities since 1965 was largely achieved by yield increases (green revolution) and only to a small extent by further expansion of cropland and pasture area, which was the pre-dominant mode of increasing production until then. Managed forests and urban areas show higher relative increases but also start from quite low absolute numbers in 1965.
 
 +++ pressure 7
 
 ### Yields
 
-Increased yields make it possible to meet the growing demand nonetheless.
+Substantial yield increases since the 1960s have been facilitated by the green revolution, which includes new breeds of high yield crops, irrigation, fertilization and the use of pesticides. 
 
 +++ pressure 8
 
-### Productivity
+### Agricultural Inputs
 
-This gain in productivity was only made possible by irrigation and – to a far greater extent – fertilisation.
+The gains in productivity since the 1960s were only made possible by strong irrigation and in particular fertilisation.
 
 +++ pressure 9
 
 ### Emissions
 
-All that also reflects in emissions from agriculture, forestry, and other land use (AFOLU), most notably in the increased N₂O Emissions which are a direct consequence of increased fertilisation.
+GHG emissions from agriculture, forestry, and other land use (AFOLU) show increasing trends for N2O and CH4 since the 1960s, which reflect the tremendous increase in the use of industrial nitrogen fertilizer and the substantical increase of livestock production.
 
 +++ solution 0
 
-## Land Is Part of the Solution
+## Potentials and trade-offs of land-based mitigation
 
-Agriculture and land-use change are major contributors to greenhouse gas emissions. But they also play a significant role in terms of climate change mitigation.
+Agriculture, forestry, and other land use (AFOLU) are major contributors to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological and socio-economic development (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role for climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
 
 +++ solution 1
 
-Today AFOLU is responsible for about 12% of total annual CO₂ emissions, most of which are caused by deforestation. For other greenhouse gases, AFOLU's share is larger: Methane (CH₄), caused primarily by rice and livestock production and nitrous oxide (N₂O), by synthetic fertilizer application account for 46% and 73% respectively.
+Today AFOLU is responsible for about 12% of total annual anthropogenic CO₂ emissions, most of which are caused by deforestation. For other GHGs, AFOLU's share is larger: Methane (CH₄), primarily caused by rice and livestock production, and nitrous oxide (N₂O), largely caused by synthetic fertilizer application, account for 46% and 73% respectively.
 
 +++ solution 2
 
-In absolute numbers, there are vast differences across these gases. But the extent to which they contribute to climate change also differs. CH₄ has about 28 times and N₂O 265 times the global warming potential CO₂ has.
+In absolute numbers, CH₄ and N₂O emissions seem very small compared to CO₂ emissions. But the contribution of these GHGs to climate change is substantially higher than that of CO₂. The global warming potential (GWP) of 1 ton CH₄/N₂O is equivalent to 28/265 tons of CO₂.
 
 +++ solution 3
 
-For that reason, it makes sense to refer to CO₂-equivalents when comparing greenhouse gases. Here it becomes clear that while still lower than CO₂, emissions from CH₄ and N₂O are far from neglectable.
+For that reason, it makes sense to refer to CO₂-equivalents when comparing GHGs. In this metric it becomes clear that  CH₄ and N₂O emissions from AFOLU are far from negligible.
 
 +++ solution 4
 
-So, for now, while comparing emissions across scenarios, we'll stick to CO₂-equivalents.
+In the following comparison across scenarios, we'll stick to CO₂-equivalents.
 
 +++ solution 5
 
-In the SSP2-Baseline scenario, total emissions continue to rise across the board. Contrary to this trend, CO₂ emissions from AFOLU are below zero by the end of the century. But not enough to make up for the still rising CH₄ and N₂0 emissions.
+In the SSP2-Baseline scenario, total annual anthropogenic CO₂ emissions (including all sectors) continue to rise across the board. Contrary to this trend, CO₂ emissions from AFOLU drop below zero by the end of the century as a result of reduced deforestation and some afforestation. However, CH₄ and N₂0 emissions, which are linked to food production and land management, continue to rise in the SSP2-Baseline scenario.
 
 +++ solution 6
 
-In the SSP2-1.9 Scenario, AFOLU has to play a pivotal role in bringing total CO₂ emissions below zero. Since CH₄ and N₂0 emissions are inherent to agriculture, they can't be eliminated. But they still need to be cut down by half. Summed up this would put emissions from AFOLU at -1171 Mt CO₂-equivalents.
+In the SSP2-1.9 Scenario, AFOLU plays a pivotal role in turning total CO₂ emissions net-negative via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
 
 +++ cdr 0
 
-Strategies to reduce emissions from AFOLU entail measures on the demand and the supply side. For instance, CH₄ and N₂O AFOLU emissions can be reduced by behavioural change towards diets with fewer animal products or by technical mitigation options, or by a combination of both. Reduction of AFOLU CO₂ emissions can be achieved by less deforestation. Also, land can be used to remove carbon dioxide from the atmosphere (CDR or negative emission technologies), e.g. via afforestation or BECCS (Bioenergy with Carbon Capture and Storage). Land-based CDR options have substantially different characteristics in terms of CDR potential, land, water and energy requirements as well as costs. 
+While BECCS and afforestation have high potentials for CDR, they require substantial amounts of land and water. Other land-based CDR options such as soil carbon storage and biochar have lower potentials but also require much less land and water. However, the most up-to-date transformation pathways, including those shown here, mostly rely on BECCS and afforestation, which are both land-demanding CDR options. 
 
 +++ cdr 1
 
-BECCS and afforestation, which show the most potential for CDR require much land. Returning to the SSP2-Baseline and SSP2-19 scenarios, we can explore what that means exactly.
+Land-use change differs substantially between the SSP2-Baseline and the SSP2-1.9 pathway.
 
 +++ change 0
 
-Following the emissions chart we showed earlier, land use changes remain moderate in the SSP2-Baseline scenario. While bioenergy crops gain relevance and effectively help to lower CO₂ emissions, more land for overall agriculture to the cost of other natural land keeps CH₄ and N₂O Emissions rising.
+In the SSP2-Baseline scenario, agricultural land (including dedicated bioenergy crops) expands by about 600 Mha between 2005 and 2100 (corresponding to a relative increase of about 12%) at the cost of forests and other natural land. The main driver for the expansion of agricultural land is increased crop and livestock production, and to some extent biomass production used as substitute for fossil fuel in the energy system. 
 
 +++ change 1
 
-SSP2-1.9 requires land-use changes at a far larger scale. Here, much more land is needed for bioenergy crops and afforestation, drastically reducing the land area available for food production.
+The dynamics in the SSP2-1.9 mitigation pathway differ in several aspects. First, land used for agricultural production declines to allow for large-scale afforestation of about 700 Mha globally by 2100. At the same time, 750 Mha of land are dedicated to bioenergy crop production in 2100. Therefore, the area available for food production is substantially reduced in the SSP2-1.9 mitigation pathway. 
 
 +++ change 2
 
-Production of bioenergy increases, and as carbon sequestration unfolds its potential in the second half of the century, AFOLU aids in achieving negative emissions.
+Production of bioenergy in SSP2-1.9 is about 4 times higher compared to SSP2-Baseline in 2100, and mostly used in combination with CCS in the energy system, which results in large-scale CDR of more than 10 Gt CO2 per year. 
 
 +++ change 3
 
-But with less land available for food production, food security declines and food prices rise. 
+But with more land dedicated land-based CDR and less land available for food production, food prices rise, which threatens food security. Therefore, the SSP2-1.9 pathway comes with a trade-off between land-based CDR for meeting the Paris Agreement goals and the broader Sustainable Development Goal (SDG) Agenda.
 
 +++ change 4
 
-Furthermore, a high-level implementation of BECCS is also posing risks of desertification, land degradation, and countering adaptation measures.
+Furthermore, a high-level implementation of BECCS may also pose risks of desertification, land degradation, and countering adaptation measures.
 
 +++ sustainable 0
 
-## Land Solutions Need to Be Sustainable
+## Is it possible reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
 
-The repercussions of having less land area available for food production depend on socioeconomic factors – mainly population development and diets. For that, we turn to a different scenario set consisting of a default policy (similar to SSP2-19, but run by a different model) and sustainable one, including early action, lifestyle and regulation policies.
+The SSP2-19 mitigation pathway presented above is compatible is the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR. 
+Below we show a different set of scenarios consisting of a default mitigation policy (similar to SSP2-19, but run by a different model) and a sustainable mitigation policy, which includes early action, lifestyle and regulation policies.
 
 +++ sustainable 1
 
-### Land-based mitigation
+### Demand-side mitigation
 
-The default policy scenario favours BECCS over Afforestatation despite the risks associated with it. After all, it requires less land area and also contributes to energy production for which this default policy scenario also has a higher demand.
+A key component of the sustainable scenario is lifestyle change like reduced demand for livestock products and reduced  food waste. In consequence, the area needed for agricultural production is smaller in the sustainable scenario, which reduces the pressure on land. 
+
 
 +++ sustainable 2
 
-### Demand-side mitigation
+### Land-based mitigation
 
-A key component of the sustainable scenarios is lifestyle changes like lowering the demand for livestock products and a reduction of food waste. That means there is less area needed for food production, allowing for more afforestation.
+As a result of less land needed for agricultural production, the sustainable scenario shows more afforestation and less BECCS, which makes sense considering that afforestation as CDR option is cheaper than BECCS.
 
 +++ sustainable 3
 
 ### Emissions
 
-The lower demand for food products also shows in agricultural CH₄ and N₂O emissions. While it takes a while for BECCS to pick up in either scenario, the significant afforestation also boosts CO₂ sequestration in the sustainable one.
+Increased afforestation in the sustainable scenario results in higher land-based CDR of up to 10 Gt CO₂ per year in 2050. Note that the CDR from BECCS, which is accounted for in the energy sector, is not shown here. Moreover, the sustainable mitigation pathway with less livestock production and reduced food waste shows much lower CH₄ and N₂O emissions from AFOLU compared to the default mitigation pathway. 
 
 +++ sustainable 4
 
 ### Prices
 
-Similarly, with lower demand and less food waste, food security is not at that much risk, meaning that prices for crops stay roughly at today's level and the cost of livestock products increases only slightly.
+The reduced pressure on land in the sustainable scenario is reflected in the development of food prices. While food prices in the default mitigation pathway rise by factors of about 1.5-3 throughout the 21st century, food prices in the sustainable scenario remain rather constant or increase only slightly. Therefore, the trade-off between land-based CDR and food security is reduced in the sustainable scenario. 
 
 +++ conclusion
 
 ## Conclusion
 
-Land-use change plays a significant role in achieving emission goals and mitigating climate change. But land-use is also closely connected to other environmental and societal issues. An aggressive shift towards BECCS has negative implications on biodiversity, desertification, land degradation and food security. A change in demand for food and land management are fundamental for a successful transition to sustainable land-use.
+Today, about 70% of the global ice-free land is used by humans for agriculture and forestry to produce food, material and biomass. In mitigation pathways compatible with the goals of the Paris Agreement, land-based CDR plays a pivotal role, in particular afforestation and BECCS. This additional demand for land could result in trade-offs with other sustainable development goals (SDGs) such as food security or biodiversity protection. However, the scale of such unwanted trade-offs depends on multiple factors including the implementation of land-based CDR measures, socio-economic development, lifestyle changes and governance. 
