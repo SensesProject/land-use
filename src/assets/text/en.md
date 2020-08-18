@@ -6,7 +6,7 @@ Today, a large share of the global ice-free land is used by humans in some way o
 
 +++ intro 2
 
-We start this module by explaining the causes and consequences of increasing pressure on land during the last decades, largely based on historic time series from FAO. Subsequently, we take a look into the future of land use and its consequences, based on IAM scenarios from the IPCC 1.5°C database. In these forward looking scenarios, land-related GHG emission reduction and land-based Carbon Dioxide Removal (CDR) play a central role. However, depending on the underlying socio-economic assumptions, there can be are trade-offs between large-scale land-based mitigation and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through demand and supply-side measures.
+We start this module by explaining the causes and consequences of increasing pressure on land during the last decades, largely based on historic time series from [FAOSTAT](http://www.fao.org/faostat/). Subsequently, we take a look into the future of land use and its consequences, based on IAM scenarios from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/). In these forward looking scenarios, land-related GHG emission reduction and land-based Carbon Dioxide Removal (CDR) play a central role. However, depending on the underlying socio-economic assumptions, there can be trade-offs between large-scale land-based mitigation and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle and regulation policies.
 
 +++ pressure 0
 
@@ -96,7 +96,7 @@ In the SSP2-Baseline scenario, total annual anthropogenic CO₂ emissions (inclu
 
 +++ solution 6
 
-In the SSP2-1.9 Scenario, AFOLU plays a pivotal role in turning total CO₂ emissions net-negative via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
+In the SSP2-1.9 Scenario, which is compatible with the 1.5°C target of the Paris Agreement, AFOLU plays a pivotal role in turning total CO₂ emissions net-negative via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
 
 +++ cdr 0
 
@@ -139,18 +139,17 @@ Below we show a different set of scenarios consisting of a default mitigation po
 
 A key component of the sustainable scenario is lifestyle change like reduced demand for livestock products and reduced  food waste. In consequence, the area needed for agricultural production is smaller in the sustainable scenario, which reduces the pressure on land. 
 
-
 +++ sustainable 2
 
 ### Land-based mitigation
 
-As a result of less land needed for agricultural production, the sustainable scenario shows more afforestation and less BECCS, which makes sense considering that afforestation as CDR option is cheaper than BECCS.
+As a result of less land needed for agricultural production, the sustainable scenario shows more afforestation and less bioenergy, which makes sense considering that afforestation as CDR option is cheaper than BECCS.
 
 +++ sustainable 3
 
 ### Emissions
 
-Increased afforestation in the sustainable scenario results in higher land-based CDR of up to 10 Gt CO₂ per year in 2050. Note that the CDR from BECCS, which is accounted for in the energy sector, is not shown here. Moreover, the sustainable mitigation pathway with less livestock production and reduced food waste shows much lower CH₄ and N₂O emissions from AFOLU compared to the default mitigation pathway. 
+More afforestation and less bioenergy in the sustainable pathway is reflected in AFOLU CO₂ emissions and carbon sequestration from biomass. Moreover, the sustainable mitigation pathway with less livestock production and reduced food waste shows much lower CH₄ and N₂O emissions from AFOLU compared to the default mitigation pathway.
 
 +++ sustainable 4
 

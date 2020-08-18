@@ -6,8 +6,8 @@
       <Pressure/>
       <Solution/>
       <Sustainable/>
-      <SensesMeta class="senses-meta" id="land-transitions"/>
     </article>
+    <SensesMeta class="senses-meta" id="land-transitions"/>
   </div>
 </template>
 
@@ -38,6 +38,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  // padding-bottom: $spacing / 2;
 }
 
 h1, h2 {
@@ -53,12 +54,18 @@ article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: $spacing * 2;
 
   .text-col {
     width: 100vw;
     max-width: calc(768px + #{$spacing});
     padding: $spacing $spacing / 2 0;
+  }
+
+  a {
+    color: inherit;
+    background: none;
+    text-decoration: underline;
+    hyphens: initial;
   }
 }
 </style>
@@ -66,7 +73,7 @@ article {
 @import "library/src/style/global.scss";
 #app {
   .senses-meta {
-    margin: $spacing $spacing / 2 0;
+    margin: 0 $spacing / 2 $spacing / 2;
   }
 }
 </style>
