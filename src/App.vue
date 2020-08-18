@@ -66,6 +66,27 @@ article {
     background: none;
     text-decoration: underline;
     hyphens: initial;
+
+    &:hover {
+      background: none;
+    }
+
+    &.to-gem {
+      // display: block;
+      text-decoration: none;
+      // color: $color-deep-gray;
+      text-align: center;
+      padding: $spacing / 4 $spacing / 2;
+      border: 1px solid $color-pale-gray;
+      border-radius: $border-radius;
+      pointer-events: all;
+      &:hover {
+        background-color: getColor(gray, 90)
+      }
+    }
+  }
+  .align-to-gem {
+    margin-top: $spacing / 2;
   }
 }
 </style>

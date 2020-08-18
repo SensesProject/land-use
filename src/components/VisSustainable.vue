@@ -7,6 +7,9 @@
     <template v-for="(g, i) in groups">
       <div class="text" :key="`g-${i}`">
         <div class="sticky" v-html="g.html"/>
+        <div class="align-to-gem">
+          <a v-if="i === groups.length - 1" class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/sustainable" target="_blank">↗ Access Data</a>
+        </div>
       </div>
       <div class="chart-group" :key="`gc-${i}`">
         <ChartLine class="chart" v-for="(c, i2) in g.charts" :key="`gc-${i}-${i2}`"

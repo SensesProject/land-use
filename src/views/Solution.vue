@@ -23,6 +23,9 @@
         </IntersectionObserver>
         <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="5" :class="{active: step === 5}">
           <div v-html="getText('solution')[6]"/>
+          <div class="align-to-gem">
+            <a class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/emissions" target="_blank">↗ Access Data</a>
+          </div>
         </IntersectionObserver>
       </template>
     </LayoutScrollytelling>
@@ -72,6 +75,9 @@
             </span>
           </p>
           <div v-html="getText('change')[4]"/>
+          <div class="align-to-gem">
+            <a class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/land-cover" target="_blank">↗ Access Data</a>
+          </div>
         </IntersectionObserver>
       </template>
     </LayoutScrollytelling>
@@ -199,9 +205,12 @@ export default {
       }
 
       @include min-width($narrow) {
-        p {
+        p, .align-to-gem {
           width: 33%;
           margin-left: auto;
+        }
+        .align-to-gem {
+          margin-top: $spacing / 2;
         }
       }
       @include max-width($narrow) {

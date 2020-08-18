@@ -2,6 +2,7 @@
   <div class="vis-emissions narrow">
     <div class="title tiny">
       Land cover change
+      <!-- <a class="to-gem">↗ Access Data</a> -->
     </div>
     <div class="safari-fix">
       <div class="grid">
@@ -195,6 +196,8 @@ export default {
   }
   .title {
     padding-bottom: $spacing / 4;
+    display: flex;
+    justify-content: space-between;
   }
 }
 </style>
