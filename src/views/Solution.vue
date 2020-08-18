@@ -6,12 +6,24 @@
         <VisEmissions slot="vis" v-bind="props"/>
       </template>
       <template v-slot:text="{ width, step }">
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="0" :class="{active: step === 0}" v-html="getText('solution')[1]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="1" :class="{active: step === 1}" v-html="getText('solution')[2]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="2" :class="{active: step === 2}" v-html="getText('solution')[3]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="3" :class="{active: step === 3}" v-html="getText('solution')[4]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="4" :class="{active: step === 4}" v-html="getText('solution')[5]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="5" :class="{active: step === 5}" v-html="getText('solution')[6]"/>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="0" :class="{active: step === 0}">
+          <div v-html="getText('solution')[1]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="1" :class="{active: step === 1}">
+          <div v-html="getText('solution')[2]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="2" :class="{active: step === 2}">
+          <div v-html="getText('solution')[3]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="3" :class="{active: step === 3}">
+          <div v-html="getText('solution')[4]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="4" :class="{active: step === 4}">
+          <div v-html="getText('solution')[5]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="5" :class="{active: step === 5}">
+          <div v-html="getText('solution')[6]"/>
+        </IntersectionObserver>
       </template>
     </LayoutScrollytelling>
     <section class="text-col wide">
@@ -24,10 +36,12 @@
         <VisLandChange slot="vis" v-bind="props"/>
       </template>
       <template v-slot:text="{ width, step }">
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="0" :class="{active: step === 0}"
-            v-html="getText('change')[0]"/>
-        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="1" :class="{active: step === 1}"
-            v-html="getText('change')[1]"/>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="0" :class="{active: step === 0}">
+          <div v-html="getText('change')[0]"/>
+        </IntersectionObserver>
+        <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="1" :class="{active: step === 1}">
+          <div v-html="getText('change')[1]"/>
+        </IntersectionObserver>
         <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="2" :class="{active: step === 2}">
           <p>
             <ChartLine label="Bioenergy" unit="EJ/yr" difftint="red" :years="years" :scenarios="biomass" />
