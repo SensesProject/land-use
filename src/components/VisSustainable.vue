@@ -150,7 +150,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: $spacing / 2;
-      align-items: end;
+      // align-items: end;
 
       &:last-child {
         margin-bottom: $spacing;
