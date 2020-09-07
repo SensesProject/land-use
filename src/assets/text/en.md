@@ -128,7 +128,7 @@ Furthermore, a high-level implementation of BECCS may also pose risks of deserti
 
 +++ sustainable 0
 
-## Is it possible reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
+## Is it possible to reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
 
 The SSP2-19 mitigation pathway presented above is compatible is the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR. 
 Below we show a different set of scenarios consisting of a default mitigation policy (similar to SSP2-19, but run by a different model) and a sustainable mitigation policy, which includes early action, lifestyle and regulation policies.
