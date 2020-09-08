@@ -85,7 +85,6 @@
 </template>
 <script>
 import Emissions from 'dsv-loader!@/assets/data/landemissions.csv' // eslint-disable-line import/no-webpack-loader-syntax
-// import ChartAreaComponent from '@/components/ChartAreaComponent.vue'
 import resize from 'vue-resize-directive'
 import { scalePow } from 'd3-scale'
 export default {
@@ -99,7 +98,6 @@ export default {
     step: Number
   },
   components: {
-    // ChartAreaComponent
   },
   data () {
     const years = [2020, 2100]

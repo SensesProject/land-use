@@ -88,9 +88,7 @@ import LayoutScrollytelling from 'library/src/components/LayoutScrollytelling.vu
 import IntersectionObserver from 'library/src/components/IntersectionObserver.vue'
 import VisEmissions from '@/components/VisEmissions.vue'
 import VisLandChange from '@/components/VisLandChange.vue'
-// // import VisEffects from '@/components/VisEffects.vue'
 import VisNet from '@/components/VisNet.vue'
-// import VisPrices from '@/components/VisPrices.vue'
 import Scenarios from 'dsv-loader!@/assets/data/landuseresults.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLine from '@/components/ChartLine.vue'
 import { mapGetters } from 'vuex'
@@ -102,9 +100,7 @@ export default {
     VisEmissions,
     VisLandChange,
     ChartLine,
-    // VisEffects,
     VisNet
-    // VisPrices
   },
   data () {
     return {
