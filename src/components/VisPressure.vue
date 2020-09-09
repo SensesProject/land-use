@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import Pressure from 'dsv-loader!@/assets/data/landpressure.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Pressure from 'dsv-loader!@/assets/data/land-pressure.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLineFactor from '@/components/ChartLineFactor.vue'
 import resize from 'vue-resize-directive'
 import { mapGetters } from 'vuex'

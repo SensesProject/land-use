@@ -1,0 +1,14 @@
+variable,group,name,min,max
+"Land Cover|Cropland|Energy Crops",1,"Energy Crops",0,1000
+"Land Cover|Forest|Afforestation and Reforestation",1,"Afforestation",0,1000
+"Primary Energy|Biomass",1,"Bioenergy",,
+"Food Demand|Crops",0,"Demand for Crops",0,2500
+"Food Demand|Livestock",0,"Demand for Livestock",0,2500
+"Land Cover|Cropland",0,"Food Crops",0,3000
+"Land Cover|Pasture",0,"Pasture",0,3000
+"Emissions|CO2|AFOLU",2,"AFOLU CO₂ Emissions",-10,10
+"Emissions|CH4|AFOLU",2,"AFOLU CH₄ Emissions",0,250
+"Emissions|N2O|AFOLU",2,"AFOLU N₂O Emissions",0,10
+"Carbon Sequestration|CCS|Biomass",2,"Carbon Sequestration from Biomass",0,15
+"Price|Agriculture|Non-Energy Crops|Index",3,"Price Index for Food Crops",0,3
+"Price|Agriculture|Livestock|Index",3,"Price Index for Livestock",0,3

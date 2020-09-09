@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import Sustainable from 'dsv-loader!@/assets/data/sustainable.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Sustainable from 'dsv-loader!@/assets/data/land-sustainable.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLine from '@/components/ChartLine.vue'
 import resize from 'vue-resize-directive'
 import { mapGetters } from 'vuex'

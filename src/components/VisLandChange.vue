@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import Change from 'dsv-loader!@/assets/data/mitigation-land-change.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Change from 'dsv-loader!@/assets/data/land-change.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartArea from '@/components/ChartArea.vue'
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'

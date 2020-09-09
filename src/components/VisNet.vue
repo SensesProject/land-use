@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import Nets from 'dsv-loader!@/assets/data/NegativeEmissionTechnoligies.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Nets from 'dsv-loader!@/assets/data/land-net.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartNet from '@/components/ChartNet.vue'
 import resize from 'vue-resize-directive'
 export default {

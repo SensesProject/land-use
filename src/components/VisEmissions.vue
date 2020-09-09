@@ -84,7 +84,7 @@
   </div>
 </template>
 <script>
-import Emissions from 'dsv-loader!@/assets/data/landemissions.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Emissions from 'dsv-loader!@/assets/data/land-emissions.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import resize from 'vue-resize-directive'
 import { scalePow } from 'd3-scale'
 export default {

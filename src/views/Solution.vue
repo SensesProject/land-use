@@ -89,7 +89,7 @@ import IntersectionObserver from 'library/src/components/IntersectionObserver.vu
 import VisEmissions from '@/components/VisEmissions.vue'
 import VisLandChange from '@/components/VisLandChange.vue'
 import VisNet from '@/components/VisNet.vue'
-import Scenarios from 'dsv-loader!@/assets/data/landuseresults.csv' // eslint-disable-line import/no-webpack-loader-syntax
+import Scenarios from 'dsv-loader!@/assets/data/land-change-impact.csv' // eslint-disable-line import/no-webpack-loader-syntax
 import ChartLine from '@/components/ChartLine.vue'
 import { mapGetters } from 'vuex'
 
