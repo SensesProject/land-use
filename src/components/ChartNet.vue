@@ -22,7 +22,6 @@
           <text y="-15" :x="dimWidth / 2 + 6">realistic</text>
         </g>
       </g>
-      <!-- <polyline :points="`${size - size/6} ${size/2} ${size - size/6 * 2} ${size/2 + (size / 2 * data.cost)} ${size - size/6 * 3} ${size/2}`" class="violet"/> -->
     </svg>
     <span class="tiny">{{ data.name }}</span>
   </div>
@@ -130,7 +129,6 @@ export default {
     }
   }
   span {
-    // font-weight: $font-weight-bold;
     max-width: 200px;
     padding: $spacing / 2 0;
     text-align: center;

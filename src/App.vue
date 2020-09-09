@@ -38,7 +38,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // padding-bottom: $spacing / 2;
 }
 
 h1, h2 {
@@ -72,9 +71,7 @@ article {
     }
 
     &.to-gem {
-      // display: block;
       text-decoration: none;
-      // color: $color-deep-gray;
       text-align: center;
       padding: $spacing / 4 $spacing / 2;
       border: 1px solid $color-pale-gray;

@@ -15,26 +15,19 @@
                   <line :x2="width" :class="{ zero: t.value === 0 }"/>
                 </g>
               </g>
-              <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, ${padding[0]})`">
-                <!-- <line class="ruler" :y2="height - padding[0] - padding[2]" :y1="Math.min(0, ...points.map(p => p.y - padding[0]))" /> -->
-              </g>
             </g>
           </g>
           <polyline class="diff" :points="diff"/>
           <g class="points">
             <g v-if="ruler.year !== 2005">
               <g v-for="(p, i) in basePoints" :key="`p${i}`"  :transform="`translate(${0}, 0)`">
-                <!-- <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/> -->
                 <circle class="dark" :class="[p.color]" r="1.5" :cx="0.5" :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'"/>
                 <g :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'">
-                  <!-- <text y="4" :x="7" :style="{ 'text-anchor': 'start'}" :class="[p.color]" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text> -->
                   <text y="4" :x="4" :style="{ 'text-anchor': 'start', 'opacity': 0.8}" :class="[p.color]" class="dark">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
                 </g>
               </g>
             </g>
             <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
-              <!-- <polyline class="shadow" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
-              <!-- <polyline :class="[p.color]" :points="ruler.x < width / 2 ? `0 ${p.y} 4 ${p.y} 8 ${p.y2} 12 ${p.y2}` : `0 ${p.y} -4 ${p.y} -8 ${p.y2} -12 ${p.y2}`"/> -->
               <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/>
               <circle :class="[p.color]" r="2" :transform="`translate(0, ${p.y})`"/>
               <g :transform="`translate(0, ${p.y})`">
@@ -56,15 +49,6 @@
                 <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ value || year }}</text>
               </g>
             </g>
-            <!-- <g class="axis-y" :transform="`translate(${padding[3]}, 0)`">
-              <g class="ticks ticks-y">
-                <g class="tick tick-y" v-for="(t, i) in yTicks" :key="`y${i}`"
-                  :transform="`translate(0, ${t.y})`" :class="{transparent: ruler !== null && ruler.x < 60 && i !== 0}">
-                  <text y="-4" class="shadow">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
-                  <text y="-4">{{ t.label }}<tspan v-if="i === 0"> {{ unit }}</tspan></text>
-                </g>
-              </g>
-            </g> -->
           </g>
         </g>
       </svg>
@@ -121,10 +105,6 @@ export default {
       type: Array,
       default: null
     }
-    // height: {
-    //   type: Number,
-    //   default: 200
-    // }
   },
   data () {
     return {
@@ -151,7 +131,6 @@ export default {
       return scaleLinear()
         .domain(xDomain)
         .range([padding[3], width - padding[1]])
-        // .nice()
     },
     yScale () {
       const { padding, height, yDomain, nice } = this
@@ -276,12 +255,6 @@ export default {
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .chart-area {
-  // background: $color-neon;
-  // margin-bottom: $spacing;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-
   .title {
     font-weight: bold;
   }
@@ -312,9 +285,7 @@ export default {
         stroke: $color-black;
         stroke-width: 1.5;
         transition: opacity $transition;
-        // mix-blend-mode: multiply;
         stroke: $color-white;
-        // @include tint(stroke);
         &.shadow {
           stroke-width: 3.5;
           stroke: $color-white;
@@ -330,7 +301,6 @@ export default {
         &.background {
           @include tint(fill);
           stroke: none;
-          // opacity: 0.1;
         }
       }
     }
@@ -346,7 +316,6 @@ export default {
         fill: $color-white;
         stroke: $color-white;
         stroke-width: 1.5;
-        // mix-blend-mode: multiply;
 
         @include tint(stroke);
 
@@ -355,28 +324,11 @@ export default {
           stroke: none;
           opacity: 0.8;
         }
-
-        // &.light {
-        //   @include tint(stroke, 60);
-        // }
-        // &.dark {
-        //   @include tint(stroke, 40);
-        // }
       }
       text {
         fill: $color-white;
-        // @include tint(fill);
-        // &.light {
-        //   @include tint(fill, 60);
-        // }
-        // &.dark {
-        //   @include tint(fill, 40);
-        // }
-        // font-size: 0.7em;
 
         &.shadow {
-          // fill: $color-white;
-          // stroke: transparentize($color: $color-white, $amount: .2);
           @include tint(stroke);
           @include tint(fill);
           stroke-width: 3px;
@@ -384,11 +336,6 @@ export default {
         &.dark {
           @include tint(fill, 20);
           opacity: 0.8;
-          // fill: $color-white;
-          // stroke: transparentize($color: $color-white, $amount: .2);
-          // @include tint(stroke);
-          // @include tint(fill);
-          // stroke-width: 3px;
         }
       }
     }

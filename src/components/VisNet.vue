@@ -52,18 +52,8 @@ export default {
     ]
     const max = {}
     dimensions.forEach(c => {
-      // max[c] = Math.max(...Nets.map(d => Math.abs(d[c])))
       max[c.key] = Math.abs(Nets[0][c.key])
     })
-    // const nets = Nets.map(n => {
-    //   const obj = {
-    //     name: n.name
-    //   }
-    //   cols.forEach(c => {
-    //     obj[c] = n[c] / max[c]
-    //   })
-    //   return obj
-    // })
     return {
       width: 320,
       columnSpacing: 16,
@@ -91,10 +81,9 @@ export default {
   },
   methods: {
     onResize (a, b, c) {
-      // const { columnSpacing } = this
       const iw = this.$refs.visNet.getBoundingClientRect().width
       this.cols = iw < 480 ? 2 : 4
-      this.width = (iw) / this.cols // - columnSpacing // * 3
+      this.width = (iw) / this.cols
     }
   }
 }

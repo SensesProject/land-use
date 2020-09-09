@@ -16,12 +16,6 @@
           v-bind="c"/>
       </div>
     </template>
-    <!-- <p class="tiny sources">
-      <strong>Sources: </strong>
-      <span v-for="(source, i) in sources" :key="`source-${i}`">
-        <strong>{{i + 1}}</strong><span v-html="`&nbsp;${source || '?'}`"/><span v-if="i !== sources.length - 1" v-html="`; `"/>
-      </span>
-    </p> -->
   </div>
 </template>
 <script>
@@ -39,7 +33,6 @@ export default {
   },
   data () {
     const years = [2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2070, 2080, 2090, 2100]
-    // const vars = [...new Set(Sustainable.map(s => s.variable))]
     return {
       yScale: 64,
       years
@@ -86,12 +79,7 @@ export default {
 @import "library/src/style/global.scss";
 .vis-pressure {
   width: 100%;
-  // max-width: 1600px;
   align-self: center;
-  // padding: 0 $spacing / 4;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
   margin-top: -$spacing;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -115,16 +103,13 @@ export default {
 
   .key {
     position: sticky;
-    // margin-top: - $spacing / 2;
     top: calc(100vh - #{$spacing});
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     grid-column: 2 / 3;
     z-index: 10;
-    // margin-bottom: -$spacing * 2;
     margin-top: $spacing * 1;
-    // padding: $spacing / 4 0;
     height: $spacing;
     :first-child {
       margin-right: $spacing / 4;
@@ -134,41 +119,19 @@ export default {
       grid-row: 2 / 2;
       margin-top: $spacing * 0.5;
     }
-    // background: $color-white;
-    // @supports ((-webkit-backdrop-filter: saturate(180%) blur(20px)) or(backdrop-filter: saturate(180%) blur(20px))) {
-    //   background: transparentize($color-white, 0.25);
-    //   -webkit-backdrop-filter: saturate(180%) blur(10px);
-    //   backdrop-filter:saturate(180%) blur(10px);
-    //   width: calc(100% + 2rem);
-    //   margin-left: -1rem;
-    //   padding-right: 1rem;
-    // }
   }
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-items: flex-start;
-  // justify-content: center;
 
   .chart-group {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: $spacing / 2;
-      // align-items: end;
 
       &:last-child {
         margin-bottom: $spacing;
       }
-  //   display: flex;
-  //   align-items: flex-end;
-  //   justify-content: center;
-  //   flex-wrap: wrap;
   }
 
   .text {
-    // padding: $spacing / 4;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
 
     .sticky {
       position: sticky;
@@ -177,13 +140,11 @@ export default {
     }
 
     h3 {
-      // color: $color-neon;
       margin-bottom: $spacing / 4;
     }
   }
 
   .pressure-text {
-    // @include tint(background);
     background: $color-neon;
     padding: $spacing / 4;
   }

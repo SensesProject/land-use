@@ -93,8 +93,6 @@ export default {
     resize
   },
   props: {
-    // width: Number,
-    // height: Number,
     step: Number
   },
   components: {
@@ -264,8 +262,6 @@ export default {
 
     .white-text {
       fill: $color-white;
-      // stroke: $color-white;
-      // stroke-width: 16;
     }
 
     .pale {

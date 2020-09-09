@@ -2,7 +2,6 @@
   <div class="vis-emissions narrow">
     <div class="title tiny">
       Land cover change
-      <!-- <a class="to-gem">↗ Access Data</a> -->
     </div>
     <div class="safari-fix">
       <div class="grid">
@@ -24,7 +23,6 @@ import Change from 'dsv-loader!@/assets/data/land-change.csv' // eslint-disable-
 import ChartArea from '@/components/ChartArea.vue'
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
-// import resize from 'vue-resize-directive'
 export default {
   name: 'VisLandChange',
   props: {
@@ -51,13 +49,10 @@ export default {
       margin: 16,
       yAxisWidth: 64,
       change: Change.reverse().map(d => {
-        // const rows = Change.filter(e => e.variable === variable).reverse()
         return {
           variable: d.variable,
           scenario: d.scenario,
-          class: [{
-            // dot: d.scenario === 'SSP2-Baseline'
-          }, colors[d.variable]],
+          class: [colors[d.variable]],
           series: years.map(year => {
             return {
               year,
@@ -116,7 +111,6 @@ export default {
       return scaleLinear()
         .domain(yDomain)
         .range([chartHeight, 0])
-        // .nice(7)
     },
     yTicks () {
       const { yScale } = this
@@ -168,13 +162,6 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing $spacing / 2;
-    // display: flex;
-    // :first-child {
-    //   margin-right: $spacing / 4;
-    // }
-    // :last-child {
-    //   margin-left: $spacing / 4;
-    // }
 
     .fade-enter-active, .fade-leave-active {
       transition: opacity $transition;

@@ -1,9 +1,7 @@
 <template>
   <div class="pressure text-col wide">
     <section class="chapter-title" v-html="getText('pressure')[0]"/>
-    <!-- <section> -->
-      <VisPressure/>
-    <!-- </section> -->
+    <VisPressure/>
   </div>
 </template>
 <script>
@@ -23,12 +21,9 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: $spacing * 2;
-  // .chapter-title {
 
-  // }
   h2 {
     margin-bottom: $spacing / 2;
-    // align-self: flex-start;
   }
 }
 </style>

@@ -1,32 +1,26 @@
 <template>
   <div class="intro">
-    <!-- <section class="cover"> -->
-      <VisLandCover class="background" :cover="cover"/>
-      <div class="overlay">
-        <section class="text-col wide">
-          <!-- <h1 class="serif">Transition to Sustainable Land-Use</h1>
-          <p>
-            Today, most of the global ice-free land is used by humans in some way or another. Land use change and sustainable land management play an important role in climate change adaptation and mitigation. But they also have an impact on food security, desertification, and land degradation.
-          </p> -->
-          <div v-html="getText('intro')[0]"/>
-          <div class="key narrow">
-            <span class="tiny key-title">
-              <strong>Global ice-free land cover:</strong>
-            </span>
-            <span v-for="(c, i) in groups" :key="`ck-${i}`" class="tiny highlight" :class="[c.color]"
-              @mouseover="group = c.label" @mouseleave="group = null" @mouseout="group = null">
-              <!-- <span :style="{opacity: c.opacity}" :class="['glyph-dot', c.color]">{{c.value}}%</span> -->
-              {{c.label}}
-            </span>
-          </div>
-        </section>
-      </div>
-      <div class="tooltips">
-        <VisLandCover :cover="cover" :group="group"/>
-      </div>
-      <div class="overlay bottom">
-        <section class="text-col wide" v-html="getText('intro')[1]"/>
-      </div>
+    <VisLandCover class="background" :cover="cover"/>
+    <div class="overlay">
+      <section class="text-col wide">
+        <div v-html="getText('intro')[0]"/>
+        <div class="key narrow">
+          <span class="tiny key-title">
+            <strong>Global ice-free land cover:</strong>
+          </span>
+          <span v-for="(c, i) in groups" :key="`ck-${i}`" class="tiny highlight" :class="[c.color]"
+            @mouseover="group = c.label" @mouseleave="group = null" @mouseout="group = null">
+            {{c.label}}
+          </span>
+        </div>
+      </section>
+    </div>
+    <div class="tooltips">
+      <VisLandCover :cover="cover" :group="group"/>
+    </div>
+    <div class="overlay bottom">
+      <section class="text-col wide" v-html="getText('intro')[1]"/>
+    </div>
   </div>
 </template>
 <script>
@@ -94,12 +88,6 @@ export default {
           margin: 0;
         }
         @include tint(color);
-        // &.light {
-        //   @include tint(color, 60);
-        // }
-        // &.dark {
-        //   @include tint(color, 40);
-        // }
       }
     }
   }
@@ -122,11 +110,6 @@ export default {
 
     &.bottom {
       background: linear-gradient(transparentize($color-white, 0.3), $color-white);
-      // @supports ((-webkit-backdrop-filter: saturate(180%) blur(20px)) or(backdrop-filter: saturate(180%) blur(20px))) {
-      //   background: linear-gradient(to top, transparentize($color-white, 0.3), $color-white);
-      //   -webkit-backdrop-filter: saturate(180%) blur(10px);
-      //   backdrop-filter:saturate(180%) blur(10px)
-      // }
     }
   }
 

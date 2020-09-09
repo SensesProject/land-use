@@ -110,12 +110,7 @@ export default {
 @import "library/src/style/global.scss";
 .vis-pressure {
   width: 100%;
-  // max-width: 1600px;
   align-self: center;
-  // padding: 0 $spacing / 4;
-  // display: flex;
-  // align-items: center;
-  // flex-direction: column;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: $spacing $spacing / 2;
@@ -123,26 +118,14 @@ export default {
     grid-template-columns: 1fr;
     gap: $spacing / 2;
   }
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-items: flex-start;
-  // justify-content: center;
 
   .chart-group {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: $spacing / 2;
-  //   display: flex;
-  //   align-items: flex-end;
-  //   justify-content: center;
-  //   flex-wrap: wrap;
   }
 
   .text {
-    // padding: $spacing / 4;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
 
     .sticky {
       position: sticky;
@@ -157,7 +140,6 @@ export default {
   }
 
   .pressure-text {
-    // @include tint(background);
     background: $color-neon;
     padding: $spacing / 4;
   }

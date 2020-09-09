@@ -26,8 +26,6 @@ export default {
   align-items: center;
 
   .text {
-    // margin: $spacing 0;
-
     &.conclusion {
       margin-top: $spacing;
     }

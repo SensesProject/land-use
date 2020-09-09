@@ -192,8 +192,6 @@ export default {
         return {
           label: format(numberFormat)(d.value).replace(/,/, ' '),
           color: c.color,
-          // scenario: c.scenario,
-          // shade: runs.length > 6 ? i >= 6 ? 'light' : 'dark' : null,
           y,
           y2: y,
           validPosition: false
@@ -245,12 +243,6 @@ export default {
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .chart-line {
-  // background: $color-neon;
-  // margin-bottom: $spacing;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-
   .title {
     font-weight: bold;
   }
@@ -260,9 +252,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid getColor(orange, 100);
     span {
-      // background: getColor(red, 100);
       border: 1px solid getColor(red, 50);
       padding: $spacing / 2 $spacing;
     }
@@ -286,7 +276,6 @@ export default {
         stroke: $color-black;
         stroke-width: 1.5;
         transition: opacity $transition;
-        // mix-blend-mode: multiply;
 
         @include tint(stroke);
         &.shadow {
@@ -311,27 +300,12 @@ export default {
         fill: $color-white;
         stroke: $color-black;
         stroke-width: 1.5;
-        // mix-blend-mode: multiply;
 
         @include tint(stroke);
 
-        // &.light {
-        //   @include tint(stroke, 60);
-        // }
-        // &.dark {
-        //   @include tint(stroke, 40);
-        // }
       }
       text {
         fill: $color-deep-gray;
-        // @include tint(fill);
-        // &.light {
-        //   @include tint(fill, 60);
-        // }
-        // &.dark {
-        //   @include tint(fill, 40);
-        // }
-        // font-size: 0.7em;
 
         &.shadow {
           fill: $color-white;

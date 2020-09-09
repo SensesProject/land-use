@@ -16,9 +16,7 @@
         <polyline class="line up" :points="line" :class="[tint]" :clip-path="`url(#mask-a-${id})`"/>
         <polyline class="area down" :class="[tint, {tint: tint != null}]" :points="area" :clip-path="`url(#mask-b-${id})`"/>
         <polyline class="line down" :points="line" :class="[tint]" :clip-path="`url(#mask-b-${id})`"/>
-        <!-- <polyline class="line up" :class="[tint]" :points="line"/> -->
         <g v-if="xDomain" :transform="`translate(0 ${height})`">
-          <!-- <line :x2="width" y1="4" y2="4"/> -->
           <line :x1="xRange[0]" :x2="xRange[0]" y1="3" y2="6"/>
           <line :x1="xRange[1]" :x2="xRange[1]" y1="3" y2="6"/>
           <text :x="xRange[0]" :y="axisHeight - 1">{{data[0].year}}</text>
@@ -125,12 +123,6 @@ export default {
       const { yScale, data, min, height } = this
       return -yScale * (data[0].value - min) + height
     }
-    // mask () {
-    //   const { width, base } = this
-    //   // const mask = `<svg xmlns='http://www.w3.org/2000/svg' width='${width}' height='${height}'><clipPath id='positive'><rect x='-4' y='-4' width='${width + 8}' height='${base + 4}' fill='white'/></clipPath></svg>`
-    //   const mask = `<rect x='-4' y='-4' width='${width + 8}' height='${base + 4}' fill='white'/>`
-    //   return `url("data:image/svg+xml;utf8,${mask}")`
-    // }
   },
   methods: {
     onResize (el) {
@@ -142,7 +134,6 @@ export default {
 <style lang="scss" scoped>
 @import "library/src/style/global.scss";
 .chart-line-factor {
-  // padding: $spacing / 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
