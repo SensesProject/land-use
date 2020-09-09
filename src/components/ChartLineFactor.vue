@@ -137,6 +137,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-top: 1px solid $color-dark-gray;
+  padding-top: $spacing / 16;
   .label {
     display: flex;
     justify-content: space-between;
