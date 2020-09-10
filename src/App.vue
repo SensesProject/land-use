@@ -85,6 +85,13 @@ article {
   .align-to-gem {
     margin-top: $spacing / 2;
   }
+
+  .keyword {
+    @include tint(color, 50);
+    &.no {
+      hyphens: none;
+    }
+  }
 }
 </style>
 <style lang="scss" scoped>

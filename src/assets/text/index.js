@@ -23,7 +23,15 @@ function parse (text) {
   const sections = text.split('+++').filter((d, i) => i > 0).map(t => {
     return [
       t.trim().match(/^[^\s]*/)[0],
-      sanitize(marked(t.trim().replace(/^[^\n]*/, '').trim()))
+      sanitize(
+        marked(
+          t.trim()
+            .replace(/^[^\n]*/, '')
+            .trim()
+            .replace()
+            .replace(/@([^(]+)\(([^)]+)\)/g, (a, b, c) => `<span class="keyword ${b}">${c}</span>`)
+        )
+      )
     ]
   })
   const keys = [...new Set(sections.map(s => s[0]))]
