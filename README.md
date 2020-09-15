@@ -8,19 +8,21 @@ This repository contains the code for [*The nexus of Land, Water, Food, Emission
 
 The source code is licensed under the [ISC license](LICENSE.md). Content and graphics are licensed under [Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/). Exceptions are listed below on a per-file basis.
 
-### Data
+- `*/land-change.csv` `*/land-change-impacts.csv` `*/land-emissions.csv` `*/land-sustainable.csv`: [License for the IAMC 1.5°C scenario ensemble data](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/#/license)
 
-- `*/land-change.csv` `*/land-change-impacts.csv` `*/land-emissions.csv` `*/land-sustainable.csv` Source:  [IAMC 1.5°C Scenario Explorer and Data hosted by IIASA](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/) – [license](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/#/license)
+## Data Soucres
+
+- `*/land-change.csv` `*/land-change-impacts.csv` `*/land-emissions.csv` `*/land-sustainable.csv`: [IAMC 1.5°C Scenario Explorer and Data hosted by IIASA](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/)
 - `*/land-pressure.csv` contains data from multiple sources:
-    - population: [WDI](https://data.worldbank.org/indicator/SP.POP.TOTL) - [CC BY-4.0](https://datacatalog.worldbank.org/public-licenses#cc-by)
+    - population: [WDI](https://data.worldbank.org/indicator/SP.POP.TOTL)
     - income: [James](https://doi.org/10.1186/1478-7954-10-12)
     - calory supply, demand, yield: [FAOSTAT](http://www.fao.org/faostat/en/)
-    - prices: [WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor) - [CC BY–4.0](https://datacatalog.worldbank.org/public-licenses#cc-by)
+    - prices: [WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor)
     - household expenditure share: [based on FAO](https://github.com/pik-piam/mrvalidation)
     - land cover: Based on LUH2 and FAO
     - irrigation: [LUH2](https://luh.umd.edu)
-    - fertilization: [Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta) – [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
-    - emissions: [PRIMAPhist](https://doi.org/10.5880/PIK.2017.001) - [CC BY-4.0](http://creativecommons.org/licenses/by/4.0/)
+    - fertilization: [Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta)
+    - emissions: [PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
 - `src/assets/data/land-cover.js` Source: [IPCC](https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/)
 - `src/assets/data/land-net.csv` Source: [Smith, 2016](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.13178)
 
