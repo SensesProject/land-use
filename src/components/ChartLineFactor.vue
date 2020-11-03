@@ -1,7 +1,7 @@
 <template>
   <div class="chart-line-factor narrow" v-resize:debounce.initial="onResize">
     <div class="label tiny">
-      <span>{{ label.replace(/\|/g,' | ') }}<sup>{{source + 1}}</sup></span>
+      <span>{{ label.replace(/\|/g,' | ') }}<SensesTooltip text-class="[]" :tooltip="`Source: ${model}`"><sup>{{source + 1}}</sup></SensesTooltip></span>
       <span class="factor" :class="[tint]">{{factor}}×</span>
     </div>
     <div>
@@ -31,6 +31,7 @@
   </div>
 </template>
 <script>
+import SensesTooltip from 'library/src/components/SensesTooltip.vue'
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
 import resize from 'vue-resize-directive'
@@ -39,6 +40,9 @@ export default {
   name: 'chartLineFactor',
   directives: {
     resize
+  },
+  components: {
+    SensesTooltip
   },
   data () {
     return {
@@ -76,6 +80,10 @@ export default {
     },
     source: {
       type: Number,
+      default: null
+    },
+    model: {
+      type: String,
       default: null
     }
   },
@@ -145,7 +153,7 @@ export default {
     align-items: flex-start;
     padding-bottom: $spacing / 8;
     hyphens: auto;
-    :first-child {
+    > :first-child {
       padding-right: $spacing / 2;
     }
     .factor {
@@ -155,7 +163,14 @@ export default {
     sup {
       color: $color-light-gray;
       vertical-align: top;
-       font-size: 0.8em;
+      font-size: 0.8em;
+      cursor: default;
+    }
+
+    ::v-deep {
+      .v-popover {
+        display: inline-block;
+      }
     }
   }
   svg {

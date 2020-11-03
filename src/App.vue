@@ -7,7 +7,9 @@
       <Solution/>
       <Sustainable/>
     </article>
-    <SensesMeta class="senses-meta" id="land-transitions"/>
+    <SensesMeta class="senses-meta" id="land-transitions" local-sources>
+      <div v-html="getText('sources')[0]"/>
+    </SensesMeta>
   </div>
 </template>
 
@@ -18,6 +20,7 @@ import Intro from './views/Intro.vue'
 import Pressure from './views/Pressure.vue'
 import Solution from './views/Solution.vue'
 import Sustainable from './views/Sustainable.vue'
+import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   components: {
@@ -27,6 +30,9 @@ export default {
     Solution,
     Sustainable,
     SensesMeta
+  },
+  computed: {
+    ...mapGetters(['getText'])
   }
 }
 </script>

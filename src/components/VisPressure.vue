@@ -14,15 +14,15 @@
       </div>
       <div class="chart-group" :key="`sc-${i}`">
         <ChartLineFactor class="chart" v-for="(d, i2) in s.data" :key="`sc-${i}-${i2}`"
-          :data="d.series" :source="d.source" :label="d.label" :tint="s.color" :y-scale="yScale" :id="`${i}-${i2}`" show-zero/>
+          :data="d.series" :source="d.source" :model="d.model" :label="d.label" :tint="s.color" :y-scale="yScale" :id="`${i}-${i2}`" show-zero/>
       </div>
     </template>
-    <p class="tiny sources">
+    <!-- <p class="tiny sources">
       <strong>Sources: </strong>
       <span v-for="(source, i) in sourceUrls" :key="`source-${i}`">
         <strong>{{i + 1}}</strong>&nbsp;<component :is="source.url ? 'a':'span'" :href="source.url" target="_blank" v-html="`${source.model}`"/><span v-if="i !== sources.length - 1" v-html="`; `"/>
       </span>
-    </p>
+    </p> -->
   </div>
 </template>
 <script>
@@ -51,6 +51,7 @@ export default {
           label: d.name,
           group: +d.group,
           source: sources.indexOf(d.model),
+          model: d.model,
           series: '.'.repeat(2017 - 1960 + 1).split('').map((y, i) => {
             const year = i + 1960
             return {

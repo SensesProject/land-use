@@ -162,4 +162,9 @@ The reduced pressure on land in the @green(sustainable scenario) is reflected in
 
 ## Conclusion
 
-Today, about 70% of the global ice-free land is used by humans for agriculture and forestry to produce food, material and biomass. In mitigation pathways compatible with the goals of the Paris Agreement, land-based CDR plays a pivotal role, in particular afforestation and BECCS. This additional demand for land could result in trade-offs with other sustainable development goals (SDGs) such as food security or biodiversity protection. But as we have seen it is possible to substantially reduce such unwanted trade-offs if early mitigation action is embedded in a broader sustainability policy. 
+Today, about 70% of the global ice-free land is used by humans for agriculture and forestry to produce food, material and biomass. In mitigation pathways compatible with the goals of the Paris Agreement, land-based CDR plays a pivotal role, in particular afforestation and BECCS. This additional demand for land could result in trade-offs with other sustainable development goals (SDGs) such as food security or biodiversity protection. But as we have seen it is possible to substantially reduce such unwanted trade-offs if early mitigation action is embedded in a broader sustainability policy.
+
++++ sources
+
+- Historic data: [1)&nbsp;WDI](http://datatopics.worldbank.org/world-development-indicators/); [2)&nbsp;James](http://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12); [3)&nbsp;FAOSTAT](http://www.fao.org/faostat/en/); [4)&nbsp;WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor); [5)&nbsp;Based on FAO](https://github.com/pik-piam/mrvalidation); [6)&nbsp;Based on LUH2 and FAO](https://github.com/pik-piam/mrvalidation); [7)&nbsp;LUH2](https://luh.umd.edu/); [8)&nbsp;Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [9)&nbsp;PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
+- [Smith, P. (2016), Soil carbon sequestration and biochar as negative emission technologies. Glob Change Biol, 22: 1315-1324. doi:10.1111/gcb.13178](https://doi.org/10.1111/gcb.13178)

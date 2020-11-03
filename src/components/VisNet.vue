@@ -7,7 +7,7 @@
       <span class="highlight no-hover blue">water</span>
       and<span v-html="`&nbsp;`"/>
       <span class="highlight no-hover red">land</span>
-      gained and needed by different negative emission technoligies realtive to BECCS. Light colors show the potential of a maximal, saturated colors of a realistic implementation. Adapted from <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.13178">Smith, 2016</a>
+      gained and needed by different negative emission technoligies realtive to BECCS. Light colors show the potential of a maximal, saturated colors of a realistic implementation. Adapted from <a href="https://doi.org/10.1111/gcb.13178">Smith, 2016</a>
     </div>
     <div class="charts">
       <ChartNet v-for="(n, i) in nets" :key="`n-${i}`"
