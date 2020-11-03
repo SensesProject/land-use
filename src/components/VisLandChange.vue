@@ -5,9 +5,9 @@
     </div>
     <div class="safari-fix">
       <div class="grid">
-        <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="SSP2-Baseline"/>
+        <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="No Climate Policy"/>
         <transition name="fade">
-          <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="SSP2-1.9"/>
+          <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="1.5°C Policy"/>
         </transition>
       </div>
     </div>

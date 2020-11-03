@@ -19,7 +19,7 @@
           </g>
           <polyline class="diff" :points="diff"/>
           <g class="points">
-            <g v-if="ruler.year !== 2005">
+            <g>
               <g v-for="(p, i) in basePoints" :key="`p${i}`"  :transform="`translate(${0}, 0)`">
                 <circle class="dark" :class="[p.color]" r="1.5" :cx="0.5" :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'"/>
                 <g :transform="`translate(0, ${p.y})`" v-if="p.color !== 'orange'">
@@ -27,14 +27,16 @@
                 </g>
               </g>
             </g>
-            <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
-              <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/>
-              <circle :class="[p.color]" r="2" :transform="`translate(0, ${p.y})`"/>
-              <g :transform="`translate(0, ${p.y})`">
-                <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
-                <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
+            <template v-if="ruler.year !== 2005">
+              <g v-for="(p, i) in points" :key="`p${i}`"  :transform="`translate(${ruler.x}, 0)`">
+                <line v-if="p.y2 < p.y1 && (value || year) !== 2005 && (value || year) !== 2100" class="ruler" :y1="p.y1" :y2="p.y2"/>
+                <circle :class="[p.color]" r="2" :transform="`translate(0, ${p.y})`"/>
+                <g :transform="`translate(0, ${p.y})`">
+                  <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]" class="shadow">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
+                  <text y="4" :x="ruler.x < width / 2 ? 7 : -7" :style="{ 'text-anchor': ruler.x < width / 2 ? 'start' : 'end'}" :class="[p.color]">{{ p.label }}<tspan> {{p.scenario}}</tspan></text>
+                </g>
               </g>
-            </g>
+            </template>
           </g>
           <g class="axes">
             <g class="axis-x" :transform="`translate(0, ${height - padding[2]})`">
@@ -45,7 +47,7 @@
                   </text>
                 </g>
               </g>
-              <g class="ruler" v-if="ruler" :transform="`translate(${ruler.x}, 0)`">
+              <g class="ruler" v-if="ruler && ruler.year !== 2005" :transform="`translate(${ruler.x}, 0)`">
                 <text :y="tickSize" :style="{ 'text-anchor': ruler.x === 0 ? 'start' : ruler.x === width ? 'end' : 'middle'}">{{ value || year }}</text>
               </g>
             </g>

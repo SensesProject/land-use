@@ -49,7 +49,7 @@
           <p>
             <ChartLine label="Bioenergy" unit="EJ/yr" difftint="red" :years="years" :scenarios="biomass" />
             <span class="key tiny">
-              <span v-for="(c, i) in Object.keys(colors)" :key="`ca-${i}`" class="highlight no-hover" :class="[colors[c]]">
+              <span v-for="(c, i) in Object.keys(labels)" :key="`ca-${i}`" class="highlight no-hover" :class="[labels[c]]">
                 {{c}}
               </span>
             </span>
@@ -58,7 +58,7 @@
           <p>
             <ChartLine label="Carbon Sequestration from Biomass" unit="Mt CO2/yr" difftint="red" :years="years" :scenarios="seq" />
             <span class="key tiny">
-              <span v-for="(c, i) in Object.keys(colors)" :key="`ca-${i}`" class="highlight no-hover" :class="[colors[c]]">
+              <span v-for="(c, i) in Object.keys(labels)" :key="`ca-${i}`" class="highlight no-hover" :class="[labels[c]]">
                 {{c}}
               </span>
             </span>
@@ -69,7 +69,7 @@
           <p>
             <ChartLine label="Food Price" unit="Index (2010 = 1)" difftint="red" :years="years" :scenarios="price"/>
             <span class="key tiny">
-              <span v-for="(c, i) in Object.keys(colors)" :key="`cb-${i}`" class="highlight no-hover" :class="[colors[c]]">
+              <span v-for="(c, i) in Object.keys(labels)" :key="`cb-${i}`" class="highlight no-hover" :class="[labels[c]]">
                 {{c}}
               </span>
             </span>
@@ -108,6 +108,10 @@ export default {
       colors: {
         'SSP2-Baseline': 'red',
         'SSP2-19': 'neon'
+      },
+      labels: {
+        'No Climate Policy': 'red',
+        '1.5°C Policy': 'neon'
       }
     }
   },

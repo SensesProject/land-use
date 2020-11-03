@@ -3,10 +3,10 @@
     <svg :height="svgHeight" :width="svgWidth">
       <g :transform="`translate(${offsetX} ${0})`">
         <g>
-          <text :y="lineHeight">Emissions from AFOLU and other sources</text>
+          <text :y="lineHeight">Emissions from AFOLU</text>
           <transition name="fade">
             <text v-if="step < 3" :y="lineHeight">
-              <tspan class="strong" :dy="lineHeight * 2" x="0">SSP Baseline 2020</tspan>
+              <tspan class="strong" :dy="lineHeight * 2" x="0">2020</tspan>
               <tspan :dy="lineHeight" x="0">relative</tspan>
               <tspan :x="columnWidth">absolute</tspan>
               <tspan :x="columnWidth * 2">CO₂-equivalent</tspan>
@@ -15,9 +15,9 @@
           <transition name="fade">
             <text v-if="step >= 3" :y="lineHeight">
               <tspan :dy="lineHeight * 2" x="0">CO₂-equivalent</tspan>
-              <tspan class="strong" :dy="lineHeight" x="0">SSP2-Baseline 2020</tspan>
-              <tspan class="strong" :x="columnWidth">SSP2-Baseline 2100</tspan>
-              <tspan class="strong" :x="columnWidth * 2">SSP2-1.9 2100</tspan>
+              <tspan class="strong" :dy="lineHeight" x="0">2020</tspan>
+              <tspan class="strong" :x="columnWidth">No Policy 2100</tspan>
+              <tspan class="strong" :x="columnWidth * 2">1.5°C Policy 2100</tspan>
             </text>
           </transition>
         </g>
@@ -78,7 +78,7 @@
                 ${lineHeight * 0.35} ${-lineHeight * 0.35}
                 0 ${-lineHeight * 0.35}
               `"/>
-            <text :x="lineHeight + 2">Other sources</text>
+            <text :x="lineHeight + 2">Energy and other sources</text>
           </g>
         </g>
       </g>
