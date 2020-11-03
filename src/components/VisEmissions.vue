@@ -31,10 +31,11 @@
               <g v-for="(u, i2) in units[i]" :key="`row-${i}-${i2}`" :transform="`translate(${columnWidth * i2} 0)`">
                 <transition name="fade">
                   <g v-if="u.min <= step && (u.max == null || u.max >= step)">
-                    <rect transform="rotate(-90)" :width="u.total" :height="u.total" class="white"/>
-                    <rect transform="rotate(-90)" :width="u.afolu" :height="u.afolu" class="white"/>
-                    <rect transform="rotate(-90)" :width="u.total" :height="u.total" class="yellow"/>
-                    <rect transform="rotate(-90)" :width="u.afolu" :height="u.afolu" class="purple"/>
+                    <rect transform="rotate(-90)" :width="u.total" :height="u.total" x="-0.5" y="-0.5" class="white"/>
+                    <rect transform="rotate(-90)" :width="u.afolu" :height="u.afolu" x="-0.5" y="-0.5" class="white"/>
+                    <rect transform="rotate(-90)" :width="u.total" :height="u.total" x="-0.5" y="-0.5" class="yellow"/>
+                    <rect transform="rotate(-90)" :width="u.total - 2" :height="u.total - 2" x="0.5" y="0.5" class="yellow-inner"/>
+                    <rect transform="rotate(-90)" :width="u.afolu" :height="u.afolu" x="-0.5" y="-0.5" class="purple"/>
                     <rect class="white-text" :height="lineHeight + 6" x="-1" :width="2" y="1"/>
                     <text class="purple" :y="lineHeight">{{ u.label }}</text>
                   </g>
@@ -43,10 +44,11 @@
               <g v-for="(u, i2) in scenarios[i]" :key="`row2-${i}-${i2}`" :transform="`translate(${columnWidth * (i2 + 2)} 0)`">
                 <transition name="fade">
                   <g v-if="u.min <= step && (u.max == null || u.max >= step)">
-                    <rect :transform="u.total > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.total)" :height="Math.abs(u.total)" class="white"/>
-                    <rect :transform="u.afolu > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.afolu)" :height="Math.abs(u.afolu)" class="white"/>
-                    <rect :transform="u.total > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.total)" :height="Math.abs(u.total)" class="yellow"/>
-                    <rect :transform="u.afolu > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.afolu)" :height="Math.abs(u.afolu)" class="purple"/>
+                    <rect :transform="u.total > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.total)" :height="Math.abs(u.total)" x="-0.5" y="-0.5" class="white"/>
+                    <rect :transform="u.afolu > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.afolu)" :height="Math.abs(u.afolu)" x="-0.5" y="-0.5" class="white"/>
+                    <rect :transform="u.total > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.total)" :height="Math.abs(u.total)" x="-0.5" y="-0.5" class="yellow"/>
+                    <rect :transform="u.total > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.total) - 2" :height="Math.abs(u.total) - 2" x="0.5" y="0.5" class="yellow-inner"/>
+                    <rect :transform="u.afolu > 0 ? 'rotate(-90)' : ''" :width="Math.abs(u.afolu)" :height="Math.abs(u.afolu)" x="-0.5" y="-0.5" class="purple"/>
                     <rect v-if="u.total < 0" class="white-text" :height="lineHeight + 4" x="-1" :width="2" :y="-lineHeight - 4"/>
                     <rect v-if="u.afolu > 0" class="white-text" :height="lineHeight + 6" x="-1" :width="2" y="1"/>
                     <text class="purple" :y="u.afolu > 0 ? lineHeight : -6">{{ u.label }}</text>
@@ -251,7 +253,7 @@ export default {
     }
     .purple {
       fill: $color-purple;
-      stroke: $color-purple;
+      // stroke: $color-purple;
     }
 
     .white {
@@ -272,8 +274,12 @@ export default {
     }
 
     .yellow {
-      fill: none;
-      stroke: $color-yellow;
+      fill: $color-yellow;
+      // stroke: $color-yellow;
+    }
+
+    .yellow-inner {
+      fill: $color-white;
     }
 
     .slide-container {
