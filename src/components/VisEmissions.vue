@@ -17,7 +17,7 @@
               <tspan :dy="lineHeight * 2" x="0">CO₂-equivalent</tspan>
               <tspan class="strong" :dy="lineHeight" x="0">2020</tspan>
               <tspan class="strong" :x="columnWidth">No Policy 2100</tspan>
-              <tspan class="strong" :x="columnWidth * 2">1.5°C Policy 2100</tspan>
+              <tspan class="strong" :x="columnWidth * 2">1.5°C Pathway 2100</tspan>
             </text>
           </transition>
         </g>

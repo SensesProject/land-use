@@ -7,7 +7,7 @@
       <div class="grid">
         <ChartArea v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="baseline" label="No Climate Policy"/>
         <transition name="fade">
-          <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="1.5°C Policy"/>
+          <ChartArea v-if="step >= 1" v-model="year" :years="years" :height="height - 34" :domain="[12476, 0]" :nice="false" unit="million ha" :scenarios="rcp19" label="1.5°C Pathway"/>
         </transition>
       </div>
     </div>

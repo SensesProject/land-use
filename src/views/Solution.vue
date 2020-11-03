@@ -111,7 +111,7 @@ export default {
       },
       labels: {
         'No Climate Policy': 'red',
-        '1.5°C Policy': 'neon'
+        '1.5°C Pathway': 'neon'
       }
     }
   },

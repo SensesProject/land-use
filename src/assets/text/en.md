@@ -1,18 +1,18 @@
 +++ intro 1
 
-# The nexus of Land, Water, Food, Emissions and CDR
+# The role of land for food production and climate protection
 
-Today, a large share of the global ice-free land is used by humans in some way or another. Man-made infrastructure, such as cities and roads, is considered as the most intensive use of land, followed by agriculture and forestry. Notably, infrastructure accounts only for about 1-2% of the global ice-free land. In contrast, about 70% of the global ice-free land is presently used for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, currently prevailing practices in agriculture and forestry have negative impacts on climate change, biodiversity, desertification and land degradation.
+Today, a large share of the global ice-free land is used by humans for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, currently prevailing practices in agriculture, forestry and other land use (AFOLU) have negative impacts on climate change, biodiversity, desertification and land degradation.
 
 +++ intro 2
 
-We start this module by explaining the causes and consequences of increasing pressure on land during the last decades, largely based on historic time series from [FAOSTAT](http://www.fao.org/faostat/en/). Subsequently, we take a look into the future of land use and its consequences, based on IAM scenarios from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/). In these forward looking scenarios, land-related GHG emission reduction and land-based Carbon Dioxide Removal (CDR) play a central role. However, depending on the underlying socio-economic assumptions, there can be trade-offs between large-scale land-based mitigation and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle and regulation policies.
+We start this module by explaining the causes and consequences of increasing pressure on land during the last decades. Subsequently, we take a look into the future of land use and its consequences, based on scenarios from the [IPCC SRCCL](https://www.ipcc.ch/srccl/). In these forward looking scenarios, greenhouse gas (GHG) emission reduction by AFOLU and land-based Carbon Dioxide Removal (CDR) play a central role to mitigate climate change. Therefore, land management in these scenarios is an important component of the overall emissions reduction. But land is a finite resource. This scarcity can result in trade-offs between land-based mitigation at large-scale and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle changes and regulatory policies.
 
 +++ pressure 0
 
 ## Land Is Under Pressure
 
-Since the 1960s the world population more than doubled (factor 2.5), while the per-capita income tripled in the same period. Both factors, population and income, substantically increased the demand for agricultural commodites in the last decades. While higher population increases the demand directly, higher incomes shift the dietary patterns away from crops and vegetables towards animal-based products, which are more resource-intensive. Today, about 60-80% of all agricultural land is used for livestock production, either for livestock grazing on pasture or for growing feed on cropland. The increase of crop and livestock production in the last decades is also reflected in rising N2O emissions (e.g. from synthetic fertilizer application) and CH4 emissions (e.g. from enteric fermentation).
+Since the 1960s the world population more than doubled (factor 2.5), while the per-capita income tripled in the same period. Both factors, population and income, substantially increased the demand for agricultural products in the last decades. While higher population increases the demand directly, higher incomes shift the dietary patterns away from crops and vegetables towards animal-based products, which are more resource-intensive. Today, about 60-80% of all agricultural land is used for livestock production, either for livestock grazing on pasture or for growing feed on cropland.
 
 +++ pressure 1
 
@@ -24,19 +24,19 @@ Growing population and higher per-capita incomes have been key drivers of the ri
 
 ### Calorie supply
 
-Higher per-capita incomes increase the per-capita calorie intake and shift the dietary patterns towards animal-based and processed products.
+Higher per-capita incomes increase the per-capita calorie intake and shift the dietary patterns towards meat and dairy products.
 
 +++ pressure 3
 
 ### Demand
 
-Higher per-capita calory intake combined with a growing population increases the global demand for these resources. Indirectly they also increase the demand for feed and supply chain loss.
+Higher per-capita calorie intake combined with a growing population increases the global demand for crops and livestock products.
 
 +++ pressure 4
 
 ### Prices
 
-While prices for agricultural products fluctuate, for many products, there is also an overall increase reflecting the heightened demand.
+While prices for agricultural products fluctuate, for many products, there is also an overall increase reflecting the increased demand.
 
 +++ pressure 5
 
@@ -48,7 +48,7 @@ But rising prices did not keep up with rising incomes. The actual household expe
 
 ### Land Cover
 
-A key insight is that higher production of agricultural commodities since 1965 was largely achieved by yield increases (green revolution) and only to a small extent by further expansion of cropland and pasture area, which was the pre-dominant mode of increasing production until then. Managed forests and urban areas show higher relative increases but also start from quite low absolute numbers in 1965.
+A key insight is that higher production of agricultural commodities since 1965 was largely achieved by higher intensity of land use and only to a small extent by further expansion of cropland and pasture area, which was the pre-dominant mode of increasing production until then. This higher intensity in land use is the central contributor for already heightened pressure on land. 
 
 +++ pressure 7
 
@@ -66,21 +66,22 @@ The gains in productivity since the 1960s were only made possible by strong irri
 
 ### Emissions
 
-GHG emissions from agriculture, forestry, and other land use (AFOLU) show increasing trends for N2O and CH4 since the 1960s, which reflect the tremendous increase in the use of industrial nitrogen fertilizer and the substantical increase of livestock production.
+GHG emissions from AFOLU show increasing trends for nitrous oxide (N₂O) and methane (CH₄) since the 1960s, which reflect the tremendous increase in the use of industrial nitrogen fertilizer and the substantical increase of livestock production (enteric fermentation).
 
 +++ solution 0
 
 ## Potentials and trade-offs of land-based mitigation
 
-Agriculture, forestry, and other land use (AFOLU) are major contributors to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological and socio-economic development (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role for climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
+The AFOLU sector is a major contributor to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological, social and economic developments (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role for climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
+In the following we show land use and AFOLU GHG emissions for a «no climate policy» scenario (SSP2-Baseline) and a 1.5°C pathway (SSP2-19) from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/).
 
 +++ solution 1
 
-Today, @purple(AFOLU) is responsible for about 12% of total annual anthropogenic CO₂ emissions, most of which are caused by deforestation. For other GHGs, AFOLU's share is larger: Methane (CH₄), primarily caused by rice and livestock production, and nitrous oxide (N₂O), largely caused by synthetic fertilizer application, account for 46% and 73% respectively.
+Today, @purple(AFOLU) is responsible for about 12% of total annual anthropogenic CO₂ emissions, most of which are caused by deforestation. For other greenhouse gases, AFOLU's share is larger. AFOLU accounts for 46% of total CH₄ and 73% of total N₂O emissions, globally. CH₄ emissions are primarily caused by rice and livestock production. N₂O emissions are largely caused by synthetic fertilizer application.
 
 +++ solution 2
 
-In absolute numbers, CH₄ and N₂O emissions seem very small compared to CO₂ emissions. But the contribution of these GHGs to climate change is substantially higher than that of CO₂. The global warming potential (GWP) of 1 ton CH₄/N₂O is equivalent to 28/265 tons of CO₂.
+In absolute numbers, CH₄ and N₂O emissions seem very small compared to CO₂ emissions. But the contribution of these GHGs to climate change is substantially higher than that of CO₂. The global warming potential over a 100-year time horizon (GWP100) of 1 ton CH₄/N₂O is equivalent to 28/265 tons of CO₂.
 
 +++ solution 3
 
@@ -92,11 +93,11 @@ In the following comparison across scenarios, we'll stick to CO₂-equivalents.
 
 +++ solution 5
 
-In the SSP2-Baseline scenario, @yellow no(total) annual anthropogenic CO₂ emissions (including all sectors) continue to rise across the board. Contrary to this trend, CO₂ emissions from @purple(AFOLU) drop below zero by the end of the century as a result of reduced deforestation and some afforestation. However, CH₄ and N₂0 emissions, which are linked to food production and land management, continue to rise in the SSP2-Baseline scenario.
+In the «no climate policy» scenario (SSP2-Baseline), in which no policies for climate mitigation are implemented, @yellow no(total) annual anthropogenic CO₂ emissions (including all sectors) continue to rise. Contrary to this trend, CO₂ emissions from @purple(AFOLU) drop below zero by the end of the century as a result of reduced deforestation and some afforestation. However, CH₄ and N₂0 emissions, which are linked to food production and land management, continue to rise in the no climate policy scenario.
 
 +++ solution 6
 
-In the SSP2-1.9 Scenario, which is compatible with the 1.5°C target of the Paris Agreement, @purple(AFOLU) plays a pivotal role in turning @yellow(total) CO₂ emissions net-negative via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
+In the 1.5°C pathway (SSP2-1.9), @purple(AFOLU) plays a pivotal role in turning @yellow(total) CO₂ emissions net-negative by 2100, achieved via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
 
 +++ cdr 0
 
@@ -104,34 +105,34 @@ While BECCS and afforestation have high potentials for @green(CDR), they require
 
 +++ cdr 1
 
-Land-use change differs substantially between the SSP2-Baseline and the SSP2-1.9 pathway.
+Land-use change differs substantially between the no climate policy scenario and the 1.5°C pathway.
 
 +++ change 0
 
-In the SSP2-Baseline scenario, agricultural land (including dedicated @orange(bioenergy crops)) expands by about 600 Mha between 2005 and 2100 (corresponding to a relative increase of about 12%) at the cost of @blue(forests) and @purple(other natural land). The main driver for the expansion of agricultural land is increased @yellow(crop) and @green(livestock) production, and to some extent biomass production used as substitute for fossil fuel in the energy system. 
+In the no climate policy scenario, agricultural land (including dedicated @orange(bioenergy crops)) expands by about 600 Mha between 2005 and 2100 (corresponding to a relative increase of about 12%) at the cost of @blue(forests) and @purple(other natural land). The main driver for the expansion of agricultural land is increased @yellow(crop) and @green(livestock) production, and to some extent biomass production used as substitute for fossil fuel in the energy system. 
 
 +++ change 1
 
-The dynamics in the SSP2-1.9 mitigation pathway differ in several aspects. First, land used for agricultural production declines to allow for large-scale @blue(afforestation) of about 700 Mha globally by 2100. At the same time, 750 Mha of land are dedicated to @orange(bioenergy crop) production in 2100. Therefore, the area available for food production is substantially reduced in the SSP2-1.9 mitigation pathway. 
+The dynamics in the 1.5°C pathway differ in several aspects. First, land used for agricultural production declines to allow for large-scale @blue(afforestation) of about 700 Mha globally by 2100. At the same time, 750 Mha of land are dedicated to @orange(2nd generation bioenergy crop) production in 2100. Therefore, the area available for food production is substantially reduced in the 1.5°C pathway. 
 
 +++ change 2
 
-Production of bioenergy in @neon(SSP2-1.9) is about 4 times higher compared to @red(SSP2-Baseline) in 2100, and mostly used in combination with CCS in the energy system, which results in large-scale CDR of more than 10 Gt CO2 per year. 
+Production of bioenergy in the @neon(1.5°C pathway) is about 4 times higher compared to the @red(no climate policy scenario) in 2100, and mostly used in combination with CCS in the energy system, which results in large-scale CDR of more than 10 Gt CO2 per year. 
 
 +++ change 3
 
-But with more land dedicated land-based CDR and less land available for food production, food prices rise, which threatens food security. Therefore, the @neon(SSP2-1.9) pathway comes with a trade-off between land-based CDR for meeting the Paris Agreement goals and the broader Sustainable Development Goal (SDG) Agenda.
+But with more land dedicated land-based CDR and less land available for food production, food prices rise, which threatens food security. Therefore, the @neon(1.5°C pathway) comes with a trade-off between land-based CDR for meeting the Paris Agreement goals and the broader Sustainable Development Goal (SDG) Agenda.
 
 +++ change 4
 
-Furthermore, a high-level implementation of BECCS may also pose risks of desertification, land degradation, and countering adaptation measures.
+Furthermore, a high-level implementation of bioenergy with CCS (BECCS) may also pose risks of desertification, land degradation, and countering adaptation measures.
 
 +++ sustainable 0
 
 ## Is it possible to reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
 
-The SSP2-19 mitigation pathway presented above is compatible is the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR. 
-Below we show a different set of scenarios consisting of a @neon(default mitigation policy) (similar to SSP2-19, but run by a different model) and a @green(sustainable mitigation policy), which includes early action, lifestyle and regulation policies.
+The 1.5°C pathway presented above is compatible with the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role, because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR. 
+Below we show a different set of scenarios consisting of a @neon(default mitigation policy) (similar to the 1.5°C pathway, but run by a different model) and a @green(sustainable mitigation policy). The sustainable mitigation policy pathway includes the political dimension (early political action, regulatory policies) but also lifestyle changes, such as shifts in dietary patterns.
 
 +++ sustainable 1
 
@@ -161,4 +162,4 @@ The reduced pressure on land in the @green(sustainable scenario) is reflected in
 
 ## Conclusion
 
-Today, about 70% of the global ice-free land is used by humans for agriculture and forestry to produce food, material and biomass. In mitigation pathways compatible with the goals of the Paris Agreement, land-based CDR plays a pivotal role, in particular afforestation and BECCS. This additional demand for land could result in trade-offs with other sustainable development goals (SDGs) such as food security or biodiversity protection. However, the scale of such unwanted trade-offs depends on multiple factors including the implementation of land-based CDR measures, socio-economic development, lifestyle changes and governance. 
+Today, about 70% of the global ice-free land is used by humans for agriculture and forestry to produce food, material and biomass. In mitigation pathways compatible with the goals of the Paris Agreement, land-based CDR plays a pivotal role, in particular afforestation and BECCS. This additional demand for land could result in trade-offs with other sustainable development goals (SDGs) such as food security or biodiversity protection. But as we have seen it is possible to substantially reduce such unwanted trade-offs if early mitigation action is embedded in a broader sustainability policy. 
