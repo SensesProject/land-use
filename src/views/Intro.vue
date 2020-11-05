@@ -110,6 +110,12 @@ export default {
 
     &.bottom {
       background: linear-gradient(transparentize($color-white, 0.3), $color-white);
+
+      &::v-deep {
+        p + p {
+          margin-top: $spacing / 2;
+        }
+      }
     }
   }
 

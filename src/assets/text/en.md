@@ -6,7 +6,11 @@ Today, a large share of the global ice-free land is used by humans for agricultu
 
 +++ intro 2
 
-We start this module by explaining the causes and consequences of increasing pressure on land during the last decades. Subsequently, we take a look into the future of land use and its consequences, based on scenarios from the [IPCC SRCCL](https://www.ipcc.ch/srccl/). In these forward looking scenarios, greenhouse gas (GHG) emission reduction by AFOLU and land-based Carbon Dioxide Removal (CDR) play a central role to mitigate climate change. Therefore, land management in these scenarios is an important component of the overall emissions reduction. But land is a finite resource. This scarcity can result in trade-offs between land-based mitigation at large-scale and food security. We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle changes and regulatory policies.
+We start this module by explaining the causes and consequences of increasing pressure on land during the last decades. Subsequently, we take a look into the future of land use and its consequences, based on scenarios from the [IPCC SRCCL](https://www.ipcc.ch/srccl/). 
+
+In these forward looking scenarios, greenhouse gas (GHG) emission reduction by AFOLU and land-based Carbon Dioxide Removal (CDR) play a central role to mitigate climate change. Therefore, land management in these scenarios is an important component of the overall emissions reduction. But land is a finite resource. This scarcity can result in trade-offs between land-based mitigation at large-scale and food security. 
+
+We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle changes and regulatory policies.
 
 +++ pressure 0
 
@@ -73,6 +77,7 @@ GHG emissions from AFOLU show increasing trends for nitrous oxide (N₂O) and me
 ## Potentials and trade-offs of land-based mitigation
 
 The AFOLU sector is a major contributor to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological, social and economic developments (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role for climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
+
 In the following we show land use and AFOLU GHG emissions for a «no climate policy» scenario (SSP2-Baseline) and a 1.5°C pathway (SSP2-19) from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/).
 
 +++ solution 1
@@ -131,7 +136,8 @@ Furthermore, a high-level implementation of bioenergy with CCS (BECCS) may also 
 
 ## Is it possible to reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
 
-The 1.5°C pathway presented above is compatible with the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role, because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR. 
+The 1.5°C pathway presented above is compatible with the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role, because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR.
+ 
 Below we show a different set of scenarios consisting of a @neon(default mitigation policy) (similar to the 1.5°C pathway, but run by a different model) and a @green(sustainable mitigation policy). The sustainable mitigation policy pathway includes the political dimension (early political action, regulatory policies) but also lifestyle changes, such as shifts in dietary patterns.
 
 +++ sustainable 1

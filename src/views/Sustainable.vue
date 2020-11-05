@@ -1,6 +1,6 @@
 <template>
   <div class="solution text-col wide">
-    <section class="text" v-html="getText('sustainable')[0]"/>
+    <section class="text sustainable" v-html="getText('sustainable')[0]"/>
     <VisSustainable/>
     <section class="text conclusion" v-html="getText('conclusion')[0]"/>
   </div>
@@ -28,6 +28,10 @@ export default {
   .text {
     &.conclusion {
       margin-top: $spacing;
+    }
+
+    &.sustainable {
+      margin-bottom: $spacing;
     }
 
     h2 {

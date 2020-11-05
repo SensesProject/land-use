@@ -1,6 +1,6 @@
 <template>
   <div class="solution text text-col wide">
-    <div v-html="getText('solution')[0]"/>
+    <div class="bt-spacing" v-html="getText('solution')[0]"/>
     <LayoutScrollytelling>
       <template v-slot:vis="props">
         <VisEmissions slot="vis" v-bind="props"/>
@@ -144,6 +144,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .bt-spacing {
+    padding-bottom: $spacing;
+  }
 
   ::v-deep h2.text-col {
     padding-bottom: $spacing / 2;
