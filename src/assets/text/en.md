@@ -1,6 +1,6 @@
 +++ intro 1
 
-# The role of land for food production and climate protection
+# The Role of Land for Food Production and Climate Protection
 
 Today, a large share of the global ice-free land is used by humans for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, currently prevailing practices in agriculture, forestry and other land use (AFOLU) have negative impacts on climate change, biodiversity, desertification and land degradation.
 
@@ -126,7 +126,7 @@ Production of bioenergy in the @neon(1.5°C pathway) is about 4 times higher com
 
 +++ change 3
 
-But with more land dedicated land-based CDR and less land available for food production, food prices rise, which threatens food security. Therefore, the @neon(1.5°C pathway) comes with a trade-off between land-based CDR for meeting the Paris Agreement goals and the broader Sustainable Development Goal (SDG) Agenda.
+But with more land dedicated to land-based CDR and less land available for food production, food prices rise, which threatens food security. Therefore, the @neon(1.5°C pathway) comes with a trade-off between land-based CDR for meeting the Paris Agreement goals and the broader Sustainable Development Goal (SDG) Agenda.
 
 +++ change 4
 
