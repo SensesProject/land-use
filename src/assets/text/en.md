@@ -2,15 +2,15 @@
 
 # The Role of Land for Food Production and Climate Protection
 
-Today, a large share of the global ice-free land is used by humans for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, currently prevailing practices in agriculture, forestry and other land use (AFOLU) have negative impacts on climate change, biodiversity, desertification and land degradation.
+Today, a large share of the global ice-free land is used by humans for agriculture and forestry, which provide food and timber for more than 7 Billion People. However, prevailing practices in agriculture, forestry and other land use (AFOLU) have negative impacts on climate change, biodiversity, desertification and land degradation.
 
 +++ intro 2
 
 We start this module by explaining the causes and consequences of increasing pressure on land during the last decades. Subsequently, we take a look into the future of land use and its consequences, based on scenarios from the [IPCC SRCCL](https://www.ipcc.ch/srccl/). 
 
-In these forward looking scenarios, greenhouse gas (GHG) emission reduction by AFOLU and land-based Carbon Dioxide Removal (CDR) play a central role to mitigate climate change. Therefore, land management in these scenarios is an important component of the overall emissions reduction. But land is a finite resource. This scarcity can result in trade-offs between land-based mitigation at large-scale and food security. 
+In these forward-looking scenarios, greenhouse gas (GHG) emission reduction by AFOLU and land-based Carbon Dioxide Removal (CDR) play a central role to mitigate climate change. Therefore, land management in these scenarios is an important component of the overall emissions reduction. But the land is a finite resource. This scarcity can result in trade-offs between land-based mitigation at large-scale and food security. 
 
-We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimzes such trade-offs through early action, lifestyle changes and regulatory policies.
+We close this module with an outlook on a more sustainable mitigation pathway towards 1.5°C that minimizes such trade-offs through early action, lifestyle changes and regulatory policies.
 
 +++ pressure 0
 
@@ -52,7 +52,7 @@ But rising prices did not keep up with rising incomes. The actual household expe
 
 ### Land Cover
 
-A key insight is that higher production of agricultural commodities since 1965 was largely achieved by higher intensity of land use and only to a small extent by further expansion of cropland and pasture area, which was the pre-dominant mode of increasing production until then. This higher intensity in land use is the central contributor for already heightened pressure on land. 
+A key insight is that higher production of agricultural commodities since 1965 was largely achieved by a higher intensity of land use and only to a small extent by further expansion of cropland and pasture area, which was the predominant mode of increasing production until then. This higher intensity in land use is the central contributor for already heightened pressure on land. 
 
 +++ pressure 7
 
@@ -70,15 +70,15 @@ The gains in productivity since the 1960s were only made possible by strong irri
 
 ### Emissions
 
-GHG emissions from AFOLU show increasing trends for nitrous oxide (N₂O) and methane (CH₄) since the 1960s, which reflect the tremendous increase in the use of industrial nitrogen fertilizer and the substantical increase of livestock production (enteric fermentation).
+GHG emissions from AFOLU show increasing trends for nitrous oxide (N₂O) and methane (CH₄) since the 1960s, which reflect the tremendous increase in the use of industrial nitrogen fertilizer and the substantial increase of livestock production (enteric fermentation).
 
 +++ solution 0
 
 ## Potentials and trade-offs of land-based mitigation
 
-The AFOLU sector is a major contributor to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological, social and economic developments (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role for climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
+The AFOLU sector is a major contributor to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological, social and economic developments (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role in climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
 
-In the following we show land use and AFOLU GHG emissions for a «no climate policy» scenario (SSP2-Baseline) and a 1.5°C pathway (SSP2-19) from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/).
+In the following, we show land use and AFOLU GHG emissions for a «no climate policy» scenario (SSP2-Baseline) and a 1.5°C pathway (SSP2-19) from the [IPCC 1.5°C database](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/).
 
 +++ solution 1
 
@@ -90,7 +90,7 @@ In absolute numbers, CH₄ and N₂O emissions seem very small compared to CO₂
 
 +++ solution 3
 
-For that reason, it makes sense to refer to CO₂-equivalents when comparing GHGs. In this metric it becomes clear that  CH₄ and N₂O emissions from @purple(AFOLU) are far from negligible.
+For that reason, it makes sense to refer to CO₂-equivalents when comparing GHGs. In this metric, it becomes clear that CH₄ and N₂O emissions from @purple(AFOLU) are far from negligible.
 
 +++ solution 4
 
@@ -102,7 +102,7 @@ In the «no climate policy» scenario (SSP2-Baseline), in which no policies for 
 
 +++ solution 6
 
-In the 1.5°C pathway (SSP2-1.9), @purple(AFOLU) plays a pivotal role in turning @yellow(total) CO₂ emissions net-negative by 2100, achieved via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with less animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
+In the 1.5°C pathway (SSP2-1.9), @purple(AFOLU) plays a pivotal role in turning @yellow(total) CO₂ emissions net-negative by 2100, achieved via large-scale afforestation and BECCS. CH₄ and N₂0 emissions from AFOLU are substantially reduced by technical mitigation and/or behavioural change towards diets with fewer animal products. However, non-CO₂ AFOLU emissions can't be eliminated in full because they are inherent to agricultural production. In sum over all GHGs, AFOLU is a sink of 1171 Mt CO₂-equivalents in 2100.
 
 +++ cdr 0
 
@@ -114,15 +114,15 @@ Land-use change differs substantially between the no climate policy scenario and
 
 +++ change 0
 
-In the no climate policy scenario, agricultural land (including dedicated @orange(bioenergy crops)) expands by about 600 Mha between 2005 and 2100 (corresponding to a relative increase of about 12%) at the cost of @blue(forests) and @purple(other natural land). The main driver for the expansion of agricultural land is increased @yellow(crop) and @green(livestock) production, and to some extent biomass production used as substitute for fossil fuel in the energy system. 
+In the no climate policy scenario, agricultural land (including dedicated @orange(bioenergy crops)) expands by about 600 Mha between 2005 and 2100 (corresponding to a relative increase of about 12%) at the cost of @blue(forests) and @purple(other natural land). The main driver for the expansion of agricultural land is increased @yellow(crop) and @green(livestock) production and to some extent biomass production used as a substitute for fossil fuel in the energy system. 
 
 +++ change 1
 
-The dynamics in the 1.5°C pathway differ in several aspects. First, land used for agricultural production declines to allow for large-scale @blue(afforestation) of about 700 Mha globally by 2100. At the same time, 750 Mha of land are dedicated to @orange(2nd generation bioenergy crop) production in 2100. Therefore, the area available for food production is substantially reduced in the 1.5°C pathway. 
+The dynamics in the 1.5°C pathway differ in several aspects. First, land used for agricultural production declines to allow for large-scale @blue(afforestation) of about 700 Mha globally by 2100. At the same time, 750 Mha of land is dedicated to @orange(2nd generation bioenergy crop) production in 2100. Therefore, the area available for food production is substantially reduced in the 1.5°C pathway. 
 
 +++ change 2
 
-Production of bioenergy in the @neon(1.5°C pathway) is about 4 times higher compared to the @red(no climate policy scenario) in 2100, and mostly used in combination with CCS in the energy system, which results in large-scale CDR of more than 10 Gt CO2 per year. 
+Production of bioenergy in the @neon(1.5°C pathway) is about 4 times higher compared to the @red(no climate policy scenario) in 2100 and mostly used in combination with CCS in the energy system, which results in large-scale CDR of more than 10 Gt CO2 per year. 
 
 +++ change 3
 
@@ -138,7 +138,7 @@ Furthermore, a high-level implementation of bioenergy with CCS (BECCS) may also 
 
 The 1.5°C pathway presented above is compatible with the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role, because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR.
  
-Below we show a different set of scenarios consisting of a @neon(default mitigation policy) (similar to the 1.5°C pathway, but run by a different model) and a @green(sustainable mitigation policy). The sustainable mitigation policy pathway includes the political dimension (early political action, regulatory policies) but also lifestyle changes, such as shifts in dietary patterns.
+Below we show a different set of scenarios, also taken from the IPCC 1.5°C database, consisting of a @neon(default mitigation policy) (similar to the 1.5°C pathway, but run by a different model) and a @green(sustainable mitigation policy). The sustainable mitigation policy pathway includes the political dimension (early political action, regulatory policies) but also lifestyle changes, such as shifts in dietary patterns.
 
 +++ sustainable 1
 
@@ -172,5 +172,8 @@ Today, about 70% of the global ice-free land is used by humans for agriculture a
 
 +++ sources
 
-- Historic data: [1)&nbsp;WDI](http://datatopics.worldbank.org/world-development-indicators/); [2)&nbsp;James](http://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12); [3)&nbsp;FAOSTAT](http://www.fao.org/faostat/en/); [4)&nbsp;WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor); [5)&nbsp;Based on FAO](https://github.com/pik-piam/mrvalidation); [6)&nbsp;Based on LUH2 and FAO](https://github.com/pik-piam/mrvalidation); [7)&nbsp;LUH2](https://luh.umd.edu/); [8)&nbsp;Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [9)&nbsp;PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
+- [Bertram, C., Luderer, G., Popp, A., Minx, J. C., Lamb, W. F., Stevanović, M., Humpenöder, F., Giannousakis, A., & Kriegler, E. (2018). Targeted policies can compensate most of the increased sustainability risks in 1.5 C mitigation scenarios. Environmental Research Letters, 13(6), 064038.](https://iopscience.iop.org/article/10.1088/1748-9326/aac3ec/meta)
+- [Shukla, P. R., Skea, J., Calvo Buendia, E., Masson-Delmotte, V., Pörtner, H. O., Roberts, D. C., ... & Ferrat, M. IPCC, 2019: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems.](https://www.ipcc.ch/srccl/)
 - [Smith, P. (2016), Soil carbon sequestration and biochar as negative emission technologies. Glob Change Biol, 22: 1315-1324. doi:10.1111/gcb.13178](https://doi.org/10.1111/gcb.13178)
+- Historic data: [1)&nbsp;WDI](http://datatopics.worldbank.org/world-development-indicators/); [2)&nbsp;James](http://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12); [3)&nbsp;FAOSTAT](http://www.fao.org/faostat/en/); [4)&nbsp;WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor); [5)&nbsp;Based on FAO](https://github.com/pik-piam/mrvalidation); [6)&nbsp;Based on LUH2 and FAO](https://github.com/pik-piam/mrvalidation); [7)&nbsp;LUH2](https://luh.umd.edu/); [8)&nbsp;Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [9)&nbsp;PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
+- Scenario data: [IAMC 1.5°C Scenario Explorer](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/)
