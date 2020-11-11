@@ -79,16 +79,23 @@ article {
     &.to-gem {
       text-decoration: none;
       text-align: center;
+      margin-top: $spacing;
       padding: $spacing / 4 $spacing / 2;
-      border: 1px solid $color-pale-gray;
+      border: 1px solid getColor(gray, 80);
       border-radius: $border-radius;
       pointer-events: all;
+      background-color: getColor(gray, 90);
+      color: $color-neon;
+      transition: all $transition;
       &:hover {
-        background-color: getColor(gray, 90)
+        border-color: getColor(gray, 70);
+        color: getColor(neon, 20);
+        background-color: getColor(neon, 100);
       }
     }
   }
   .align-to-gem {
+    padding-top: $spacing / 2;
     margin-top: $spacing / 2;
   }
 
