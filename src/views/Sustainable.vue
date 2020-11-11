@@ -27,7 +27,8 @@ export default {
 
   .text {
     &.conclusion {
-      margin-top: $spacing;
+      margin-top: $spacing * 2;
+      margin-bottom: $spacing;
     }
 
     &.sustainable {
