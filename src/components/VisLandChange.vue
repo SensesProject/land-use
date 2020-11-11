@@ -1,7 +1,7 @@
 <template>
   <div class="vis-emissions narrow">
     <div class="title tiny">
-      Land cover change
+      Land Cover Change
     </div>
     <div class="safari-fix">
       <div class="grid">

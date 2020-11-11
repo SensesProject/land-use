@@ -26,7 +26,7 @@ Growing population and higher per-capita incomes have been key drivers of the ri
 
 +++ pressure 2
 
-### Calorie supply
+### Calorie Supply
 
 Higher per-capita incomes increase the per-capita calorie intake and shift the dietary patterns towards meat and dairy products.
 
@@ -74,7 +74,7 @@ GHG emissions from AFOLU show increasing trends for nitrous oxide (N₂O) and me
 
 +++ solution 0
 
-## Potentials and trade-offs of land-based mitigation
+## Potentials and Trade-Offs of Land-Based Mitigation
 
 The AFOLU sector is a major contributor to global greenhouse gas (GHG) emissions today. The future trajectory of AFOLU GHG emissions depends on various factors including technological, social and economic developments (e.g. population and dietary patterns). Moreover, the AFOLU sector can play an important role in climate change mitigation through land-based Carbon Dioxide Removal (CDR) options such as Bioenergy with Carbon Capture and Storage (BECCS) and afforestation. 
 
@@ -134,7 +134,7 @@ Furthermore, a high-level implementation of bioenergy with CCS (BECCS) may also 
 
 +++ sustainable 0
 
-## Is it possible to reach the Paris Agreement goals without major trade-offs in the AFOLU sector?
+## Is it Possible to Reach the Paris Agreement Goals Without Major Trade-Offs in the AFOLU Sector?
 
 The 1.5°C pathway presented above is compatible with the Paris Agreement goals but comes with a trade-off regarding food security. Therefore, the question arises if it is possible to minimize such unwanted trade-offs. In this context, dietary patterns play an important role, because the production of animal-based food products is land-demanding. Therefore, a shift of dietary patterns towards less animal-based food products could reduce the overall pressure in the AFOLU sector, which would be of particular advantage in a mitigation pathway with land-based CDR.
  
@@ -142,13 +142,13 @@ Below we show a different set of scenarios, also taken from the IPCC 1.5°C data
 
 +++ sustainable 1
 
-### Demand-side mitigation
+### Demand-Side Mitigation
 
 A key component of the @green(sustainable scenario) is lifestyle change like reduced demand for livestock products and reduced food waste. In consequence, the area needed for agricultural production is smaller in the @green(sustainable scenario), which reduces the pressure on land. 
 
 +++ sustainable 2
 
-### Land-based mitigation
+### Land-Based Mitigation
 
 As a result of less land needed for agricultural production, the @green(sustainable scenario) shows more afforestation and less bioenergy, which makes sense considering that afforestation as CDR option is cheaper than BECCS.
 
@@ -175,5 +175,5 @@ Today, about 70% of the global ice-free land is used by humans for agriculture a
 - [Bertram, C., Luderer, G., Popp, A., Minx, J. C., Lamb, W. F., Stevanović, M., Humpenöder, F., Giannousakis, A., & Kriegler, E. (2018). Targeted policies can compensate most of the increased sustainability risks in 1.5 C mitigation scenarios. Environmental Research Letters, 13(6), 064038.](https://iopscience.iop.org/article/10.1088/1748-9326/aac3ec/meta)
 - [Shukla, P. R., Skea, J., Calvo Buendia, E., Masson-Delmotte, V., Pörtner, H. O., Roberts, D. C., ... & Ferrat, M. IPCC, 2019: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems.](https://www.ipcc.ch/srccl/)
 - [Smith, P. (2016), Soil carbon sequestration and biochar as negative emission technologies. Glob Change Biol, 22: 1315-1324. doi:10.1111/gcb.13178](https://doi.org/10.1111/gcb.13178)
-- Historic data: [1)&nbsp;WDI](http://datatopics.worldbank.org/world-development-indicators/); [2)&nbsp;James](http://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12); [3)&nbsp;FAOSTAT](http://www.fao.org/faostat/en/); [4)&nbsp;WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor); [5)&nbsp;Based on FAO](https://github.com/pik-piam/mrvalidation); [6)&nbsp;Based on LUH2 and FAO](https://github.com/pik-piam/mrvalidation); [7)&nbsp;LUH2](https://luh.umd.edu/); [8)&nbsp;Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [9)&nbsp;PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
+- Historical data: [1)&nbsp;WDI](http://datatopics.worldbank.org/world-development-indicators/); [2)&nbsp;James](http://pophealthmetrics.biomedcentral.com/articles/10.1186/1478-7954-10-12); [3)&nbsp;FAOSTAT](http://www.fao.org/faostat/en/); [4)&nbsp;WBGEM](https://datacatalog.worldbank.org/dataset/global-economic-monitor); [5)&nbsp;Based on FAO](https://github.com/pik-piam/mrvalidation); [6)&nbsp;Based on LUH2 and FAO](https://github.com/pik-piam/mrvalidation); [7)&nbsp;LUH2](https://luh.umd.edu/); [8)&nbsp;Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [9)&nbsp;PRIMAPhist](https://doi.org/10.5880/PIK.2017.001)
 - Scenario data: [IAMC 1.5°C Scenario Explorer](https://data.ene.iiasa.ac.at/iamc-1.5c-explorer/)
