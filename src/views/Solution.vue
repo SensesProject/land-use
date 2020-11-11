@@ -24,7 +24,7 @@
         <IntersectionObserver class="narrow" :no-styling="width >= 600" :align="width >= 600 ? 'right' : 'center'" :step="5" :class="{active: step === 5}">
           <div v-html="getText('solution')[6]"/>
           <div class="align-to-gem">
-            <a class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/emissions" target="_blank">↗ Access Data</a>
+            <a class="to-gem" href="/gems/#/land-transition/emissions" target="_blank">↗ Access Data</a>
           </div>
         </IntersectionObserver>
       </template>
@@ -76,7 +76,7 @@
           </p>
           <div v-html="getText('change')[4]"/>
           <div class="align-to-gem">
-            <a class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/land-cover" target="_blank">↗ Access Data</a>
+            <a class="to-gem" href="/gems/#/land-transition/land-cover" target="_blank">↗ Access Data</a>
           </div>
         </IntersectionObserver>
       </template>

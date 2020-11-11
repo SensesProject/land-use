@@ -8,7 +8,7 @@
       <div class="text" :key="`g-${i}`">
         <div :class="{sticky: i < groups.length - 1}" v-html="g.html"/>
         <div class="align-to-gem">
-          <a v-if="i === groups.length - 1" class="to-gem" href="https://senses-gems.netlify.app/#/land-transition/sustainable" target="_blank">↗ Access Data</a>
+          <a v-if="i === groups.length - 1" class="to-gem" href="/gems/#/land-transition/sustainable" target="_blank">↗ Access Data</a>
         </div>
       </div>
       <div class="chart-group" :key="`gc-${i}`">
