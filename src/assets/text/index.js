@@ -31,7 +31,7 @@ function parse (text) {
             .replace()
             .replace(/@([^(]+)\(([^)]+)\)/g, (a, b, c) => `<span class="keyword ${b}">${c}</span>`)
         )
-      )
+      ).replace(/(href="https?:\/\/)/g, (a, b) => `target="blank" ${b}`)
     ]
   })
   const keys = [...new Set(sections.map(s => s[0]))]
