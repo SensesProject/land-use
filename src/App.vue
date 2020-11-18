@@ -112,6 +112,7 @@ article {
 #app {
   .senses-meta {
     margin: 0 $spacing / 2 $spacing / 2;
+    max-width: $wide;
   }
 }
 </style>
