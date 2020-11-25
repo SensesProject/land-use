@@ -28,7 +28,7 @@ Data sources and if applicable licenses are listed below on a per-file basis.
 
 ## Development
 
-## Project setup
+### Project setup
 ```
 npm install
 ```
