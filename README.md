@@ -23,8 +23,8 @@ Data sources and if applicable licenses are listed below on a per-file basis.
     - irrigation: [LUH2](https://luh.umd.edu)
     - fertilization: [Lassaletta2014](https://iopscience.iop.org/article/10.1088/1748-9326/9/10/105011/meta); [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)
     - emissions: [PRIMAPhist](https://doi.org/10.5880/PIK.2017.001); [CC BY-4.0](http://creativecommons.org/licenses/by/4.0/)
-- `src/assets/data/land-cover.js` Source: [IPCC](https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/)
-- `src/assets/data/land-net.csv` Source: [Smith, 2016](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.13178)
+- `src/assets/data/land-cover.js` Source: [Shukla, P. R., Skea, J., Calvo Buendia, E., Masson-Delmotte, V., Pörtner, H. O., Roberts, D. C., ... & Ferrat, M. IPCC, 2019: Climate Change and Land: an IPCC special report on climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems.](https://www.ipcc.ch/srccl/chapter/summary-for-policymakers/)
+- `src/assets/data/land-net.csv` Source: [Smith, P. (2016), Soil carbon sequestration and biochar as negative emission technologies. Glob Change Biol, 22: 1315-1324. doi:10.1111/gcb.13178](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.13178)
 
 ## Development
 
