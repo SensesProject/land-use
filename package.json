@@ -13,7 +13,7 @@
     "d3-scale": "^3.2.1",
     "dompurify": "^2.0.12",
     "dsv-loader": "^2.0.0",
-    "library": "github:SensesProject/library",
+    "library": "github:SensesProject/library#tsd",
     "marked": "^1.1.0",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.10",
