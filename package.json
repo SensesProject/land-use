@@ -11,7 +11,7 @@
     "core-js": "^3.4.3",
     "d3-format": "^1.4.3",
     "d3-scale": "^3.2.1",
-    "dompurify": "^2.0.12",
+    "dompurify": "^2.0.17",
     "dsv-loader": "^2.0.0",
     "library": "github:SensesProject/library",
     "marked": "^1.1.0",
