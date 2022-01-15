@@ -14,7 +14,7 @@
     "dompurify": "^2.0.12",
     "dsv-loader": "^2.0.0",
     "library": "github:SensesProject/library",
-    "marked": "^1.1.0",
+    "marked": "^4.0.10",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.10",
     "vue-masonry": "^0.11.8",
